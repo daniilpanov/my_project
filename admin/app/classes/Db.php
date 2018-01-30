@@ -64,5 +64,5 @@ class Db extends Config
     }
 
 }
-?>
+
 

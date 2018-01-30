@@ -1,7 +1,12 @@
+<div class="messages">
+
+</div>
 <div>
+    <p><u>ВАШЕ ИМЯ</u></p>
+    <label><input id="name" type="text"></label>
     <p><u>ОЦЕНКА</u></p>
     <div id="reviewStars-input">
-        <input id="star-4" type="radio" name="reviewStars" value="Great">
+        <input id="star-4" type="radio" name="reviewStars" value="great">
         <label title="Great" for="star-4"></label>
 
         <input id="star-3" type="radio" name="reviewStars" value="good">
@@ -16,8 +21,14 @@
         <input id="star-0" type="radio" name="reviewStars" value="awful">
         <label title="awful" for="star-0"></label>
     </div>
+    <input id="go" type="submit" value="Далее">
 </div>
 <style>
+    input#go,input#name{
+        text-underline: none;
+        padding: 10px;
+        background: gray;
+    }
     #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
         background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
     }
@@ -78,9 +89,6 @@
     }
     #reviewStars-input #star-4 {
         left: 212px;
-    }
-    #reviewStars-input #star-5 {
-        left: 265px;
     }
 </style>
 
