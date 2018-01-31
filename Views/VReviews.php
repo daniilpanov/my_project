@@ -1,5 +1,7 @@
 <div class="messages">
+    <?php
 
+    ?>
 </div>
 <div>
     <p><u>ВАШЕ ИМЯ</u></p>
