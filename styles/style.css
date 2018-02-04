@@ -63,15 +63,16 @@
     left: 265px;
 }
 
-.container
+.jumbotron
 {
-    margin-top: 20px;
+    margin: 5%;
     text-align: center;
     font-family: Verdana, serif;
-    width: 100%;
+    font-size: 15px;
+    width: 85%;
     height: 5%;
 }
-.container .content
+.jumbotron .content
 {
     text-decoration: none;
     color: black;
@@ -79,12 +80,12 @@
     padding: 10px;
     padding-bottom: 20px;
 }
-.container .content:hover,.container .content:active
+.jumbotron .content:hover,.jumbotron .content:active
 {
     background-color: darkgrey;
     box-shadow: inset 0 0 5px 1px;
 }
-.container .content:checked
+.jumbotron .content:checked
 {
     background-color: white;
     text-decoration: underline;
@@ -92,13 +93,10 @@
 }
 .first
 {
-    height: 10%;
-    display: block;
+    margin: 0;
+    height: 15%;
+    width: 15%;
+    display: inline;
     border: 1px seagreen solid;
     text-align: center;
-}
-.first img
-{
-    height: 10%;
-    width: 10%;
 }
