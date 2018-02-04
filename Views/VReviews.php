@@ -1,3 +1,8 @@
+<div id="e-mail">
+    <div>
+        <input type="email" name="e-mail" placeholder="Ваш адрес эл. почты">
+    </div>
+</div>
 <div>
     <p><u>ОЦЕНКА</u></p>
     <div id="reviewStars-input">
