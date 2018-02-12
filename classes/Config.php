@@ -1,5 +1,5 @@
 <?php
-namespace Models\Config;
+namespace classes;
 
 class Config
 {

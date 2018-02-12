@@ -14,6 +14,7 @@ body
     overflow: visible;
     position: relative;
     float: left;
+    text-align: center;
 }
 
 #reviewStars-input input {
@@ -41,7 +42,6 @@ body
     float: right;
     cursor: pointer;
     margin-right: 10px;
-
     position: relative;
     z-index: 1;
 }
@@ -53,22 +53,22 @@ body
 }
 
 #reviewStars-input #star-0 {
-    left: 0;
+    margin-left: 0;
 }
 #reviewStars-input #star-1 {
-    left: 53px;
+    margin-left: 50px;
 }
 #reviewStars-input #star-2 {
-    left: 106px;
+    margin-left: 50px;
 }
 #reviewStars-input #star-3 {
-    left: 159px;
+    margin-left: 50px;
 }
 #reviewStars-input #star-4 {
-    left: 212px;
+    margin-left: 50px;
 }
 #reviewStars-input #star-5 {
-    left: 265px;
+    margin-left: 50px;
 }
 
 .jumbotron
@@ -112,4 +112,26 @@ body
 {
     width: 30%;
     height: 30%;
+}
+.review,#reviewStars-input
+{
+    background-color: #fff8e0;
+    border: black solid 1px;
+    display: block;
+    margin: 1%;
+    font-size: 15px;
+    text-align: center;
+    width: 50%;
+}
+.review input
+{
+    background-color: #576bcb;
+    color: aliceblue;
+    width: 100%;
+}
+#review
+{
+    display: inline-block;
+    text-align: center;
+    width: 50%;
 }
