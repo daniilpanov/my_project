@@ -38,11 +38,22 @@
 </div>
 
 <?php
-for ($i=1,$c=2;$i<$c;$c++,$i++)
+$data = new classes\CReviews();
+for ($id=1,$i=1,$c=2;$i<$c;$c++,$i++)
 {
-    $id = 1;
-    $sql = "SELECT * FROM reviews WHERE id={$id}";
-    if (!empty($sql))
+    $data = $review->getReview($id);
+    foreach ($data as $value)
+    {
+        if (!empty($value))
+        {
+            echo "<div class='dispay'>".$value['user_name']."</div>";
+            echo "<div class='dispay'>".$value['rev']."</div>";
+            echo "<div class='dispay'>".$value['email']."</div>";
+            echo "<div class='dispay'>".$value['font']."</div>";
+            echo "<div class='dispay'>".$value['bottom']."</div>";
+        }
+    }
+    if (!empty($data))
     {
         $id++;
     }
