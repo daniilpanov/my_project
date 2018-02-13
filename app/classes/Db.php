@@ -8,7 +8,6 @@ namespace classes;
  * @copyright 24.09.2013
  * @updated 25.12.2017
  */
-
 class Db extends Config
 {
     private static $instance = null; // объект для работы с БД

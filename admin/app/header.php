@@ -15,4 +15,3 @@ function __autoload($name)
     <title>Главная страница</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-</html>

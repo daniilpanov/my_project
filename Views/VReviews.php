@@ -31,18 +31,17 @@
         <p><u>Текст отзыва:</u></p>
         <input type="text" name="font" placeholder="Заголовок">
     </div>
-    <br>
     <div class="review bottom">
-        <input type="text" name="bottom" placeholder="Текст отзыва"><input type="submit" value="Отправить отзыв">
+        <textarea name="bottom" placeholder="Текст"></textarea> <input type="submit" value="Отправить отзыв">
     </div>
 </div>
 
 <?php
-$data = new classes\CReviews();
+$data = new \app\classes\CReviews();
 for ($id=1,$i=1,$c=2;$i<$c;$c++,$i++)
 {
-    $data = $review->getReview($id);
-    foreach ($data as $value)
+    $review=$data->getOneReview($id);
+    foreach ($review as $value)
     {
         if (!empty($value))
         {
@@ -53,7 +52,7 @@ for ($id=1,$i=1,$c=2;$i<$c;$c++,$i++)
             echo "<div class='dispay'>".$value['bottom']."</div>";
         }
     }
-    if (!empty($data))
+    if (!empty($value))
     {
         $id++;
     }
