@@ -1,11 +1,7 @@
 body
 {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("../img/3-d-blue-cubes-wallpaper-1920x1080.jpg");
-    background-color: black;
+    background: #d19c1e url("../img/1346085875-1798262-0288499_www.nevseoboi.com.ua.jpg") no-repeat left;
 }
-
 #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
     background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
 }
@@ -125,6 +121,7 @@ body
 }
 .review input,.review textarea
 {
+    margin: 5px 0;
     background-color: #576bcb;
     color: aliceblue;
     width: 100%;

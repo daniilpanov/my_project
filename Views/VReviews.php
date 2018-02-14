@@ -32,7 +32,7 @@
         <input type="text" name="font" placeholder="Заголовок">
     </div>
     <div class="review bottom">
-        <textarea name="bottom" placeholder="Текст"></textarea> <input type="submit" value="Отправить отзыв">
+        <textarea name="bottom" placeholder="Текст"></textarea><br><input type="submit" value="Отправить отзыв">
     </div>
 </div>
 
