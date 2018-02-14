@@ -40,7 +40,7 @@
 $data = new \app\classes\CReviews();
 for ($id=1,$i=1,$c=2;$i<$c;$c++,$i++)
 {
-    $review=$data->getOneReview($id);
+    $review = $data->getOneReview($id);
     foreach ($review as $value)
     {
         if (!empty($value))

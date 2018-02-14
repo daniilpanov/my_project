@@ -119,13 +119,21 @@ body
     text-align: center;
     width: 50%;
 }
-.review input,.review textarea
+.review input
 {
     margin: 5px 0;
     background-color: #576bcb;
     color: aliceblue;
     width: 100%;
-    height: 20px;
+    height: 25px;
+}
+.review textarea
+{
+    margin: 5px 0;
+    background-color: #576bcb;
+    color: aliceblue;
+    width: 100%;
+    height: 50px;
 }
 #review
 {

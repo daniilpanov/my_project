@@ -9,7 +9,7 @@ require_once "menu.php";
 // Router
 if (!$_GET)
 {
-    require_once "Views/VSelect_font.php";
+    require_once "Selectors/font.php";
 }
 if ($_GET)
 {
@@ -21,7 +21,7 @@ if ($_GET)
         }
         elseif ($_GET['page'] == "info")
         {
-
+            require_once "Selectors/info.php";
         }
     }
 }
