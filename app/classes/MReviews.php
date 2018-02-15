@@ -1,5 +1,6 @@
 <?php
 namespace app\classes;
+
 class MReviews
 {
     protected function getReview($id)

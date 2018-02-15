@@ -5,3 +5,9 @@
     <a class="content" href="?page=info">О сайте</a>
     <a class="content" href="admin/app">Войти как администратор</a></i></b>
 </div>
+<?php
+$tables = "SELECT numb FROM pages";
+for ($i=1;$i<$tables;$i++)
+{
+
+}

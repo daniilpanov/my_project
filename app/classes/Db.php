@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 namespace app\classes;
 
 /**
@@ -64,5 +64,5 @@ class Db extends Config
     }
 
 }
-
+?>
 

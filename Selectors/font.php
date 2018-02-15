@@ -1,3 +1,4 @@
 <?php
-echo $sql = "SELECT * FROM `font`";
+$sql = "SELECT * FROM `font`";
+echo $sql;
 $select = \app\classes\Db::getInstance()->sql($sql);
