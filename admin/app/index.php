@@ -42,21 +42,20 @@
     <title>Войти как администратор</title>
 </head>
 <body>
-<?if (empty($_POST)) { ?>
+<?php
+if (empty($_POST))
+{
+    ?>
     <form method="post">
         <input type="text" name="login" placeholder="Логин">
         <input type="password" name="password" placeholder="Пароль">
         <input type="submit" value="Войти">
     </form>
-    <?}?>
 <?php
-if (!empty($_POST))
+}
+elseif (!empty($_POST))
 {
-    if ($_POST['login'] == 'admin' && $_POST['password'] == 'MyProject'
-    || $_POST['login'] == 'Daniil' && $_POST['password'] == 'my12345')
-    {
-        ?><a href="index2.php">Войти как администратор</a> <?php
-    }
+    require_once "goToInside.php";
 }
 ?>
 </body>

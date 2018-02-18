@@ -6,8 +6,22 @@
     <a class="content" href="admin/app">Войти как администратор</a></i></b>
 </div>
 <?php
-$tables = "SELECT numb FROM pages";
-for ($i=1;$i<$tables;$i++)
+$pages[] = array('number'=>"SELECT COUNT(id) FROM pages");
+$pages[] = array('all'=>"SELECT * FROM pages");
+foreach ($pages as $value)
 {
+    $date = \app\classes\Db::getInstance()->sql($value);
 
+    if (!empty($value['number']))
+    {
+        echo "<div class='jumbotron'>";
+        for ($i=1;$i<$value['number'];$i++)
+        {
+            ?>
+            <a href='<?=$value['url']?>'><?=$value['all']?></a>
+            <?php
+        }
+        echo "</div>";
+    }
 }
+
