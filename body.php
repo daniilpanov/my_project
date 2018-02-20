@@ -4,26 +4,12 @@
     <h1>MY PROJECT</h1>
 </div>
 <?php
-require_once "menu.php";
-
+require_once "Views/VMenu.php";
+echo $content['content'];
 // Router
-if (!$_GET)
-{
-    require_once "Selectors/font.php";
-}
 if ($_GET)
 {
-    if ($_GET['page'])
-    {
-        if ($_GET['page'] == "reviews")
-        {
-            require_once "Views/VReviews.php";
-        }
-        elseif ($_GET['page'] == "info")
-        {
-            require_once "Selectors/info.php";
-        }
-    }
+
 }
 elseif ($_POST)
 {

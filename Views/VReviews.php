@@ -37,28 +37,3 @@
 </div>
 
 <?php
-$data = new \app\classes\CReviews();
-$sql = "SELECT COUNT id FROM reviews";
-$date = \app\classes\Db::getInstance()->sql($sql);
-echo $sql;
-/*for ($id=1,$c=1;$id=$c;$c++)
-{
-    $review = $data->getOneReview($id);
-    foreach ($review as $value);
-       if (!empty($value))
-       {
-           echo "<div class='dispay'>".$value['user_name']."</div>";
-           echo "<div class='dispay'>".$value['rev']."</div>";
-           echo "<div class='dispay'>".$value['email']."</div>";
-           echo "<div class='dispay'>".$value['font']."</div>";
-           echo "<div class='dispay'>".$value['bottom']."</div>";
-       }
-    if (!empty($value))
-    {
-        $id++;
-    }
-    else
-    {
-        break;
-    }
-}*/

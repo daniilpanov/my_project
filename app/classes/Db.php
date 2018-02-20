@@ -27,7 +27,7 @@ class Db extends Config
     {
         if (self::$instance === null)
         {
-           self::$instance = new self;
+            self::$instance = new self;
         }
 
         return self::$instance;
@@ -42,7 +42,7 @@ class Db extends Config
         // если соединение не открыто, выдаем сообщение об ошибке
         if (!self::$handler)
         {
-            die ("<h3><u><i><strong>К сожалению, произошла ошибка запроса к базе данных</strong></i></u></h3>");
+            die("Ошибка соединения с базой данных");
         }
 
         // установка принудительной кодировки UTF-8
@@ -57,12 +57,10 @@ class Db extends Config
         // если запрос не удался, выдаем сообщение об ошибке
         if (!$result)
         {
-            die ("<h3><u><i><strong>К сожалению, произошла ошибка запроса к базе данных</strong></i></u></h3>");
+            die ("Ошибка запроса к базе данных");
         }
 
         return $result;
     }
 
 }
-?>
-
