@@ -139,5 +139,22 @@ body
 {
     display: inline-block;
     text-align: center;
-    width: 50%;
+    width: 49%;
+}
+.content
+{
+    display: inline-block;
+    width: 49%;
+    margin: 1%;
+    text-align: left;
+}
+.shablons
+{
+    display: block;
+    padding: 25px;
+    border: black solid 1px;
+}
+#shablon
+{
+    width: 15px;
 }

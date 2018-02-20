@@ -3,9 +3,14 @@ namespace app\classes;
 
 class CReviews extends MReviews
 {
-    public function getOneReview($id)
+    public function getOneReview($input)
     {
-        $review = $this->getReview($id);
+        foreach ($input as $value)
+        {
+            $content[] = $value;
+        }
+        $insert = $content[1].'<br>'.$content[2].'<br>'.$content[3].'<br>'.$content[4].'<br>'.$content[5].'<hr>';
+        $review = $this->getReview($insert);
         return $review;
     }
 }
