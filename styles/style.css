@@ -67,14 +67,30 @@ body
     margin-left: 50px;
 }
 
+#admin
+{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 .jumbotron
 {
+    display: none;
     margin: 5% 0 0;
     text-align: center;
     font-family: Verdana, Arial, sans-serif;
     font-size: 15px;
-    width: 100%;
+    width: 25%;
     height: 5%;
+}
+#hidden-visible ~ .jumbotron
+{
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .jumbotron .menu
 {
