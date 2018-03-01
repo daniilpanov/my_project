@@ -34,23 +34,8 @@
     <div class="review bottom">
         <textarea name="bottom" placeholder="Текст"></textarea><br><input type="submit" value="Отправить отзыв">
     </div>
-    <div class="shablons">
-        <a href="?шаблоны=<br>">Перенос на новую строку</a>
-        <i><a href="?шаблоны=<i>">Курсив</a></i>
-        <b><a href="?шаблоны=<b>">Жирный шрифт</a></b>
-        <a href="?шаблоны=<hr>">Горизонтальная линия<hr id="shablon"></a>
-    </div>
-
 </div>
 
 <?php
-if ($_GET['шаблоны'])
-{
-    ?>
-    <script>
-
-    </script>
-    <?
-}
 $insert = new app\classes\CReviews();
 $review = $insert->getOneReview($_POST);
