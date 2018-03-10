@@ -14,7 +14,6 @@ require_once "Views/VContent.php";
 <head>
     <meta charset="UTF-8">
     <title><?=$content['title']?>|сайт`my_project`</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="styles/style.css">
