@@ -2,7 +2,7 @@
 <?php
 $pages = new \app\classes\CMenu();
 $menus = $pages->prepareMenu();
-echo "<div id='admin'><a href='admin/'>Войти как администратор</a></div>";
+echo "<div id='admin'><a href='admin/app'>Войти как администратор</a></div>";
     echo "<div class='jumbotron'><i><ul>";
         foreach ($menus as $value)
         {

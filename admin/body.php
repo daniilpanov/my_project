@@ -8,14 +8,18 @@
     </div>
 </header>
 <?php
+require_once "Views/VRedactor.php";
 require_once "Views/VMenu.php";
-echo "<div class='content'>";
-echo $content['content'];
-echo "</div>";
+for ($i=1;$i<1000;$i++){
+    echo $i.'<br>';
+}
 // Router
 if ($_GET)
 {
+    if ($_GET['page'])
+    {
 
+    }
 }
 elseif ($_POST)
 {
