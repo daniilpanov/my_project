@@ -3,7 +3,7 @@ function __autoload($name)
 {
     // конвертируем полный путь в пространстве имён с \ в /
     $name = str_replace('\\', '/', $name);
-
+    echo $name;
     require_once($name.'.php');
 }
 ?>
@@ -12,7 +12,7 @@ function __autoload($name)
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?=$content['title']?>|сайт`my_project`</title>
+    <title>сайт`my_project`</title>
     <meta name="keywords" content="">
     <meta name="Content-language" content="ru">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">

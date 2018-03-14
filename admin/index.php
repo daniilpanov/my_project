@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <style>
-
-    </style>
-    <meta charset="UTF-8">
-    <title>Войти как администратор</title>
-</head>
-<body>
 <?php
-if (empty($_POST))
+require_once "header.php";
+if (!$_POST)
 {
-    ?>
-    <form method="post">
-        <input type="text" name="login" placeholder="Логин">
-        <input type="password" name="password" placeholder="Пароль">
-        <input type="submit" value="Войти">
-    </form>
-<?php
+    // Если нет $_POST, то подключаем:
+    require_once "Views/Vlogin.php";
 }
-elseif (!empty($_POST))
+elseif ($_POST)
 {
-    require_once "goToInside.php";
+    if ($_POST['autorisation'])
+    {
+        // Иначе создаём объект для получения пользователей
+        $autorisation = new \app\classes\Clogin();
+        $check = $autorisation->checkUser($_POST['login'],$_POST['password']);
+    }
 }
-?>
-</body>
-</html>

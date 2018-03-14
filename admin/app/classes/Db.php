@@ -1,5 +1,5 @@
 ﻿<?php
-namespace admin\app\classes;
+namespace app\classes;
 
 /**
  * @filename DB.php

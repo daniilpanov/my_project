@@ -1,14 +1,11 @@
 <hr size="3px">
 <?php
-$pages = new \app\classes\CMenu();
+$pages = new \admin\app\classes\CMenu();
 $menus = $pages->prepareMenu();
-echo "<div id='admin'><a href='admin/app'>Войти как администратор</a></div>";
-    echo "<div class='jumbotron'><i><ul>";
+echo "<div id='admin'><a href='../index.php'>Войти как посетитель</a></div>";
+    echo "<table id='menu'>";
         foreach ($menus as $value)
         {
-            echo "<li><a class='menu' href='index.php?page={$value['id']}'>{$value['menu_name']}</a></li>";
+            echo "<tr><td>{$value['id']}</td><td>{$value['menu_name']}</td><input type='checkbox' name='page[]' value='{$value['id']}' ></tr>";
         }
-    echo "</ul></i></div>";
-
-
-
+    echo "</table>";
