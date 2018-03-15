@@ -6,21 +6,20 @@ class Clogin extends Mlogin
 {
     public function checkUser($user,$password)
     {
-        $result = $this->getUser($user);
-        $userFromDb = mysqli_fetch_assoc($result);
-        var_export($userFromDb);
-        // Если прошел запрос
-        if ($result !== false)
+        if($result = $this->getUser($user))
         {
-            foreach ($userFromDb as $value)
+            $userFromDb = mysqli_fetch_assoc($result);
+            if($userFromDb['password'] == $password)
             {
-                if ($password == $value)
-                {
-                    // Если пароль верен
-                    require_once "body.php";
-                    require_once "footer.php";
-                }
+                $_SESSION['autorisated'] = TRUE;
             }
         }
+        else
+        {
+            echo "Нет такого пользователь";
+        }
+
+
+
     }
 }
