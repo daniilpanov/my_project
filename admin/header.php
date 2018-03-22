@@ -3,7 +3,7 @@ function __autoload($name)
 {
     // конвертируем полный путь в пространстве имён с \ в /
     $name = str_replace('\\', '/', $name);
-    echo $name."<br>";
+    //echo $name."<br>";//для отладки
     require_once($name.'.php');
 }
 ?>

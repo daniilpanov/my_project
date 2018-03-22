@@ -5,9 +5,10 @@ require_once "header.php";
 if($_GET['page']=="logout")
 {
     unset($_SESSION['autorisated']);
+    header( 'Refresh: 3; url=http://localhost/my_project/admin/' );
 }
 
-if (!$_POST)
+if (!$_SESSION['autorisated'])
 {
     // Если нет $_POST, то подключаем:
     require_once "Views/Vlogin.php";
@@ -27,6 +28,8 @@ if ($_POST)
     {
         // Иначе создаём объект для получения пользователей
         $autorisation = new \app\classes\Clogin();
-        $check = $autorisation->checkUser($_POST['login'],$_POST['password']);
+        $shifr = $autorisation->prepare($_POST['login'],$_POST['password']);
+        $check = $autorisation->checkUser($prepare[0],$prepare[1]);
+
     }
 }
