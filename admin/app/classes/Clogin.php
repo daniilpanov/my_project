@@ -4,6 +4,12 @@ namespace app\classes;
 
 class Clogin extends Mlogin
 {
+    public function __construct($login,$password)
+    {
+        // __construct вызывает метод prepare, передавая ему переменные с логином и паролем
+        $this->prepare($login,$password);
+    }
+
     public function prepare($login,$password)
     {
         //Объявляем переменные для улучшенной шифровки
@@ -11,11 +17,11 @@ class Clogin extends Mlogin
         $salt2 = "meat";
 
         //Шифруем данные переменных с паролем и логином
-        $prepare[] = md5($salt1).md5($login).md5($salt2);
-        $prepare[] = md5($salt1).md5($password).md5($salt2);
+        $login2 = md5($salt1).md5($login).md5($salt2);
+        $password2 = md5($salt1).md5($password).md5($salt2);
 
-        //Возвращаем массив с зашифрованными данными
-        return $prepare;
+        //Метод prepare вызывает метод checkUser и передаёт ему переменные с зашифрованными логином и паролем
+        $this->checkUser($login2,$password2);
     }
 
 

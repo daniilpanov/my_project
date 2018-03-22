@@ -26,10 +26,7 @@ if ($_POST)
 {
     if ($_POST['autorisation'])
     {
-        // Иначе создаём объект для получения пользователей
-        $autorisation = new \app\classes\Clogin();
-        $shifr = $autorisation->prepare($_POST['login'],$_POST['password']);
-        $check = $autorisation->checkUser($prepare[0],$prepare[1]);
-
+        // Иначе создаём объект, при создании которого вызывается метод __construct
+        $autorisation = new \app\classes\Clogin($_POST['login'],$_POST['password']);
     }
 }
