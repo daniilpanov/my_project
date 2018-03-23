@@ -2,7 +2,7 @@
 namespace app\classes;
 
 
-class Mlogin
+class MLogin
 {
     public function getUser($login)
     {

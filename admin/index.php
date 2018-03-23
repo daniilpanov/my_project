@@ -4,19 +4,20 @@ session_start();
 require_once "header.php";
 if($_GET['page']=="logout")
 {
-    unset($_SESSION['autorisated']);
-    header( 'Refresh: 3; url=http://localhost/my_project/admin/' );
+    unset($_SESSION['authorised']);
+    header( 'Refresh: 1; url=http://localhost/my_project/admin/' );
 }
 
-if (!$_SESSION['autorisated'])
+if (!$_SESSION['authorised'])
 {
     // Если нет $_POST, то подключаем:
-    require_once "Views/Vlogin.php";
+    require_once "Views/VLogin.php";
 }
 
-if($_SESSION['autorisated'])
+if($_SESSION['authorised'])
 {
-    echo "Вошли<a href='?page=logout'>Выйти</a>";
+    // Если есть суперглобальный массив $_SESSION с ключом 'authorised', то подключаются body.php  &  footer.php
+    echo "Вошли&emsp;<a href='?page=logout'>Выйти</a>";
     require_once "body.php";
     require_once "footer.php";
 }
@@ -24,9 +25,9 @@ if($_SESSION['autorisated'])
 
 if ($_POST)
 {
-    if ($_POST['autorisation'])
+    if ($_POST['authorisation'])
     {
-        // Иначе создаём объект, при создании которого вызывается метод __construct
-        $autorisation = new \app\classes\Clogin($_POST['login'],$_POST['password']);
+        // Если пользователь что-то отправил в форме, создаём объект, при создании которого вызывается метод __construct
+        new \app\classes\CLogin($_POST['login'],$_POST['password']);
     }
 }

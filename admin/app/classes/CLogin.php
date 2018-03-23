@@ -2,7 +2,7 @@
 namespace app\classes;
 
 
-class Clogin extends Mlogin
+class CLogin extends MLogin
 {
     public function __construct($login,$password)
     {
@@ -17,11 +17,11 @@ class Clogin extends Mlogin
         $salt2 = "meat";
 
         //Шифруем данные переменных с паролем и логином
-        $login2 = md5($salt1).md5($login).md5($salt2);
-        $password2 = md5($salt1).md5($password).md5($salt2);
+        $preparedLogin = md5(md5($salt1).md5($login).md5($salt2));
+        $preparedPassword = md5(md5($salt1).md5($password).md5($salt2));
 
         //Метод prepare вызывает метод checkUser и передаёт ему переменные с зашифрованными логином и паролем
-        $this->checkUser($login2,$password2);
+        $this->checkUser($preparedLogin,$preparedPassword);
     }
 
 
@@ -35,10 +35,10 @@ class Clogin extends Mlogin
             //Проверка
             if($userFromDb['password'] == $password)
             {
-                $_SESSION['autorisated'] = TRUE;
+                $_SESSION['authorised'] = TRUE;
 
                 //Переход на главную страницу
-                header( 'Refresh: 3; url=http://localhost/my_project/admin/' );
+                header( 'Refresh: 1; url=http://localhost/my_project/admin/' );
             }
             else
             {
