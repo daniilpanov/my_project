@@ -4,13 +4,13 @@ namespace app\classes;
 
 class CLogin extends MLogin
 {
-    public function __construct($login,$password)
+    public function __construct($login,$password,$name,$email)
     {
         // __construct вызывает метод prepare, передавая ему переменные с логином и паролем
-        $this->prepare($login,$password);
+        $this->prepare($login,$password,$name,$email);
     }
 
-    public function prepare($login,$password)
+    public function prepare($login,$password,$name,$email)
     {
         //Объявляем переменные для улучшенной шифровки
         $salt1 = "fish";
@@ -19,13 +19,15 @@ class CLogin extends MLogin
         //Шифруем данные переменных с паролем и логином
         $preparedLogin = md5(md5($salt1).md5($login).md5($salt2));
         $preparedPassword = md5(md5($salt1).md5($password).md5($salt2));
+        $preparedName = md5(md5($salt1).md5($name).$salt2);
+        $preparedEmail = md5(md5($salt1).md5($email).$salt2);
 
         //Метод prepare вызывает метод checkUser и передаёт ему переменные с зашифрованными логином и паролем
-        $this->checkUser($preparedLogin,$preparedPassword);
+        $this->checkUser($preparedLogin,$preparedPassword,$preparedName,$preparedEmail);
     }
 
 
-    public function checkUser($login,$password)
+    public function checkUser($login,$password,$name,$email)
     {
         if($result = $this->getUser($login))//Если запрос прошел
         {
@@ -33,7 +35,9 @@ class CLogin extends MLogin
             $userFromDb = mysqli_fetch_assoc($result);
 
             //Проверка
-            if($userFromDb['password'] == $password)
+            if($userFromDb['password'] == $password
+                && $userFromDb['name&surname'] == $name
+                && $userFromDb['email'] == $email)
             {
                 $_SESSION['authorised'] = TRUE;
 

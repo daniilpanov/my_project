@@ -17,3 +17,39 @@
     text-align: center;
     margin-left: 5%;
 }
+.doing
+{
+    display: inline;
+    background-color: #005000;
+    border: whitesmoke 2px solid;
+    text-decoration: none;
+    color: white;
+    padding: 1px;
+
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.do
+{
+    width: 45px;
+    height: 40px;
+}
+.forMenu
+{
+    border: none;
+    background-color: #005000;
+    margin: 0;
+}
+.checkYourDoing
+{
+    text-align: center;
+    background-color: #005000;
+    height: 50px;
+    margin: 0;
+}
+.menu
+{
+    background-color: lightgray;
+    width: 20%;
+}

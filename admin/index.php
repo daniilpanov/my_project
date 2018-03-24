@@ -17,7 +17,6 @@ if (!$_SESSION['authorised'])
 if($_SESSION['authorised'])
 {
     // Если есть суперглобальный массив $_SESSION с ключом 'authorised', то подключаются body.php  &  footer.php
-    echo "Вошли&emsp;<a href='?page=logout'>Выйти</a>";
     require_once "body.php";
     require_once "footer.php";
 }
@@ -28,6 +27,6 @@ if ($_POST)
     if ($_POST['authorisation'])
     {
         // Если пользователь что-то отправил в форме, создаём объект, при создании которого вызывается метод __construct
-        new \app\classes\CLogin($_POST['login'],$_POST['password']);
+        new \app\classes\CLogin($_POST['login'],$_POST['password'],$_POST['name'],$_POST['email']);
     }
 }

@@ -8,5 +8,4 @@
     </div>
 </header>
 <?php
-/*require_once "Views/VEditor.php";
-require_once "Views/VMenu.php";*/
+require_once "Views/VMenu.php";
