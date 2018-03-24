@@ -53,3 +53,40 @@
     background-color: lightgray;
     width: 20%;
 }
+.login
+{
+    background-color: black;
+    margin-top: 20%;
+    text-align: center;
+    height: auto;
+    width: 38%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#login
+{
+    margin-top: 20px;
+    background-color: black;
+    text-align: center;
+}
+#login td
+{
+    box-shadow: white 0 0 3px 1px;
+    -o-box-shadow: white 0 0 3px 1px;
+    -moz-box-shadow: white 0 0 3px 1px;
+    -webkit-box-shadow: white 0 0 3px 1px;
+
+    border: lightgray;
+    padding: 0;
+}
+#page input
+{
+    width: auto;
+    height: 25px;
+    font-family: "Arial Black",sans-serif;
+    background-color: gold;
+    color: black;
+}
