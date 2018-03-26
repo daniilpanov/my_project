@@ -6,10 +6,6 @@
             <table id="login">
                 <tbody>
                 <tr>
-                    <td><u>ФИ</u></td><td><input type="text" placeholder="Ваши фамилия, имя" name="name"></td>
-                    <td><u>E-mail</u></td><td><input type="email" placeholder="Ваш e-mail" name="email"></td>
-                </tr>
-                <tr>
                     <td><u>Логин</u></td><td><input type="text" name="login" placeholder="Логин"></td>
                     <td><u>Пароль</u></td><td><input type="password" name="password" placeholder="Пароль"></td>
                 </tr>
@@ -17,5 +13,6 @@
             </table>
             <input type="submit" name="authorisation" value="Продолжить">
         </form>
+        <a href="?forget">Забыли пароль?</a>
     </center>
 </div>

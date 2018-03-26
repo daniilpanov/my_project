@@ -8,6 +8,12 @@ if($_GET['page']=="logout")
     header( 'Refresh: 1; url=http://localhost/my_project/admin/' );
 }
 
+if ($_GET['forget'])//Не подключается!!!
+{
+    //Если есть $_GET['forget'], то подключаем
+    require_once "Views/VForget.php";
+}
+
 if (!$_SESSION['authorised'])
 {
     // Если нет $_POST, то подключаем:
@@ -27,6 +33,6 @@ if ($_POST)
     if ($_POST['authorisation'])
     {
         // Если пользователь что-то отправил в форме, создаём объект, при создании которого вызывается метод __construct
-        new \app\classes\CLogin($_POST['login'],$_POST['password'],$_POST['name'],$_POST['email']);
+        new \app\classes\CLogin($_POST['login'],$_POST['password']);
     }
 }

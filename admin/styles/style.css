@@ -53,7 +53,7 @@
     background-color: lightgray;
     width: 20%;
 }
-.login
+.login,.get
 {
     background-color: black;
     margin-top: 20%;
