@@ -8,7 +8,7 @@
     </div>
 </header>
 <?php
-require_once "Views/VMenu.php";
+require_once "views/VMenu.php";
 echo "<div class='content'>";
 echo $content['content'];
 echo "</div>";

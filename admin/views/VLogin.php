@@ -13,6 +13,5 @@
             </table>
             <input type="submit" name="authorisation" value="Продолжить">
         </form>
-        <a href="?forget">Забыли пароль?</a>
     </center>
 </div>

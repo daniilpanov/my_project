@@ -14,9 +14,4 @@ class CMenu extends MMenu
         }
         return $menu;
     }
-
-    public function add_pages($param)
-    {
-        echo $param;
-    }
 }

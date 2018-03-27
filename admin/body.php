@@ -8,4 +8,30 @@
     </div>
 </header>
 <?php
-require_once "Views/VMenu.php";
+require_once "views/VMenu.php";
+if ($_GET)
+{
+    if($_GET['doing'])
+    {
+        if ($_GET['doing'] == 'create')
+        {
+            require_once "views/VCreate.php";
+        }
+        elseif ($_GET['doing'] == 'seeMenu')
+        {
+
+        }
+        elseif ($_GET['doing'] == 'seePages')
+        {
+
+        }
+        elseif ($_GET['doing'] == 'seeFav')
+        {
+
+        }
+        elseif ($_GET['doing'] == 'addFav')
+        {
+
+        }
+    }
+}

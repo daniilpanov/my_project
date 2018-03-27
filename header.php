@@ -5,7 +5,7 @@ function __autoload($name)
     $name = str_replace('\\', '/', $name);
     require_once($name.'.php');
 }
-require_once "Views/VContent.php";
+require_once "views/VContent.php";
 ?>
 
 <!DOCTYPE html>

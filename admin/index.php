@@ -8,16 +8,10 @@ if($_GET['page']=="logout")
     header( 'Refresh: 1; url=http://localhost/my_project/admin/' );
 }
 
-if ($_GET['forget'])//Не подключается!!!
-{
-    //Если есть $_GET['forget'], то подключаем
-    require_once "Views/VForget.php";
-}
-
 if (!$_SESSION['authorised'])
 {
     // Если нет $_POST, то подключаем:
-    require_once "Views/VLogin.php";
+    require_once "views/VLogin.php";
 }
 
 if($_SESSION['authorised'])
