@@ -23,7 +23,7 @@ function __autoload($name)
     <meta name="Author" content="" />
     <!--End Meta-->
 
-    <title>|сайт `my_project`</title>
+    <title>сайт `my_project`</title>
 
     <!--CSS-->
     <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
