@@ -19,6 +19,7 @@
 }
 .doing
 {
+    cursor: pointer;
     display: inline;
     background-color: #005000;
     border: whitesmoke 2px solid;
@@ -29,11 +30,6 @@
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-}
-.do
-{
-    width: 45px;
-    height: 40px;
 }
 .forMenu
 {

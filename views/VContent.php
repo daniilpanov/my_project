@@ -1,10 +1,10 @@
 <?php
 $page_content = new \app\classes\CContent();
-if ($_GET)
+if ($_GET['page'])
 {
     $content = $page_content->prepareContent($_GET['page']);
 }
-elseif (!$_GET)
+elseif (!$_GET['page'])
 {
     $content = $page_content->prepareContent(1);
 }

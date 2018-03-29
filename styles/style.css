@@ -53,3 +53,29 @@ div.content,#admin
 {
     margin-left: 15px;
 }
+a.slide
+{
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+
+    padding: 10px;
+    margin: 15px;
+    display: inline-block;
+    background-color: rgba(254,197,20,0.5);
+    position: static;
+    text-decoration: none;
+    color: black;
+    font-family: "Arial Black",sans-serif;
+}
+a.slide:hover,
+a.slide:active
+{
+    background-color: #005000;
+    color: darkblue;
+    font-size: 25px;
+}
+.pages_from_menu
+{
+    display: none;
+}
