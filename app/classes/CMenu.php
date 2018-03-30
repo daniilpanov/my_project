@@ -4,13 +4,17 @@ namespace app\classes;
 
 class CMenu extends MMenu
 {
-    public function prepareMenu()
+    public function prepareMenu($id)
     {
-        $response = $this->getMenu();
+        $id = 1+(5*$id-5);
+
+        $response = $this->getMenu($id);
+
         foreach ($response as $value)
         {
-            $menu[] = $value;
+            $endResponse[] = mysqli_fetch_assoc($value);
         }
-        return $menu;
+
+        return $endResponse;
     }
 }

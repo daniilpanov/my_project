@@ -4,10 +4,14 @@ namespace app\classes;
 
 class MMenu
 {
-    public function getMenu()
+    public function getMenu($id)
     {
-        $sql = "SELECT id, menu_name FROM pages";
-        $result = \app\classes\Db::getInstance()->sql($sql);
+        for ($endId = $id;$endId<=($id+4);$endId++)
+        {
+            $sql = "SELECT id, menu_name FROM pages WHERE id='{$endId}'";
+            $result[] = Db::getInstance()->sql($sql);
+        }
+
         return $result;
     }
     
