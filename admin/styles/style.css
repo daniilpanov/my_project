@@ -17,12 +17,12 @@
     text-align: center;
     margin-left: 5%;
 }
-.doing
+.doing,.doing:hover,.doing:active,.doing:visited
 {
     cursor: pointer;
-    display: inline;
     background-color: #005000;
-    border: whitesmoke 2px solid;
+    border: whitesmoke 1px solid;
+    text-underline: none;
     text-decoration: none;
     color: white;
     padding: 1px;
