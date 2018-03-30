@@ -26,7 +26,8 @@ function __autoload($name)
     <title>сайт `my_project`</title>
 
     <!--CSS-->
-    <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="styles/bootstrap-3.3.2/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="styles/bootstrap-3.3.2/dist/js/bootstrap.js" rel="script">
     <link href="styles/jquery.navgoco.css" rel="stylesheet" />
     <link href="img/">
     <link href="styles/style.css" rel="stylesheet" />

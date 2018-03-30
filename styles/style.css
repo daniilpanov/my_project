@@ -4,18 +4,12 @@
     border: seagreen 1px solid;
     margin: 25px;
     text-align: center;
+    width: 90%;
 }
-#logo
+#header td
 {
-    display: inline-block;
-    text-align: center;
-    margin-right: 5%;
-}
-#siteName
-{
-    display: inline-block;
-    text-align: center;
-    margin-left: 5%;
+   text-align: center;
+    margin: 25px 10%;
 }
 div.menu
 {
