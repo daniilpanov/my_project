@@ -14,7 +14,8 @@ class CMenu extends MMenu
         {
             $endResponse[] = mysqli_fetch_assoc($value);
         }
-
         return $endResponse;
+
+
     }
 }

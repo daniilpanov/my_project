@@ -1,6 +1,7 @@
 <hr size="3px">
 <?php
 $pages = new \app\classes\CMenu();
+
 ?><div id='admin'>
     <a href='admin/'>Войти как администратор</a>
 </div>
@@ -24,7 +25,10 @@ $pages = new \app\classes\CMenu();
             <?php
             foreach ($menus as $value)
             {
-                echo "<li><a href='?page={$value['id']}'>{$value['menu_name']}</a></li>";
+                if (!is_null($value))
+                {
+                    echo "<li><a href='?page={$value['id']}'>{$value['menu_name']}</a></li>";
+                }
             }
             ?>
         </ol>
@@ -39,5 +43,8 @@ $pages = new \app\classes\CMenu();
     {
 
     }
+    $count = new app\classes\CCountMenu();
+    $menuPages = $count->countMenu();
+    var_export($menuPages);
     ?>
 </i></div>

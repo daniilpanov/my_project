@@ -14,5 +14,4 @@ class MMenu
 
         return $result;
     }
-    
 }
