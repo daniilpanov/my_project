@@ -6,7 +6,7 @@ class MCountMenu
 {
     public function getCounter()
     {
-        $sql = "SELECT COUNT(id) FROM pages";
+        $sql = "SELECT id FROM pages";
 
         $result = Db::getInstance()->sql($sql);
 
