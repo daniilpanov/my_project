@@ -1,3 +1,25 @@
+#openMenu
+{
+    width: 25px;
+    height: 25px;
+    z-index: 0;
+    position: fixed;
+    top: 20%;
+    left: 0;
+    transition-duration: 3s;
+    -o-transition-duration: 3s;
+    -moz-transition-duration: 3s;
+    -webkit-transition-duration: 3s;
+}
+#openMenu:checked
+{
+    left: 20%;
+    transform: rotateZ(-90deg);
+}
+#openMenu:checked + div.menu
+{
+    left: 0;
+}
 #header
 {
     background-color: whitesmoke;
@@ -26,33 +48,6 @@ div.menu
     -webkit-transition-duration: 3s;
     overflow: hidden;
     z-index: 1;
-}
-div.menu:hover
-{
-    left: 0;
-}
-#openMenu
-{
-    z-index: 0;
-    position: fixed;
-    background-color: green;
-    border-radius: 0 5px 0 0;
-    -moz-border-radius: 0 5px 0 0;
-    -webkit-border-radius: 0 5px 0 0;
-    height: 25px;
-    width: 35px;
-    top: 20%;
-    text-align: center;
-    font-size: large;
-    font-family: "Harlow Solid Italic","Arial Black",sans-serif;
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-}
-div#openMenu:hover + div.menu
-{
-    left: 0;
 }
 div.menu a.menu
 {

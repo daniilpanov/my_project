@@ -7,7 +7,7 @@ $count = new app\classes\CCountMenu();
     <a href='admin/'>Войти как администратор</a>
 </div>
 
-<div id="openMenu">>></div>
+<input id="openMenu" type="checkbox">
 <div class='jumbotron menu'><i>
     <?php
     if (!$_GET['menu'])
