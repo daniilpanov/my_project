@@ -19,7 +19,7 @@
         <a href = "?page=settings" title="Настройки"><i class="icon-cog icon-large"> </i></a>
         <a href = "?page=help" title="Помощь"><i class="icon-info-sign icon-large"> </i></a>
         <a href = "../index.php" title="На сайт" target="_blank"><i class="icon-reply icon-large"> </i></a>
-        <a href = "exit.php" title="Выход"><i class="icon-off icon-large"> </i></a>
+        <a href = "?page=logout" title="Выход"><i class="icon-off icon-large"> </i></a>
     </div><!--navigation-->
 </div><!--navigation-container-->
 
