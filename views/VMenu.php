@@ -8,6 +8,7 @@ $count = new app\classes\CCountMenu();
 </div>
 
 <input id="openMenu" type="checkbox">
+<!--<label for="openMenu"><i class="icon-reorder icon-large"> </i></label>-->
 <div class='jumbotron menu'><i>
     <?php
     if (!$_GET['menu'])
@@ -21,14 +22,27 @@ $count = new app\classes\CCountMenu();
 
     if (!is_null($menus))
     {
-        ?>
+    ?>
         <ol>
             <?php
-            foreach ($menus as $value)
+            if (!$_GET['menu'])
             {
-                if (!is_null($value))
+                foreach ($menus as $value)
                 {
-                    echo "<li><a class='menu' href='?page={$value['id']}'>{$value['menu_name']}</a></li>";
+                    if (!is_null($value))
+                    {
+                        echo "<li><a class='menu' href='?page={$value['id']}'>{$value['menu_name']}</a></li>";
+                    }
+                }
+            }
+            elseif ($_GET['menu'])
+            {
+                foreach ($menus as $value)
+                {
+                    if (!is_null($value))
+                    {
+                        echo "<li><a class='menu' href='?page={$value['id']}&menu={$_GET['menu']}'>{$value['menu_name']}</a></li>";
+                    }
                 }
             }
             ?>
@@ -51,6 +65,14 @@ $count = new app\classes\CCountMenu();
         {
             echo "<a class='slide' href=?page={$_GET['page']}&menu={$a}>{$a}</a>";
         }
+    }
+    if (!$_GET['menu'])
+    {
+        echo "<h3>Вы на 1 странице меню.</h3>";
+    }
+    elseif ($_GET['menu'])
+    {
+        echo "<h3>Вы на {$_GET['menu']} странице меню.</h3>";
     }
     ?>
 </div></i></div>
