@@ -86,3 +86,35 @@
     background-color: gold;
     color: black;
 }
+
+/*Список страниц*/
+#pagelist_table
+{
+    position: relative;
+    left: 125px; /* Положение от левого края */
+}
+
+.pagelist_table_header
+{
+    background-color: #0D3349;
+    color: white;
+    padding-left: 5px;
+    width: 900px;
+}
+
+.pagelist_table_row
+{
+    background-color: darkgrey;
+    border-bottom: white 1px solid;
+    padding: 5px;
+    width: 900px;
+}
+
+.pagelist_table_row a
+{
+
+    color: black;
+    text-decoration: underline;
+}
+
+/* END Список страниц*/

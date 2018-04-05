@@ -1,6 +1,38 @@
 <?php
 $pagesList = $vcreateedit->getAllPages();
-foreach ($pagesList as $value)
-{
-    echo "<a href='?editPage={$value['id']}'>{$value['menu_name']}</a><br>";
-}
+?>
+<div id="pagelist_table">
+    <div class="row pagelist_table_header">
+        <div class="col-md-3">Название страницы</div>
+        <div class="col-md-1">Язык</div>
+        <div class="col-md-2">Создана</div>
+        <div class="col-md-2">Изменена</div>
+        <div class="col-md-2">Редактировать</div>
+        <div class="col-md-1">Удалить</div>
+        <div class="col-md-1"><input type="checkbox" name="deleteselected"></div>
+    </div>
+
+    <?php
+    foreach ($pagesList as $value)
+    {?>
+
+        <div class="row pagelist_table_row">
+            <div class="col-md-3">
+
+                    <?php echo "<a href='?editPage={$value['id']}'>{$value['menu_name']}</a><br>";?>
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <?php echo "<a href='?editPage={$value['id']}'><span class=\"glyphicon glyphicon-pencil\"></span></a><br>";?>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+        </div>
+
+    <?php
+    }
+    ?>
+</div>
