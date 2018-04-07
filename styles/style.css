@@ -19,7 +19,7 @@
 }
 #openMenu:checked + div.menu
 {
-    left: 0;
+    left: 1%;
 }
 #header
 {
@@ -59,6 +59,8 @@ div.menu a.menu
     display: block;
     border: goldenrod 1px solid;
     text-underline: none;
+    font-style: italic;
+    font-family: "Arial Black",serif;
 }
 a.menu
 {
@@ -70,18 +72,22 @@ div.content,#admin
 }
 a.slide
 {
-    border-radius: 0 6px 6px 0;
-    -moz-border-radius: 0 6px 6px 0;
-    -webkit-border-radius: 0 6px 6px 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 
-    padding: 3px;
-    margin: 0 5px;
+    padding: 10px;
+    margin: 5px;
     display: inline-block;
-    background-color: rgba(0, 103, 254, 0.3);
+    background-color: black;
     position: static;
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
     font-family: "Arial Black",sans-serif;
+}
+#slide
+{
+    display: block;
 }
 #menus
 {
@@ -93,13 +99,13 @@ a.slide
 {
     font-size: 20px;
 }
-a.slide:hover
+a.slide:hover,a#slide:hover
 {
-    background-color: darkred;
-    color: darkblue;
+    background-color: whitesmoke;
+    color: black;
 }
-a.slide:active
+a.slide:active,a#slide:active
 {
-    background-color: darkblue;
-    color: darkred;
+    background-color: #00bb76;
+    color: darkorange;
 }

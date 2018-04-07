@@ -13,80 +13,82 @@ $count = new app\classes\CCountMenu();
 <div class='row menu'>
     <div class="col-md-12">
         <i>
-        <?php
-        if (!$_GET['menu'])//Если нет $_GET['menu'], в качестве арг. передаём 1
-        {
-            $menus = $pages->prepareMenu(1);//Список страниц
-        }
-        elseif ($_GET['menu'])
-        {
-            $menus = $pages->prepareMenu($_GET['menu']);//Список страниц
-        }
+            <?php
+            if (!$_GET['menu'])//Если нет $_GET['menu'], в качестве арг. передаём 1
+            {
+                $menus = $pages->prepareMenu(1);//Список страниц
+            }
+            elseif ($_GET['menu'])
+            {
+                $menus = $pages->prepareMenu($_GET['menu']);//Список страниц
+            }
 
-        if (!is_null($menus))
-        {
-        ?>
-            <ol>
-                <?php
-                if (!$_GET['menu'])
-                {
-                    foreach ($menus as $value)
+            if (!is_null($menus))
+            {
+            ?>
+                <ol>
+                    <?php
+                    if (!$_GET['menu'])
                     {
-                        if (!is_null($value))//Если $value не пустая, то
+                        foreach ($menus as $value)
                         {
-                            //выводим ссылку
-                            echo "<li><a class='menu' href='?page={$value['id']}'>{$value['menu_name']}</a></li>";
+                            if (!is_null($value))//Если $value не пустая, то
+                            {
+                                //выводим ссылку
+                                echo "<li><a class='menu' href='?page={$value['id']}'>{$value['menu_name']}</a></li>";
+                            }
                         }
                     }
-                }
-                elseif ($_GET['menu'])//Если есть $_GET['menu'], мы его сохраняем
-                {
-                    foreach ($menus as $value)
+                    elseif ($_GET['menu'])//Если есть $_GET['menu'], мы его сохраняем
                     {
-                        if (!is_null($value))//Если $value не пустая, то
+                        foreach ($menus as $value)
                         {
-                            //выводим ссылку
-                            echo "<li><a class='menu' href='?page={$value['id']}&menu={$_GET['menu']}'>{$value['menu_name']}</a></li>";
+                            if (!is_null($value))//Если $value не пустая, то
+                            {
+                                //выводим ссылку
+                                echo "<li><a class='menu' href='?page={$value['id']}&menu={$_GET['menu']}'>{$value['menu_name']}</a></li>";
+                            }
                         }
                     }
-                }
-                ?>
-            </ol>
+                    ?>
+                </ol>
+            </div>
             <?php
         }
     ?>
             <div id="menus"> <?php
-        if (!$_GET['page'])
-        {
-            //Используем зтот метод для подсчёта страниц меню
-            $menuPages = $count->countMenu();
-            //В цикле выводим ссылки на страницы меню
-            for ($a = 1;$a<=$menuPages;$a++)
+            if (!$_GET['page'])
             {
-                echo "<a class='slide' href=?menu={$a}>{$a}</a>";
+                //Используем зтот метод для подсчёта страниц меню
+                $menuPages = $count->countMenu();
+                //В цикле выводим ссылки на страницы меню
+                for ($a = 1;$a<=$menuPages;$a++)
+                {
+                    echo "<a class='slide' href=?menu={$a}>{$a}</a>";
+                }
             }
-        }
-        elseif ($_GET['page'])//Если есть $_GET['page'], то мы его сохраняем
-        {
-            //Используем зтот метод для подсчёта страниц меню
-            $menuPages = $count->countMenu();
-            //В цикле выводим ссылки на страницы меню
-            for ($a = 1;$a<=$menuPages;$a++)
+            elseif ($_GET['page'])//Если есть $_GET['page'], то мы его сохраняем
             {
-                echo "<a class='slide' href=?page={$_GET['page']}&menu={$a}>{$a}</a>";
+                //Используем зтот метод для подсчёта страниц меню
+                $menuPages = $count->countMenu();
+                //В цикле выводим ссылки на страницы меню
+                for ($a = 1;$a<=$menuPages;$a++)
+                {
+                    echo "<a class='slide' href=?page={$_GET['page']}&menu={$a}>{$a}</a>";
+                }
+                echo "</div><div>";
             }
-            echo "</div><br>";
-        }
-        //Выводим, на какой странице меню находится пользователь
-        if (!$_GET['menu'])
-        {
-            echo "<span id='fromMenus'>Вы на 1 странице меню.</span>";
-        }
-        elseif ($_GET['menu'])
-        {
-            echo "<span id='fromMenus'>Вы на {$_GET['menu']} странице меню.</span>";
-        }
-        ?>
+            //Выводим, на какой странице меню находится пользователь
+            if (!$_GET['menu'])
+            {
+                echo "<br><span id='fromMenus'>Вы на 1 странице меню.</span>";
+            }
+            elseif ($_GET['menu'])
+            {
+                echo "<br><span id='fromMenus'>Вы на {$_GET['menu']} странице меню.</span>";
+            }
+            ?>
+            </div>
         </i>
     </div>
 </div>

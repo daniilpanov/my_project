@@ -11,7 +11,7 @@
 <div id="navigation-container">
     <div id="navigation">
         <a href = "index.php" title="Главная"><i class="icon-home icon-large"> </i></a>
-        <a href = "?page=menuList" title="Список меню"><i class="icon-reorder icon-large"> </i></a>
+        <!--<a href = "?page=menuList" title="Список меню"><i class="icon-reorder icon-large"> </i></a>-->
         <a href = "?page=pageList" title="Список страниц"><i class="icon-list-ol icon-large"> </i></a>
         <a href = "?page=rureviews" title="Отзывы"><i class="icon-thumbs-up icon-large"> </i></a>
         <a href = "?page=languages" title="Языки"><i class="icon-globe icon-large"> </i></a>
@@ -27,7 +27,7 @@
 
 // создаем новые обьекты
 $vcreateedit = new \app\classes\CPageCreateEdit(); // для работы со страницами
-
+$vgetauth = new \app\classes\CChangeAuth();
 
 
 // если от пользователя получены данные из формы
@@ -40,13 +40,17 @@ if ($_GET)
 {
     if($_GET['page'])
     {
-        if ($_GET['doing'] == 'menuList')
+        /*if ($_GET['doing'] == 'menuList')
         {
 
         }
-        elseif ($_GET['page'] == 'pageList')
+        else*/if ($_GET['page'] == 'pageList')
         {
             require_once "views/VPageList.php";
+        }
+        elseif ($_GET['page'] == 'changeAuth')
+        {
+            require_once "views/VChangeAuth.php";
         }
     }
 }

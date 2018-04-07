@@ -17,13 +17,13 @@ class CLogin extends MLogin
         $salt2 = "meat";
 
         //Шифруем данные переменных с паролем и логином
-        $preparedLogin = md5(md5($salt1).md5($login).md5($salt2));
+
         $preparedPassword = md5(md5($salt1).md5($password).md5($salt2));
 
-        //echo $preparedLogin."<br>".$preparedPassword;//Для отладки
+        //echo $preparedPassword;//Для отладки
 
         //Метод prepare вызывает метод checkUser и передаёт ему переменные с зашифрованными логином и паролем
-        $this->checkUser($preparedLogin,$preparedPassword);
+        $this->checkUser($login,$preparedPassword);
     }
 
 

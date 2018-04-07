@@ -1,6 +1,6 @@
 <body>
 <header>
-    <center>
+    <div style="text-align: center;">
         <table id="header">
             <tr>
                 <!--Логотип сайта-->
@@ -13,13 +13,13 @@
                 </td>
             </tr>
         </table>
-    </center>
+    </div>
 </header>
 <?php
 require_once "views/VMenu.php";
-echo "<div class='content'>";
-echo $content['content'];
-echo "</div>";
+?><div class='content'>
+    <?=$content['content']?>
+</div><?php
 
 // Router
 if ($_GET)
