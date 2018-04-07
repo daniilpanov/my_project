@@ -94,7 +94,7 @@
     left: 125px; /* Положение от левого края */
 }
 
-.pagelist_table_header
+.pagelist_table_header,.usersList
 {
     background-color: #0D3349;
     color: white;
@@ -102,7 +102,7 @@
     width: 900px;
 }
 
-.pagelist_table_row
+.pagelist_table_row,.user_list_table_row
 {
     background-color: darkgrey;
     border-bottom: white 1px solid;
@@ -110,11 +110,19 @@
     width: 900px;
 }
 
-.pagelist_table_row a
+.pagelist_table_row a,.user_list_table_row a
 {
-
     color: black;
     text-decoration: underline;
 }
 
 /* END Список страниц*/
+
+.pagelist_table_row,.user_list_table_row,.pagelist_table_header,.usersList
+{
+    font-size: 20px;
+}
+.div-center
+{
+    text-align: center;
+}
