@@ -1,1 +1,0 @@
-INSERT INTO for_my_project.pages (id, menu_name, content, title) VALUES (1, 'Главная', 'Главная страница', 'Главная');

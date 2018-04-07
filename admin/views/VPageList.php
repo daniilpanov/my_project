@@ -23,7 +23,7 @@ $pagesList = $vcreateedit->getAllPages();
 
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-2"></div>
+            <div class="col-md-2"><?=date($value['created'])?></div>
             <div class="col-md-2"></div>
             <div class="col-md-2">
                 <?php echo "<a href='?editPage={$value['id']}'><span class=\"glyphicon glyphicon-pencil\"></span></a><br>";?>

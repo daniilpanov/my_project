@@ -1,1 +1,0 @@
-INSERT INTO for_my_project.users (id, login, password, email, surname) VALUES (1, '022a68dc0d1f2cfcf3ad71311928cb11', 'da9d630b967d7838f404957cb79b7c27', '6b0bafe31d427a1b72be902077ebef6c', '4b7fc35c88dd11b58b50241966ba6932');
