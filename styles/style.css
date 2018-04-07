@@ -62,7 +62,7 @@ div.menu a.menu
 }
 a.menu
 {
-    margin: 10px 0 0 15px;
+    margin: 5px 0 0 10px;
 }
 div.content,#admin
 {
@@ -75,7 +75,7 @@ a.slide
     -webkit-border-radius: 0 6px 6px 0;
 
     padding: 3px;
-    margin: 0 15px;
+    margin: 0 5px;
     display: inline-block;
     background-color: rgba(0, 103, 254, 0.3);
     position: static;
@@ -86,8 +86,12 @@ a.slide
 #menus
 {
     background: #666666;
-    height: 5%;
+    height: auto;
     text-align: center;
+}
+#fromMenus
+{
+    font-size: 20px;
 }
 a.slide:hover
 {
