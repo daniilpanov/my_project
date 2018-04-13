@@ -15,8 +15,20 @@
         </table>
     </div>
 </header>
+
+<div id='admin'>
+    <a href='admin/'>Войти как администратор</a>
+</div>
 <?php
-require_once "views/VMenu.php";
+if (!$_GET['menu_page'])
+{
+    require_once "views/VMenu.php";
+}
+elseif ($_GET['menu_page'])
+{
+    require_once "views/VPages.php";
+}
+
 ?><div class='content'>
     <?=$content['content']?>
 </div><?php

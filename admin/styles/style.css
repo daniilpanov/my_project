@@ -51,7 +51,7 @@
 }
 .login,.get
 {
-    background-color: black;
+    background-color: darkorange;
     margin-top: 20%;
     text-align: center;
     height: auto;
@@ -120,7 +120,7 @@
 
 .pagelist_table_row,.user_list_table_row,.pagelist_table_header,.usersList
 {
-    font-size: 20px;
+    font-size: 15px;
 }
 .div-center
 {

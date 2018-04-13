@@ -1,11 +1,11 @@
 <div class="div-center">
-     <div class='row usersList'>
-    <div class='col-md-1'>Id</div>
-    <div class='col-md-3'>Логин</div>
-    <div class='col-md-2'>Редактировать</div>
-    <div class='col-md-2'>Удалить</div>
-    <div class='col-md-1'><input type='checkbox' class="selectAll"></div>
-</div>
+    <div class='row usersList'>
+        <div class='col-md-1'>Id</div>
+        <div class='col-md-3'>Логин</div>
+        <div class='col-md-2'>Редактировать</div>
+        <div class='col-md-2'>Удалить</div>
+        <div class='col-md-1'><input type='checkbox' class="selectAll"></div>
+    </div>
 <?php
 $auth = $vgetauth->get_auth();
 
