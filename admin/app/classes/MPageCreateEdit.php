@@ -11,4 +11,8 @@ class MPageCreateEdit
 
         return $result;
     }
+    public function insertPage($sql)
+    {
+
+    }
 }

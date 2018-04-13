@@ -40,11 +40,7 @@ if ($_GET)
 {
     if($_GET['page'])
     {
-        /*if ($_GET['doing'] == 'menuList')
-        {
-
-        }
-        else*/if ($_GET['page'] == 'pageList')
+        if ($_GET['page'] == 'pageList')
         {
             require_once "views/VPageList.php";
         }
@@ -52,5 +48,18 @@ if ($_GET)
         {
             require_once "views/VChangeAuth.php";
         }
+        elseif ($_GET['page'] == 'create')
+        {
+            require_once "views/VPageAdd.php";
+        }
+    }
+
+}
+
+if ($_POST)
+{
+    if ($_GET['page'] == 'create')
+    {
+        $vcreateedit->createPage($_POST);
     }
 }

@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.16-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.30-MariaDB, for Win32 (AMD64)
 --
 -- Host: 127.0.0.1    Database: for_my_project
 -- ------------------------------------------------------
--- Server version	10.1.16-MariaDB
+-- Server version	10.1.30-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -68,7 +68,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'022a68dc0d1f2cfcf3ad71311928cb11','da9d630b967d7838f404957cb79b7c27');
+INSERT INTO `users` VALUES (1,'admin','da9d630b967d7838f404957cb79b7c27');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-07 12:24:17
+-- Dump completed on 2018-04-13 16:20:00
