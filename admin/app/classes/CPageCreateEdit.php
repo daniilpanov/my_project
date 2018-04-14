@@ -19,7 +19,8 @@ class CPageCreateEdit extends MPageCreateEdit
     // создаём страницу
     function createPage($post)
     {
-        $aux_sql=null;
+        $keys = "INSERT INTO pages (";
+        $values ="VALUES(";
         $count = count($post);
         $counter = 0;
         foreach ($post as $key => $val)
@@ -27,16 +28,21 @@ class CPageCreateEdit extends MPageCreateEdit
             $counter++ ;
             if($counter != $count)
             {
-                $aux_sql .= $key.'=\''.$val.'\',';
+                $keys .= $key.', ';
+                $values .= "'{$val}', ";
             }
             else
             {
-                $aux_sql .= $key.'=\''.$val.'\'';
+                $keys .= $key.') ';
+                $values .= "'{$val}')";
             }
 
         }
-        echo $aux_sql;
+
+        $sql = $keys.$values;
+
         // отправляем информацию в базу
-        $this->insertPage($aux_sql);
+
+        $this->insertPage($sql);
     }
 }

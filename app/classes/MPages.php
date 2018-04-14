@@ -6,7 +6,7 @@ class MPages
 {
     public function getPages($parent_id)
     {
-        $sql = "SELECT id,menu_name FROM pages WHERE parent_id='{$parent_id}'";
+        $sql = "SELECT id, menu_name FROM pages WHERE menu_number='{$parent_id}'";
 
         $result = Db::getInstance()->sql($sql);
 

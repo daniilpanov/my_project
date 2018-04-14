@@ -13,6 +13,7 @@ class MPageCreateEdit
     }
     public function insertPage($sql)
     {
-
+        echo $sql;
+        Db::getInstance()->sql($sql);
     }
 }
