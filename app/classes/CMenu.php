@@ -4,18 +4,29 @@ namespace app\classes;
 
 class CMenu extends MMenu
 {
-    public function prepareMenu($id)
+    public function prepareMenu()
     {
-        //Редактируем переменную id так, чтобы выполнился правильный запрос
-        $id = 1+(5*$id-5);
-
         //Метод для запроса к базе данных
-        $response = $this->getMenu($id);
+        $response = $this->getMenu();
 
         //В цикле записываем результат, приведённый к массиву в массив $endResponse
-        foreach ($response as $value)
+        while ($row = mysqli_fetch_assoc($response))
         {
-            $endResponse[] = mysqli_fetch_assoc($value);
+            $endResponse[] = $row;
+        }
+
+        //Возвращаем конечный результат
+        return $endResponse;
+    }
+    public function preparePages()
+    {
+        //Метод для запроса к базе данных
+        $response = $this->getPages();
+
+        //В цикле записываем результат, приведённый к массиву в массив $endResponse
+        while ($row = mysqli_fetch_assoc($response))
+        {
+            $endResponse[] = $row;
         }
 
         //Возвращаем конечный результат

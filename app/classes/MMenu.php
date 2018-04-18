@@ -4,19 +4,18 @@ namespace app\classes;
 
 class MMenu
 {
-    public function getMenu($id)
+    public function getMenu()
     {
-        //В цикле for делаем 5 запросов к БД, начиная от указанного в дочернем классе id
-        for ($endId = $id;$endId<=($id+4);$endId++)
-        {
-            //SQL код запроса к БД
-            $sql = "SELECT id, name FROM menu WHERE id='{$endId}'";
-
-            //Вызываем статический метод класса Db для получения объекта и у него вызываем метод sql для запроса к БД
-            $result[] = Db::getInstance()->sql($sql);
-        }
+        $sql = "SELECT id,name FROM menu";
+        $result = Db::getInstance()->sql($sql);
 
         //Возвращаем результат
+        return $result;
+    }
+    public function getPages()
+    {
+        $sql = "SELECT id,menu_number,menu_name,icon_size,menu_icon FROM pages";
+        $result = Db::getInstance()->sql($sql);
         return $result;
     }
 }

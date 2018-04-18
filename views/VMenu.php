@@ -11,38 +11,37 @@ $count = new app\classes\CCountMenu();
     <i>
         <div class="col-md-12">
             <?php
-            if (!$_GET['menu'])//Если нет $_GET['menu'], в качестве арг. передаём 1
-            {
-                $menus = $pages->prepareMenu(1);//Список страниц
-            }
-            elseif ($_GET['menu'])
-            {
-                $menus = $pages->prepareMenu($_GET['menu']);//Список страниц
-            }
-//            var_export($menus);
+            $menus = $pages->prepareMenu();//Список страниц
+            $allPages = $pages->preparePages();//Список страниц
+
             if (!is_null($menus))
             {
             ?>
                 <ol>
                     <?php
-                    if (!$_GET['menu'])
+
+                    foreach ($menus as $value)
                     {
-                        foreach ($menus as $value)
+                        if (!is_null($value))//Если $value не пустая, то
                         {
-                            if (!is_null($value))//Если $value не пустая, то
+                            //выводим ссылку
+                            echo "<li class='menu'>{$value['name']}</li><ul>";
+                            foreach ($allPages as $item)
                             {
-                                //выводим ссылку
-                                echo "<li><a class='menu' href='?menu_page={$value['id']}'>{$value['name']}</a></li>";
+                                if ($item['menu_number'] == $value['id'])
+                                echo "<li><a href='?page={$item['id']}'>{$item['menu_name']}</a></li>";
                             }
+                            echo "</ul>";
                         }
                     }
+
                     ?>
                 </ol>
             </div>
             <?php
         }
     ?>
-            <div id="menus"> <?php
+            <div id="menus"><?php
             //Используем зтот метод для подсчёта страниц меню
             $menuPages = $count->countMenu();
             //В цикле выводим ссылки на страницы меню
