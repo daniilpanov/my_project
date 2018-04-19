@@ -1,5 +1,5 @@
 <?php
-
+$menus = $vcreateedit->getAllMenus();
 ?>
 <form method="post">
     <div class="row">
@@ -13,7 +13,7 @@
                 <?php
                 foreach ($menus as $value)
                 {
-                    echo "<option value='{$value}'>{$value}</option>";
+                    echo "<option value='{$value['id']}'>{$value['name']}</option>";
                 }
                 ?>
             </select>

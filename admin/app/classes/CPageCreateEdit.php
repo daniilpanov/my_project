@@ -45,4 +45,16 @@ class CPageCreateEdit extends MPageCreateEdit
 
         $this->insertPage($sql);
     }
+
+    public function getAllMenus()
+    {
+        $response = $this->getMenuList();
+
+        while ($row = mysqli_fetch_assoc($response))
+        {
+            $menus[] = $row;
+        }
+
+        return $menus;
+    }
 }

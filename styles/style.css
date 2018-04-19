@@ -1,26 +1,4 @@
-#openMenu
-{
-    transform: rotateZ(90deg);
-    width: 25px;
-    height: 25px;
-    z-index: 0;
-    position: fixed;
-    top: 20%;
-    left: 0;
-    transition-duration: 1s;
-    -o-transition-duration: 1s;
-    -moz-transition-duration: 1s;
-    -webkit-transition-duration: 1s;
-}
-#openMenu:checked
-{
-    left: 20%;
-    transform: rotateZ(-90deg);
-}
-#openMenu:checked + div.menu
-{
-    left: 1%;
-}
+/*Заголовок*/
 #header
 {
     background-color: whitesmoke;
@@ -29,83 +7,30 @@
     text-align: center;
     width: 90%;
 }
+
 #header td
 {
    text-align: center;
     margin: 25px 10%;
 }
-div.menu
+/*END__Заголовок*/
+
+/*Меню*/
+
+
+#menu a
 {
-    display: inline-block;
-    background-color: lightgray;
-    position: fixed;
-    top: 0;
-    left: -20%;
-    width: 20%;
-    height: 100%;
-    transition-duration: 1s;
-    -o-transition-duration: 1s;
-    -moz-transition-duration: 1s;
-    -webkit-transition-duration: 1s;
-    overflow: hidden;
-    z-index: 1;
+    color: black;
 }
-div.menu a.menu
-{
-    padding: 5px;
-    margin: 5px;
-    background-color: black;
-    color: white;
-    display: block;
-    border: goldenrod 1px solid;
-    text-underline: none;
-    font-style: italic;
-    font-family: "Arial Black",serif;
+
+#menu li{
+    list-style-type: none;
 }
-a.menu
-{
-    margin: 5px 0 0 10px;
-}
-div.content,#admin
+/*END__Меню*/
+
+/*Контент*/
+#content
 {
     margin-left: 15px;
 }
-a.slide
-{
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-
-    padding: 10px;
-    margin: 5px;
-    display: inline-block;
-    background-color: black;
-    position: static;
-    text-decoration: none;
-    color: whitesmoke;
-    font-family: "Arial Black",sans-serif;
-}
-#slide
-{
-    display: block;
-}
-#menus
-{
-    background: #666666;
-    height: auto;
-    text-align: center;
-}
-#fromMenus
-{
-    font-size: 20px;
-}
-a.slide:hover,a#slide:hover
-{
-    background-color: whitesmoke;
-    color: black;
-}
-a.slide:active,a#slide:active
-{
-    background-color: #00bb76;
-    color: darkorange;
-}
+/*END__Контент*/

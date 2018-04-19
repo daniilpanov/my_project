@@ -15,21 +15,14 @@
         </table>
     </div>
 </header>
-
-<div id='admin'>
-    <a href='admin/'>Войти как администратор</a>
-</div>
+<div class="row">
 <?php
 if (!$_GET['menu_page'])
 {
     require_once "views/VMenu.php";
 }
-elseif ($_GET['menu_page'])
-{
-    require_once "views/VPages.php";
-}
 
-?><div class='content'>
+?><div class='col-md-8' id="content">
     <?=$content['content']?>
 </div><?php
 
@@ -42,3 +35,5 @@ elseif ($_POST)
 {
 
 }
+?>
+</div>
