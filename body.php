@@ -5,7 +5,7 @@
             <tr>
                 <!--Логотип сайта-->
                 <td id="logo" class="col-3">
-                    <img src="img/compass_pic.png" width="100" height="100" border="0">
+                    <img src="img/compass_pic.png" width="100px" height="100px" border="0">
                 </td>
                 <!--Название сайта-->
                 <td id="siteName" class="col-8">
@@ -17,19 +17,29 @@
 </header>
 <div class="row">
 <?php
-if (!$_GET['menu_page'])
-{
-    require_once "views/VMenu.php";
-}
-
+require_once "views/VMenu.php";
 ?><div class='col-md-8' id="content">
-    <?=$content['content']?>
+    <?php
+    if (!$_GET || $_GET['page'])
+    {
+        echo $content['content'];
+    }
+    ?>
 </div><?php
 
 // Router
 if ($_GET)
 {
-
+    ?>
+    <div class='col-md-8' id="content">
+    <?php
+    if ($_GET['news'])
+    {
+        echo $NContent['content'];
+    }
+    ?>
+    </div>
+    <?php
 }
 elseif ($_POST)
 {

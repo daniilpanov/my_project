@@ -37,6 +37,7 @@ $pages = new \app\classes\CMenu();
                     echo "</ul>";
                 }
             }
+            require_once "views/VNews.php";
             ?>
 
         </div><!--class="col-md-3" id="menu"-->
