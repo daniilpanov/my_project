@@ -7,21 +7,24 @@ $news = new app\classes\CNews();
     </tr>
     <tr>
         <td>
-            <ul>
-                <?php
-                $allNews = $news->getNews();
+            <?php
+            $allNews = $news->getNews();
 
-                foreach ($allNews as $key => $value)
-                {
-                    echo "<li><a href='?news={$value['id']}'>{$value['name']}</a></li>";
-                    echo "<ul>";
-                    echo "<li>{$value['description']}</li>";
-                    echo "</ul>";
-                }
+            foreach ($allNews as $key => $value)
+            {
+                echo "<div class='news_item'>";
+                    echo "<div class='center'><img src='{$value['image']}' width='{$value['image_width']}'></div>";
+                    echo "<div class='center'><a href='?news={$value['id']}'>{$value['name']}</a></div>";
+                    echo "<div class='desc'>";
+                    echo "{$value['description']}";
+                    echo "<a href='?news={$value['id']}'>  Подробнее ...</a>";
+                    echo "</div>";
+                echo "</div>";
 
-                $countNews = $news->counter();
-                ?>
-            </ul>
+            }
+
+            $countNews = $news->counter();
+            ?>
         </td>
     </tr>
     <tr>
