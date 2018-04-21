@@ -8,7 +8,7 @@ if ($_GET['deleteMenu'] && $_GET['true'] == 'true')
 {
     ?>
     <script>
-        document.location.href = 'http://localhost/my_project/admin/?page=pageList';
+        document.location.href = 'http://localhost/my_project/admin/?page=menuList';
     </script>
     <?php
     $vcreateeditmenu->deleteMenus($_GET['deleteMenu']);
