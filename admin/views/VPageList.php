@@ -1,7 +1,7 @@
 <?php
-$pagesList = $vcreateedit->getAllPages();
+$pagesList = $vcreateeditpage->getAllPages();
 ?>
-<div class="create"><a href="?page=create"><span class="icon-plus-sign icon-large mysubmenu"></span></a></div>
+<div class="create"><a href="?page=createPage"><span class="icon-plus-sign icon-large mysubmenu"></span></a></div>
 <div id="pagelist_table">
     <div class="row pagelist_table_header">
         <div class="col-md-3">Название страницы</div>
@@ -19,7 +19,6 @@ $pagesList = $vcreateedit->getAllPages();
 
         <div class="row pagelist_table_row">
             <div class="col-md-3">
-
                     <?php echo "<a href='?editPage={$value['id']}'>{$value['menu_name']}</a><br>";?>
             </div>
             <div class="col-md-1"></div>
@@ -31,9 +30,11 @@ $pagesList = $vcreateedit->getAllPages();
                 ?>
             </div>
             <div class="col-md-2">
-                <?php echo "<a href='?editPage={$value['id']}'><span class=\"glyphicon glyphicon-pencil\"></span></a><br>";?>
+                <?php echo "<a href='?editPage={$value['id']}'><span class='glyphicon glyphicon-pencil'></span></a><br>";?>
             </div>
-            <div class="col-md-1"></div>
+            <div class="col-md-1">
+                <?php echo "<a class='delete' onclick='document.getElementsByClassName(\"rotateX\")[0].style.display = \"block\"' href='?deletePage={$value['id']}'><span class='glyphicon glyphicon-trash'></span></a><br>";?>
+            </div>
             <div class="col-md-1"></div>
         </div>
 

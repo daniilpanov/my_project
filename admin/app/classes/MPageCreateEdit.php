@@ -16,7 +16,6 @@ class MPageCreateEdit
     // добавить страницу
     public function insertPage($sql)
     {
-        echo $sql;
         Db::getInstance()->sql($sql);
     }
 
@@ -28,5 +27,9 @@ class MPageCreateEdit
         return $result;
     }
 
-
+    public function deletePage($page)
+    {
+        $sql = "DELETE FROM pages WHERE id='{$page}'";
+        Db::getInstance()->sql($sql);
+    }
 }

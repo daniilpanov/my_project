@@ -25,7 +25,7 @@ class CPageCreateEdit extends MPageCreateEdit
         $counter = 0;
         foreach ($post as $key => $val)
         {
-            $counter++ ;
+            $counter++;
             if($counter != $count)
             {
                 $keys .= $key.', ';
@@ -56,5 +56,10 @@ class CPageCreateEdit extends MPageCreateEdit
         }
 
         return $menus;
+    }
+
+    public function deletePages($page)
+    {
+        $this->deletePage($page);
     }
 }

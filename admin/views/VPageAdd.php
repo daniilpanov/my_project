@@ -1,5 +1,5 @@
 <?php
-$menus = $vcreateedit->getAllMenus();
+$menus = $vcreateeditpage->getAllMenus();
 ?>
 <form method="post">
     <div class="row">

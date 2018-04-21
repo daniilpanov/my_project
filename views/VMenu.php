@@ -5,7 +5,7 @@ $pages = new \app\classes\CMenu();
 
 ?>
 <i>
-    <div class="col-md-3" id="menu">
+    <div class="col-md-4" id="menu">
         <?php
         $menus = $pages->prepareMenu();//Список меню
         $allPages = $pages->preparePages();//Список страниц
@@ -18,7 +18,7 @@ $pages = new \app\classes\CMenu();
                 if (!is_null($value))//Если $value не пустая, то
                 {
                     //выводим название меню
-                    echo "<u class='menu'>{$value['name']}</u>";
+                    echo "<u class='menu'><i class='{$value['menu_icon']} {$value['icon_size']}'></i>{$value['name']}</u>";
 
                     //страницы меню:
                     echo "<ul>";

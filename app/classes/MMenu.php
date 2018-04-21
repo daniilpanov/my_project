@@ -6,7 +6,7 @@ class MMenu
 {
     public function getMenu()
     {
-        $sql = "SELECT id, name FROM menu LIMIT 5";
+        $sql = "SELECT id, name, menu_icon, icon_size FROM menu";
         $result = Db::getInstance()->sql($sql);
 
         //Возвращаем результат

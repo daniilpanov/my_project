@@ -13,6 +13,7 @@
         <a href = "index.php" title="Главная"><i class="icon-home icon-large"> </i></a>
         <a href = "?page=menuList" title="Список меню"><i class="icon-reorder icon-large"> </i></a>
         <a href = "?page=pageList" title="Список страниц"><i class="icon-list-ol icon-large"> </i></a>
+        <a href = "?page=news" title="Новости"><i class="icon-list-alt"> </i></a>
         <a href = "?page=rureviews" title="Отзывы"><i class="icon-thumbs-up icon-large"> </i></a>
         <a href = "?page=languages" title="Языки"><i class="icon-globe icon-large"> </i></a>
         <a href = "?page=changeAuth" title="Пользователи"><i class="icon-user icon-large"> </i></a>
@@ -26,16 +27,20 @@
 <?php
 
 // создаем новые обьекты
-$vcreateedit = new \app\classes\CPageCreateEdit(); // для работы со страницами
+$vcreateeditpage = new \app\classes\CPageCreateEdit(); // для работы со страницами
 $vgetauth = new \app\classes\CChangeAuth();
-
+$vcreateeditmenu = new \app\classes\CMenuCreateEdit();
 
 // если от пользователя получены данные из формы
 if ($_POST)
 {
-    if ($_GET['page'] == 'create')
+    if ($_GET['page'] == 'createPage')
     {
-        $vcreateedit->createPage($_POST);
+        $vcreateeditpage->createPage($_POST);
+    }
+    elseif ($_GET['page'] == 'createMenu')
+    {
+        $vcreateeditmenu->createMenu($_POST);
     }
 }
 // Маршрутизатор
@@ -53,15 +58,26 @@ if ($_GET)
         {
             require_once "views/VChangeAuth.php";
         }
-        elseif ($_GET['page'] == 'create')
+        elseif ($_GET['page'] == 'createPage')
         {
             require_once "views/VPageAdd.php";
         }
         elseif ($_GET['page'] == 'menuList')
         {
-
+            require_once "views/VMenuList.php";
+        }
+        elseif ($_GET['page'] == 'createMenu')
+        {
+            require_once "views/VMenuAdd.php";
         }
     }
-
+    elseif ($_GET['deletePage'])
+    {
+        require_once "views/VPageDelete.php";
+    }
+    elseif ($_GET['deleteMenu'])
+    {
+        require_once "views/VMenuDelete.php";
+    }
 }
 

@@ -18,7 +18,7 @@
 <div class="row">
 <?php
 require_once "views/VMenu.php";
-?><div class='col-md-8' id="content">
+?><div class='col-md-7' id="content">
     <?php
     if (!$_GET || $_GET['page'])
     {
@@ -31,7 +31,7 @@ require_once "views/VMenu.php";
 if ($_GET)
 {
     ?>
-    <div class='col-md-8' id="content">
+    <div class='col-md-7' id="content">
     <?php
     if ($_GET['news'])
     {

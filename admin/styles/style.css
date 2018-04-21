@@ -126,3 +126,13 @@
 {
     text-align: center;
 }
+.rotateX
+{
+    background-color: whitesmoke;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+}
