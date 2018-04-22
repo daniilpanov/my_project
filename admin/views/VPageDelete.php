@@ -1,6 +1,6 @@
 <?php
-echo "<div class='rotateX'>
-    <div class='center'>Вы уверены,<br>что хотите удалить эту страницу?</div>
+echo "<div class='question'>
+    <div>Вы уверены,<br>что хотите удалить эту страницу?</div>
     <a href='?deletePage={$_GET['deletePage']}&true=true'>Да</a>
     <a href='?deletePage={$_GET['deletePage']}&false=false'>Отмена</a>
 </div>";

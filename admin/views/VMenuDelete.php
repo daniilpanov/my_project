@@ -1,6 +1,6 @@
 <?php
-echo "<div class='rotateX'>
-    <div class='center'>Вы уверены,<br>что хотите удалить это меню?</div>
+echo "<div class='question'>
+    <div>Вы уверены,<br>что хотите удалить это меню?</div>
     <a href='?deleteMenu={$_GET['deleteMenu']}&true=true'>Да</a>
     <a href='?deleteMenu={$_GET['deleteMenu']}&false=false'>Отмена</a>
 </div>";

@@ -1,3 +1,4 @@
+/*Заголовок*/
 #header
 {
     background-color: whitesmoke;
@@ -17,41 +18,87 @@
     text-align: center;
     margin-left: 5%;
 }
-.doing,.doing:hover,.doing:active,.doing:visited
+/*END__Заголовок*/
+
+/*Навигация по сайту*/
+#navigation
 {
-    cursor: pointer;
-    background-color: #005000;
+    background-color: #0e4000;
+    padding: 5px;
+    text-align: center;
+}
+#navigation a,#navigation a:hover,#navigation a:active,#navigation a:visited
+{
     border: whitesmoke 1px solid;
-    text-underline: none;
     text-decoration: none;
     color: white;
+    margin: 0;
+    font-size: 15px;
     padding: 2px;
+}
+/*END__Навигация по сайту*/
 
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-}
-.forMenu
+/*Создание меню, страниц и др.*/
+.create
 {
-    border: none;
-    background-color: #005000;
-    margin: 0;
+    background-color: silver;
+    margin: 5px;
+    padding: 20px;
+    display: block;
 }
-.checkYourDoing
+
+.create a
 {
-    text-align: center;
-    background-color: #005000;
+    transition-duration: 1s;
+    -o-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    color: black;
+    text-decoration: none;
+}
+.create a:hover,.create a:active
+{
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: lightseagreen;
+    color: darkred;
+}
+.create textarea
+{
+    background-color: lightblue;
+    width: 100%;
     height: 50px;
-    margin: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
-.menu
+.create input,select,option
 {
-    background-color: lightgray;
-    width: 20%;
+    padding: 10px;
+    background-color: darkorange;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Arial Black", sans-serif;
+    font-kerning: auto;
 }
+.create input[type='submit']
+{
+    width: 50%;
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+    background-color: #b8bfc9;
+    font-family: "Comic Sans MS",Aharoni,Arial,serif;
+    user-select: all;
+}
+/*END__Создание меню, страниц и др.*/
+
+/*Поле для логина*/
 .login,.get
 {
-    background-color: darkorange;
+    background-color: #26ebe3;
     margin-top: 20%;
     text-align: center;
     height: auto;
@@ -86,10 +133,12 @@
     background-color: gold;
     color: black;
 }
+/*END__Поле для логина*/
 
-/*Список страниц*/
-#pagelist_table
+/*Список страниц, меню, пользователей и др.*/
+#pagelist_table,#usersList_table
 {
+    margin-top: 5px;
     position: relative;
     left: 125px; /* Положение от левого края */
 }
@@ -116,23 +165,39 @@
     text-decoration: underline;
 }
 
-/* END Список страниц*/
-
 .pagelist_table_row,.user_list_table_row,.pagelist_table_header,.usersList
 {
     font-size: 15px;
 }
+/* END__Список страниц, меню, пользователей и др.*/
+
+/*Общее*/
 .div-center
 {
     text-align: center;
 }
-.rotateX
+.question
 {
-    background-color: whitesmoke;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 25%;
-    width: 50%;
-    height: 50%;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    font-kerning: auto;
+    background-color: olive;
+    height: auto;
+    text-align: center;
+    padding: 10px;
 }
+.question a
+{
+    text-decoration: underline;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 5px;
+    text-underline-color: darkred;
+    cursor: default;
+    color: rgba(0, 0, 44, 0.85);
+    padding: 5px;
+    background-color: rgba(0,0,0,0.5);
+}
+/*END__Общее*/
