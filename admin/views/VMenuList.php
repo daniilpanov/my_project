@@ -19,8 +19,7 @@ $menusList = $vcreateeditmenu->getAllMenus();
 
         <div class="row pagelist_table_row">
             <div class="col-md-3">
-
-                    <?php echo "<a href='?editPage={$value['id']}'>{$value['name']}</a><br>";?>
+                    <?php echo "<a href='?editMenu={$value['id']}'>{$value['name']}</a><br>";?>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2"><?=date("d.m.Y \в H:i:s",$value['created'])?></div>

@@ -11,14 +11,14 @@ if ($_GET['deleteMenu'] && $_GET['true'] == 'true')
         document.location.href = 'http://localhost/my_project/admin/?page=menuList';
     </script>
     <?php
-    $vcreateeditmenu->deleteMenus($_GET['deleteMenu']);
+    $vcreateeditmenu->deleteMenu($_GET['deleteMenu']);
 }
 elseif ($_GET['deleteMenu'] && $_GET['false'] == 'false')
 {
     ?>
     <script>
         alert('Удаление отменено');
-        document.location.href = 'http://localhost/my_project/admin/?page=menuList';
+        document.location.href = 'http://localhost/my_project/admin/?menu=menuList';
     </script>
     <?php
 }

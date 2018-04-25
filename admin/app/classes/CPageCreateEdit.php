@@ -62,4 +62,25 @@ class CPageCreateEdit extends MPageCreateEdit
     {
         $this->deletePage($page);
     }
+
+    public function updatePage($id,$place)
+    {
+        $sql = "UPDATE pages SET ";
+        $count = count($place);
+        $counter = 0;
+        foreach ($place as $key => $val)
+        {
+            $counter++;
+            if($counter != $count)
+            {
+                $sql .= $key."='{$val}', ";
+            }
+            else
+            {
+                $sql .= $key."='{$val}' ";
+            }
+        }
+        $sql .="WHERE id = '{$id}'";
+        $this->finalUpdatePage($sql);
+    }
 }

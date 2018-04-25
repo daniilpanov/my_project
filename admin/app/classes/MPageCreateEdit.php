@@ -7,7 +7,7 @@ class MPageCreateEdit
     // список страниц
     public function getPagesList()
     {
-        $sql = "SELECT id, menu_name, created FROM pages";
+        $sql = "SELECT * FROM pages";
         $result = Db::getInstance()->sql($sql);
 
         return $result;
@@ -30,6 +30,11 @@ class MPageCreateEdit
     public function deletePage($page)
     {
         $sql = "DELETE FROM pages WHERE id='{$page}'";
+        Db::getInstance()->sql($sql);
+    }
+
+    public function finalUpdatePage($sql)
+    {
         Db::getInstance()->sql($sql);
     }
 }

@@ -48,4 +48,26 @@ class CMenuCreateEdit extends MMenuCreateEdit
     {
         $this->deleteMenu($menu);
     }
+
+    public function updateMenu($id,$place)
+    {
+        $sql = "UPDATE menu SET ";
+        $count = count($place);
+        $counter = 0;
+        foreach ($place as $key => $val)
+        {
+            $counter++;
+            if($counter != $count)
+            {
+                $sql .= $key."='{$val}', ";
+            }
+            else
+            {
+                $sql .= $key."='{$val}' ";
+            }
+
+        }
+        $sql .="WHERE id = '{$id}'";
+        $this->finalUpdateMenu($sql);
+    }
 }

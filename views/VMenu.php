@@ -18,7 +18,7 @@ $pages = new \app\classes\CMenu();
                 if (!is_null($value))//Если $value не пустая, то
                 {
                     //выводим название меню
-                    echo "<u class='menu'><i class='{$value['menu_icon']} {$value['icon_size']}'></i>{$value['name']}</u>";
+                    echo "<u class='menu'><i class='{$value['icon']} {$value['icon_size']}'></i>{$value['name']}</u>";
 
                     //страницы меню:
                     echo "<ul>";

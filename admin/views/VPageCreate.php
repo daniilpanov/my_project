@@ -1,33 +1,11 @@
 <?php
 $menus = $vcreateeditpage->getAllMenus();
-$pages = $vcreateeditpage->getAllPages();
-foreach ($pages as $key => $value)
-{
-    if ($value['id'] == $_GET['editPage'])
-    {
-        foreach ($value as $item)
-        {
-            $onePage[] = $item;
-        }
-    }
-}
-
-foreach ($menus as $key => $value)
-{
-    if ($value['id'] == $onePage[10])
-    {
-        foreach ($value as $item)
-        {
-            $onePage[] = $item;
-        }
-    }
-}
 ?>
 <div class="create">
     <form method="post">
         <div class="row">
             <div class="col-md-4">название страницы в меню:</div>
-            <div class="col-md-4"><input type="text" name="menu_name" value="<?=$onePage[1]?>"></div>
+            <div class="col-md-4"><input type="text" name="menu_name"></div>
         </div>
         <div class="row">
             <div class="col-md-4">в каком меню:</div>
@@ -40,26 +18,25 @@ foreach ($menus as $key => $value)
                     }
                     ?>
                 </select>
-                <?if (!empty($onePage[10])) echo '(Меню: '.$onePage[12].')'; else echo 'Эта страничка не состоит ни в каком меню'?>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">заголовок страницы (title):</div>
-            <div class="col-md-4"><input type="text" name="title" value="<?=$onePage[3]?>"></div>
+            <div class="col-md-4"><input type="text" name="title"></div>
         </div>
         <div class="row">
             <div class="col-md-4">ключевые слова (keywords):</div>
-            <div class="col-md-4"><input type="text" name="keywords" value="<?=$onePage[6]?>"></div>
+            <div class="col-md-4"><input type="text" name="keywords"></div>
         </div>
         <div class="row">
             <div class="col-md-4">описание (description):</div>
-            <div class="col-md-4"><input type="text" name="description" value="<?=$onePage[7]?>"></div>
+            <div class="col-md-4"><input type="text" name="description"></div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 иконка: (<a href="http://fontawesome.veliovgroup.com/design.html" title="список названий" target="_blank">список иконок</a>)
             </div>
-            <div class="col-md-4"><input type="text" name="menu_icon" value="<?=$onePage[8]?>"></div>
+            <div class="col-md-4"><input type="text" name="menu_icon"></div>
         </div>
         <div class="row">
             <div class="col-md-4">размер иконки:</div>
@@ -71,12 +48,11 @@ foreach ($menus as $key => $value)
                     <option value = "icon-3x">icon-3x</option>
                     <option value = "icon-4x">icon-4x</option>
                 </select>
-                <?if (!empty($onePage[9])) echo '(Размер: '.$onePage[9].')'; else echo 'У этой странички не указан размер иконки'?>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">содержание страницы:</div>
-            <div class="col-md-4"><textarea name="content"><?=$onePage[1]?></textarea></div>
+            <div class="col-md-4"><textarea name="content"></textarea></div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>

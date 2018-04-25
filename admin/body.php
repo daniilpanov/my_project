@@ -40,6 +40,14 @@ if ($_POST)
     {
         $vcreateeditmenu->createMenu($_POST);
     }
+    elseif ($_GET['editMenu'])
+    {
+        $vcreateeditmenu->updateMenu($_GET['editMenu'], $_POST);
+    }
+    elseif ($_GET['editPage'])
+    {
+        $vcreateeditpage->updatePage($_GET['editPage'], $_POST);
+    }
 }
 // Маршрутизатор
 
@@ -58,7 +66,7 @@ if ($_GET)
         }
         elseif ($_GET['page'] == 'createPage')
         {
-            require_once "views/VPageAdd.php";
+            require_once "views/VPageCreate.php";
         }
         elseif ($_GET['page'] == 'menuList')
         {
@@ -66,7 +74,7 @@ if ($_GET)
         }
         elseif ($_GET['page'] == 'createMenu')
         {
-            require_once "views/VMenuAdd.php";
+            require_once "views/VMenuCreate.php";
         }
     }
     elseif ($_GET['deletePage'])
@@ -76,6 +84,14 @@ if ($_GET)
     elseif ($_GET['deleteMenu'])
     {
         require_once "views/VMenuDelete.php";
+    }
+    elseif ($_GET['editMenu'])
+    {
+        require_once "views/VMenuAdd.php";
+    }
+    elseif ($_GET['editPage'])
+    {
+        require_once "views/VPageAdd.php";
     }
 }
 
