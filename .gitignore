@@ -1,3 +1,3 @@
 .idea
-admin\app\classes\Config.php
-app\classes\Config.php
+admin/app/classes/Config.php
+app/classes/Config.php
