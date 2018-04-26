@@ -23,7 +23,14 @@ $menusList = $vcreateeditmenu->getAllMenus();
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2"><?=date("d.m.Y \в H:i:s",$value['created'])?></div>
-            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <?php
+                if (!is_null($value['updated']))
+                {
+                    echo date("d.m.Y \в H:i:s",$value['updated']);
+                }
+                ?>
+            </div>
             <div class="col-md-2">
                 <?php echo "<a href='?editMenu={$value['id']}'><span class='glyphicon glyphicon-pencil'></span></a><br>";?>
             </div>

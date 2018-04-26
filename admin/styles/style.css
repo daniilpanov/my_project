@@ -123,12 +123,12 @@
     -webkit-box-shadow: white 0 0 3px 1px;
 
     border: lightgray;
-    padding: 0;
+    padding: 5px;
 }
 #page input
 {
-    width: auto;
-    height: 25px;
+    width: 120px;
+    line-height: 15px;
     font-family: "Arial Black",sans-serif;
     background-color: gold;
     color: black;

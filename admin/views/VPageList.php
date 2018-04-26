@@ -22,18 +22,20 @@ $pagesList = $vcreateeditpage->getAllPages();
                     <?php echo "<a href='?editPage={$value['id']}'>{$value['menu_name']}</a><br>";?>
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-2"><?php echo date("d.m.Y \в H:i:s",$value['created'])?></div>
+            <div class="col-md-2"><?=date("d.m.Y \в H:i:s",$value['created'])?></div>
             <div class="col-md-2">
                 <?php
-                if (!empty($value['updated']))
-                echo date("d.m.Y \в H:i:s",$value['updated'])
+                if (!is_null($value['updated']))
+                {
+                echo date("d.m.Y \в H:i:s",$value['updated']);
+                }
                 ?>
             </div>
             <div class="col-md-2">
                 <?php echo "<a href='?editPage={$value['id']}'><span class='glyphicon glyphicon-pencil'></span></a><br>";?>
             </div>
             <div class="col-md-1">
-                <?php echo "<a class='delete' onclick='document.getElementsByClassName(\"rotateX\")[0].style.display = \"block\"' href='?deletePage={$value['id']}'><span class='glyphicon glyphicon-trash'></span></a><br>";?>
+                <?php echo "<a class='delete' href='?deletePage={$value['id']}'><span class='glyphicon glyphicon-trash'></span></a><br>";?>
             </div>
             <div class="col-md-1"></div>
         </div>
