@@ -32,7 +32,7 @@ foreach ($menus as $key => $value)
                     <option value = "icon-2x">icon-2x</option>
                     <option value = "icon-3x">icon-3x</option>
                     <option value = "icon-4x">icon-4x</option>
-                </select><?if (!empty($oneMenu[3])) echo '('.$oneMenu[3].')'?>
+                </select><?='('.$oneMenu[3].')'?>
             </div>
         </div>
         <div class="row">

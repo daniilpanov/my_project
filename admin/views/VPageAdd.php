@@ -77,7 +77,7 @@ foreach ($menus as $key => $value)
                     <option value="icon-3x">icon-3x</option>
                     <option value="icon-4x">icon-4x</option>
                 </select>
-                <?if (!empty($onePage[9])) echo '(Размер: '.$onePage[9].')'; else echo 'У этой странички не указан размер иконки'?>
+                <?='(Размер: '.$onePage[9].')'?>
             </div>
         </div>
         <div class="row">
