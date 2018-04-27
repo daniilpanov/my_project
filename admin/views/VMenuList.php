@@ -19,7 +19,7 @@ $menusList = $vcreateeditmenu->getAllMenus();
 
         <div class="row pagelist_table_row">
             <div class="col-md-3">
-                    <?php echo "<a href='?editMenu={$value['id']}'>{$value['name']}</a><br>";?>
+                    <?php echo "<a href='?editMenu={$value['id']}'><i class='{$value['icon']} {$value['icon_size']}'></i>{$value['name']}</a><br>";?>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2"><?=date("d.m.Y \в H:i:s",$value['created'])?></div>
@@ -37,7 +37,6 @@ $menusList = $vcreateeditmenu->getAllMenus();
             <div class="col-md-1"><?php echo "<a href='?deleteMenu={$value['id']}'><span class='glyphicon glyphicon-trash'></span></a>"?> </div>
             <div class="col-md-1"></div>
         </div>
-
     <?php
     }
     ?>

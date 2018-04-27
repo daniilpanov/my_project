@@ -15,13 +15,13 @@ foreach ($menus as $key => $value)
     <form method="post">
         <div class="row">
             <div class="col-md-4">название меню:</div>
-            <div class="col-md-4"><input type="text" name="name" value="<?=$oneMenu[1]?>"></div>
+            <div class="col-md-4"><input type="text" name="name" value="<?=$oneMenu[2]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 иконка: (<a href="http://fontawesome.veliovgroup.com/design.html" title="список названий" target="_blank">список иконок</a>)
             </div>
-            <div class="col-md-4"><input type="text" name="icon" value="<?=$oneMenu[4]?>"></div>
+            <div class="col-md-4"><input type="text" name="icon" value="<?=$oneMenu[1]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">размер иконки:</div>

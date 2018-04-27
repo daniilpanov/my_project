@@ -19,7 +19,7 @@ $pagesList = $vcreateeditpage->getAllPages();
 
         <div class="row pagelist_table_row">
             <div class="col-md-3">
-                    <?php echo "<a href='?editPage={$value['id']}'>{$value['menu_name']}</a><br>";?>
+                    <?php echo "<a href='?editPage={$value['id']}'><i class='{$value['menu_icon']} {$value['icon_size']}'></i>{$value['menu_name']}</a><br>";?>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2"><?=date("d.m.Y \в H:i:s",$value['created'])?></div>
@@ -27,7 +27,7 @@ $pagesList = $vcreateeditpage->getAllPages();
                 <?php
                 if (!is_null($value['updated']))
                 {
-                echo date("d.m.Y \в H:i:s",$value['updated']);
+                    echo date("d.m.Y \в H:i:s",$value['updated']);
                 }
                 ?>
             </div>

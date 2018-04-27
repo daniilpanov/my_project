@@ -36,11 +36,17 @@ foreach ($menus as $key => $value)
                     <?php
                     foreach ($menus as $value)
                     {
-                        echo "<option value='{$value['id']}'>{$value['name']}</option>";
+                        if ($value['id'] == $onePage[10])
+                        {
+                            echo "<option value='{$value['id']}' selected>{$value['name']}</option>";
+                        }
+                        else
+                        {
+                            echo "<option value='{$value['id']}'>{$value['name']}</option>";
+                        }
                     }
                     ?>
                 </select>
-                <?if (!empty($onePage[10])) echo '(Меню: '.$onePage[12].')'; else echo 'Эта страничка не состоит ни в каком меню'?>
             </div>
         </div>
         <div class="row">
@@ -65,11 +71,11 @@ foreach ($menus as $key => $value)
             <div class="col-md-4">размер иконки:</div>
             <div class="col-md-4">
                 <select name = "icon_size" class="select">
-                    <option value = "icon-large" selected>icon-large</option>
-                    <option value = "icon-1x">icon-1x</option>
-                    <option value = "icon-2x">icon-2x</option>
-                    <option value = "icon-3x">icon-3x</option>
-                    <option value = "icon-4x">icon-4x</option>
+                    <option value="icon-large">icon-large</option>
+                    <option value="icon-1x">icon-1x</option>
+                    <option value="icon-2x">icon-2x</option>
+                    <option value="icon-3x">icon-3x</option>
+                    <option value="icon-4x">icon-4x</option>
                 </select>
                 <?if (!empty($onePage[9])) echo '(Размер: '.$onePage[9].')'; else echo 'У этой странички не указан размер иконки'?>
             </div>
@@ -80,8 +86,8 @@ foreach ($menus as $key => $value)
         </div>
         <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4"> <input type="submit" value="Добавить"></div>
+            <div class="col-md-4"> <input type="submit" value="Сохранить"></div>
         </div>
-        <input type="hidden" name="created" value="<?=time()?>">
+        <input type="hidden" name="updated" value="<?=time()?>">
     </form>
 </div>
