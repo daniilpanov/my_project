@@ -4,12 +4,14 @@ namespace app\classes;
 
 class CLogin extends MLogin
 {
+    //__construct при создании объекта вызывает метод 'prepare'
     public function __construct($login,$password)
     {
         // __construct вызывает метод prepare, передавая ему переменные с логином и паролем
         $this->prepare($login,$password);
     }
 
+    //Метод для шифрования пароля
     public function prepare($login,$password)
     {
         //Объявляем переменные для улучшенной шифровки
@@ -26,7 +28,7 @@ class CLogin extends MLogin
         $this->checkUser($login,$preparedPassword);
     }
 
-
+    //Метод, проверяющий, правильно ли введён пароль и логин, или нет
     public function checkUser($login,$password)
     {
         if($result = $this->getUser($login))//Если запрос прошел

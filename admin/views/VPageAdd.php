@@ -1,17 +1,26 @@
 <?php
-$menus = $vcreateeditpage->getAllMenus();
+// вызываем метод, с помощью которого получаем всю информацию о всех страничах
 $pages = $vcreateeditpage->getAllPages();
+// для того, чтобы выбрать, в каком меню находится(будет находиться) страничка
+$menus = $vcreateeditpage->getAllMenus();
+
+// перебираем массив со страницами и записываем то, что нужно в другой массив(см.ниже)
 foreach ($pages as $key => $value)
 {
+    // если id в $value совпадает с id редактируемого меню, то
     if ($value['id'] == $_GET['editPage'])
     {
+        // перебираем $value (тоже массив) и записываем во второй массив
         foreach ($value as $item)
         {
             $onePage[] = $item;
         }
     }
 }
+//Чтобы осталась информация только об одной страничке:
+unset($pages);
 
+//То же самое делаем с меню:
 foreach ($menus as $key => $value)
 {
     if ($value['id'] == $onePage[10])
@@ -22,7 +31,9 @@ foreach ($menus as $key => $value)
         }
     }
 }
+unset($menus);
 ?>
+<!--Далее - форма для редактирования данных, которые находятся в массиве $onePage-->
 <div class="create">
     <form method="post">
         <div class="row">
@@ -88,6 +99,7 @@ foreach ($menus as $key => $value)
             <div class="col-md-4"></div>
             <div class="col-md-4"> <input type="submit" value="Сохранить"></div>
         </div>
+        <!--для меньшего размера кода-->
         <input type="hidden" name="updated" value="<?=time()?>">
     </form>
 </div>

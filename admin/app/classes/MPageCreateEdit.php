@@ -27,12 +27,14 @@ class MPageCreateEdit
         return $result;
     }
 
+    // удалить страницу
     public function deletePage($page)
     {
         $sql = "DELETE FROM pages WHERE id='{$page}'";
         Db::getInstance()->sql($sql);
     }
 
+    // обновить страницу
     public function finalUpdatePage($sql)
     {
         Db::getInstance()->sql($sql);

@@ -1,9 +1,9 @@
 <?php
 $newsList = $vcreateeditnews->getAllNews();
 ?>
-<div class="create"><a href="?page=createMenu"><span class="icon-plus-sign icon-large mysubmenu"></span></a></div>
-<div id="pagelist_table">
-    <div class="row pagelist_table_header">
+<div class="create"><a href="?page=createNews"><span class="icon-plus-sign icon-large mysubmenu"></span></a></div>
+<div id="list_table">
+    <div class="row list_table_header">
         <div class="col-md-3">Название новости</div>
         <div class="col-md-1">Язык</div>
         <div class="col-md-2">Создана</div>
@@ -17,7 +17,7 @@ $newsList = $vcreateeditnews->getAllNews();
     foreach ($newsList as $value)
     {?>
 
-        <div class="row pagelist_table_row">
+        <div class="row list_table_row">
             <div class="col-md-3">
                 <?php echo "<a href='?editNews={$value['id']}'>{$value['name']}</a><br>";?>
             </div>
@@ -30,9 +30,9 @@ $newsList = $vcreateeditnews->getAllNews();
                 }
                 ?></div>
             <div class="col-md-2">
-                <?php echo "<a href='?editMenu={$value['id']}'><span class='glyphicon glyphicon-pencil'></span></a><br>";?>
+                <?php echo "<a href='?editNews={$value['id']}'><span class='glyphicon glyphicon-pencil'></span></a><br>";?>
             </div>
-            <div class="col-md-1"><?php echo "<a href='?deleteMenu={$value['id']}'><span class='glyphicon glyphicon-trash'></span></a>"?> </div>
+            <div class="col-md-1"><?php echo "<a href='?deleteNews={$value['id']}'><span class='glyphicon glyphicon-trash'></span></a>"?> </div>
             <div class="col-md-1"></div>
         </div>
 

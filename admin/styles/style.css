@@ -45,6 +45,7 @@
     margin: 5px;
     padding: 20px;
     display: block;
+    text-align: center;
 }
 
 .create a
@@ -136,36 +137,37 @@
 /*END__Поле для логина*/
 
 /*Список страниц, меню, пользователей и др.*/
-#pagelist_table,#usersList_table
+#list_table
 {
     margin-top: 5px;
     position: relative;
     left: 125px; /* Положение от левого края */
+    width: 750px;
 }
 
-.pagelist_table_header,.usersList
+.list_table_header
 {
     background-color: #0D3349;
     color: white;
     padding-left: 5px;
-    width: 900px;
+    width: 750px;
 }
 
-.pagelist_table_row,.user_list_table_row
+.list_table_row
 {
     background-color: darkgrey;
     border-bottom: white 1px solid;
     padding: 5px;
-    width: 900px;
+    width: 750px;
 }
 
-.pagelist_table_row a,.user_list_table_row a
+.list_table_row a
 {
     color: black;
     text-decoration: underline;
 }
 
-.pagelist_table_row,.user_list_table_row,.pagelist_table_header,.usersList
+.list_table_row
 {
     font-size: 15px;
 }

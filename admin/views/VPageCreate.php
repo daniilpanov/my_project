@@ -1,6 +1,8 @@
 <?php
+//Инф. обо всех меню(для выбора, в каком меню будет состоять страничка)
 $menus = $vcreateeditpage->getAllMenus();
 ?>
+<!--Форма для создания странички-->
 <div class="create">
     <form method="post">
         <div class="row">
@@ -12,6 +14,7 @@ $menus = $vcreateeditpage->getAllMenus();
             <div class="col-md-4">
                 <select name="menu_number">
                     <?php
+                    //В цикле выводим все возможные меню:
                     foreach ($menus as $value)
                     {
                         echo "<option value='{$value['id']}'>{$value['name']}</option>";
@@ -58,6 +61,7 @@ $menus = $vcreateeditpage->getAllMenus();
             <div class="col-md-4"></div>
             <div class="col-md-4"> <input type="submit" value="Добавить"></div>
         </div>
+        <!--для меньшего размера кода-->
         <input type="hidden" name="created" value="<?=time()?>">
     </form>
 </div>

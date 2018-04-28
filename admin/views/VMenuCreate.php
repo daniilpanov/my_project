@@ -1,3 +1,4 @@
+<!--It`s just form for create page-->
 <div class="create">
     <form method="post">
         <div class="row">
@@ -26,6 +27,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4"> <input type="submit" value="Добавить"></div>
         </div>
+        <!--для меньшего размера кода-->
         <input type="hidden" name="created" value="<?=time()?>">
     </form>
 </div>

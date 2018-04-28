@@ -1,4 +1,5 @@
 <!--Просто форма-->
+<a href="../index.php">Вернуться на сайт</a>
 <div id="page">
     <center>
         <form method="post" class="login">

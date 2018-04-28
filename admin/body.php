@@ -27,13 +27,12 @@
 
 // создаем новые обьекты
 $vcreateeditpage = new \app\classes\CPageCreateEdit(); //для работы со страницами
-$vcreateeditauth = new \app\classes\CChangeAuth(); //для работы с пользователями
+$vcreateeditauth = new \app\classes\CAuthCreateEdit(); //для работы с пользователями
 $vcreateeditmenu = new \app\classes\CMenuCreateEdit(); //для работы с меню
 $vcreateeditnews = new \app\classes\CNewsCreateEdit(); //для работы с новостями
 
 // если от пользователя получены данные из формы
-if ($_POST)
-{
+if ($_POST) {
     //ALL_CREATE
     if ($_GET['page'] == 'createPage')
     {
@@ -43,9 +42,9 @@ if ($_POST)
     {
         $vcreateeditmenu->createMenu($_POST);
     }
-    elseif ($_GET['page'] == 'createNews')
+    elseif ($_GET['page'] == 'createAuth')
     {
-        $vcreateeditnews->createNews($_POST);
+        $vcreateeditauth->createAuth($_POST);
     }
     //ALL_EDIT
     elseif ($_GET['editMenu'])
@@ -56,9 +55,9 @@ if ($_POST)
     {
         $vcreateeditpage->updatePage($_GET['editPage'], $_POST);
     }
-    elseif ($_GET['editNews'])
+    elseif ($_GET['editAuth'])
     {
-        $vcreateeditnews->updateNews($_GET['editNews'], $_POST);
+        $vcreateeditauth->updateAuth($_GET['editAuth'], $_POST);
     }
 }
 // Маршрутизатор
@@ -90,13 +89,13 @@ if ($_GET)
         {
             require_once "views/VPageCreate.php";
         }
+        elseif ($_GET['page'] == 'createAuth')
+        {
+            require_once "views/VAuthCreate.php";
+        }
         elseif ($_GET['page'] == 'createMenu')
         {
             require_once "views/VMenuCreate.php";
-        }
-        elseif ($_GET['page'] == 'createNews')
-        {
-            require_once "views/VNewsCreate.php";
         }
     }
     //ALL_DELETE
@@ -104,26 +103,26 @@ if ($_GET)
     {
         require_once "views/VPageDelete.php";
     }
+    elseif ($_GET['deleteAuth'])
+    {
+        require_once "views/VAuthDelete.php";
+    }
     elseif ($_GET['deleteMenu'])
     {
         require_once "views/VMenuDelete.php";
-    }
-    elseif ($_GET['deleteNews'])
-    {
-        require_once "views/VNewsDelete.php";
     }
     //ALL_EDIT
     elseif ($_GET['editMenu'])
     {
         require_once "views/VMenuAdd.php";
     }
+    elseif ($_GET['editAuth'])
+    {
+        require_once "views/VAuthAdd.php";
+    }
     elseif ($_GET['editPage'])
     {
         require_once "views/VPageAdd.php";
-    }
-    elseif ($_GET['editNews'])
-    {
-        require_once "views/VNewsAdd.php";
     }
 }
 
