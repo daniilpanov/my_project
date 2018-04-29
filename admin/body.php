@@ -55,9 +55,9 @@ if ($_POST) {
     {
         $vcreateeditpage->updatePage($_GET['editPage'], $_POST);
     }
-    elseif ($_GET['editAuth'])
+    elseif ($_GET['editUser'])
     {
-        $vcreateeditauth->updateAuth($_GET['editAuth'], $_POST);
+        $vcreateeditauth->updateAuth($_GET['editUser'], $_POST);
     }
 }
 // Маршрутизатор
@@ -117,6 +117,10 @@ if ($_GET)
         require_once "views/VMenuAdd.php";
     }
     elseif ($_GET['editAuth'])
+    {
+        require_once "views/VAuthCheck.php";
+    }
+    elseif ($_GET['editUser'])
     {
         require_once "views/VAuthAdd.php";
     }

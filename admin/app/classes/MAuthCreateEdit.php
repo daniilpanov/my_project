@@ -16,7 +16,8 @@ class MAuthCreateEdit
     public function getUser($id)
     {
         //SQL-запрос
-        $sql = "SELECT `password` FROM `users` WHERE id='{$id}'";
+        $sql = "SELECT `password` FROM users WHERE `id` = {$id}";
+
         //если запрос - истина, то возвращаем результат
         if($response = Db::getInstance()->sql($sql))
         {

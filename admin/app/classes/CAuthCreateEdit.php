@@ -41,7 +41,6 @@ class CAuthCreateEdit extends MAuthCreateEdit
         {
             //Записываем в $userFromDb $result как массив
             $userFromDb = mysqli_fetch_assoc($result);
-            var_export($userFromDb);
 
             //Проверка
             if($userFromDb['password'] == $password)

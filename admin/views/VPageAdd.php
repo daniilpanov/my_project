@@ -19,26 +19,13 @@ foreach ($pages as $key => $value)
 }
 //Чтобы осталась информация только об одной страничке:
 unset($pages);
-
-//То же самое делаем с меню:
-foreach ($menus as $key => $value)
-{
-    if ($value['id'] == $onePage[10])
-    {
-        foreach ($value as $item)
-        {
-            $onePage[] = $item;
-        }
-    }
-}
-unset($menus);
 ?>
 <!--Далее - форма для редактирования данных, которые находятся в массиве $onePage-->
 <div class="create">
     <form method="post">
         <div class="row">
             <div class="col-md-4">название страницы в меню:</div>
-            <div class="col-md-4"><input type="text" name="menu_name" value="<?=$onePage[1]?>"></div>
+            <div class="col-md-4"><input type="text" name="menu_name" value="<?=$onePage[8]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">в каком меню:</div>
@@ -47,7 +34,7 @@ unset($menus);
                     <?php
                     foreach ($menus as $value)
                     {
-                        if ($value['id'] == $onePage[10])
+                        if ($value['id'] == $onePage[7])
                         {
                             echo "<option value='{$value['id']}' selected>{$value['name']}</option>";
                         }
@@ -62,21 +49,21 @@ unset($menus);
         </div>
         <div class="row">
             <div class="col-md-4">заголовок страницы (title):</div>
-            <div class="col-md-4"><input type="text" name="title" value="<?=$onePage[3]?>"></div>
+            <div class="col-md-4"><input type="text" name="title" value="<?=$onePage[4]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">ключевые слова (keywords):</div>
-            <div class="col-md-4"><input type="text" name="keywords" value="<?=$onePage[6]?>"></div>
+            <div class="col-md-4"><input type="text" name="keywords" value="<?=$onePage[3]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">описание (description):</div>
-            <div class="col-md-4"><input type="text" name="description" value="<?=$onePage[7]?>"></div>
+            <div class="col-md-4"><textarea name="description"><?=$onePage[1]?></textarea></div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 иконка: (<a href="http://fontawesome.veliovgroup.com/design.html" title="список названий" target="_blank">список иконок</a>)
             </div>
-            <div class="col-md-4"><input type="text" name="menu_icon" value="<?=$onePage[8]?>"></div>
+            <div class="col-md-4"><input type="text" name="menu_icon" value="<?=$onePage[5]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">размер иконки:</div>
@@ -88,12 +75,12 @@ unset($menus);
                     <option value="icon-3x">icon-3x</option>
                     <option value="icon-4x">icon-4x</option>
                 </select>
-                <?='(Размер: '.$onePage[9].')'?>
+                <?='(Размер: '.$onePage[6].')'?>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">содержание страницы:</div>
-            <div class="col-md-4"><textarea name="content"><?=$onePage[1]?></textarea></div>
+            <div class="col-md-4"><textarea name="content"><?=$onePage[9]?></textarea></div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
