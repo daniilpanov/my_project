@@ -26,7 +26,7 @@ require_once "views/VNewsContent.php";
     <!--End Meta-->
 
 
-    <title><?=$content['title']?>|сайт`my_project`</title>
+    <title><?=$content['title'].$NContent['title']?>|сайт`my_project`</title>
 
 
     <!--CSS-->
@@ -47,14 +47,16 @@ require_once "views/VNewsContent.php";
     <!--End Favicon-->
 
     <!--Java scripts-->
-    <script type="text/javascript" src="js/jquery/jquery-1.11.3.js"></script>
+    <!--<script type="text/javascript" src="js/jquery/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.navgoco.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.lightbox-0.5.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.lightbox-0.5.js"></script>-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <!--End Java scripts-->
 
     <!--Bootstrap-->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="styles/bootstrap-3.3.2/dist/js/bootstrap.min.js"></script>
     <!--End Bootstrap-->
 
 </head>

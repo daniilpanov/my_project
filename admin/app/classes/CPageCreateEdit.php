@@ -100,7 +100,10 @@ class CPageCreateEdit extends MPageCreateEdit
             }
         }
         // и соединяем их
-        $sql .="WHERE id = '{$id}'";
+        $sql .=" WHERE id = '{$id}'";
+
+        $sql = str_replace("''", "\'", $sql);
+
         // отправляем информацию в базу
         $this->finalUpdatePage($sql);
     }
