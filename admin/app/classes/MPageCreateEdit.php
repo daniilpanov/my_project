@@ -39,4 +39,19 @@ class MPageCreateEdit
     {
         Db::getInstance()->sql($sql);
     }
+
+    // возвращает список всех страниц со всей информацией по каждой
+    function menu_pos()
+    {
+        $sql = "SELECT * FROM pages ORDER BY position ASC";
+        $res = \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
+        return $res; // возвращаем результат
+    }
+
+    // позиция в меню
+    function pos_inc($pos)
+    {
+        $sql = "UPDATE pages SET position = position+1 WHERE position >= {$pos}";
+        \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
+    }
 }

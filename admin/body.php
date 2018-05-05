@@ -36,6 +36,7 @@ if ($_POST) {
     //ALL_CREATE
     if ($_GET['page'] == 'createPage')
     {
+
         $vcreateeditpage->createPage($_POST);
     }
     elseif ($_GET['page'] == 'createMenu')

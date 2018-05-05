@@ -1,4 +1,5 @@
 <?php
+
 //Инф. обо всех меню(для выбора, в каком меню будет состоять страничка)
 $menus = $vcreateeditpage->getAllMenus();
 ?>
@@ -18,6 +19,31 @@ $menus = $vcreateeditpage->getAllMenus();
                     foreach ($menus as $value)
                     {
                         echo "<option value='{$value['id']}'>{$value['name']}</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">позиция:</div>
+            <div class="col-md-4">
+                <select name="position">
+                    <?php $menu = $vcreateeditpage->menu_return('-в конец списка-');
+                    $max = count($menu);
+                    $counter = 0;
+
+                    foreach ($menu as $menu_name => $position)
+                    {
+                        $counter++;
+                        if($counter != $max)
+                        {?>
+                            <option value = "<?php echo $position; ?>"><?=$menu_name ?></option>
+                            <?php
+                        }
+                        else
+                        {?>
+                            <option value = "<?php echo $position; ?>" selected><?=$menu_name ?></option>
+                        <?php   }
                     }
                     ?>
                 </select>

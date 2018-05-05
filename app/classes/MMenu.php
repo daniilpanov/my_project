@@ -14,7 +14,7 @@ class MMenu
     }
     public function getPages()
     {
-        $sql = "SELECT id, menu_number, menu_name, icon_size, menu_icon FROM pages";
+        $sql = "SELECT id, menu_number, menu_name, icon_size, menu_icon FROM pages ORDER BY position ASC";
         $result = Db::getInstance()->sql($sql);
         return $result;
     }

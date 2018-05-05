@@ -4,6 +4,25 @@ namespace app\classes;
 
 class CPageCreateEdit extends MPageCreateEdit
 {
+    // возвращает список меню и добавляет надпись "-в конец списка-"
+    public function menu_return($last_pos = null)
+    {
+        // получаем список всех меню
+        $res = $this->menu_pos();
+        while ($row = mysqli_fetch_assoc($res))
+        {
+            // заносим в новый массив
+            $menu[$row['menu_name']] = $row['position'];
+        }
+        // добавляем в конец массива пункт "-в конец списка-"
+        if($last_pos)
+        {
+            $k = end($menu);
+            $menu[$last_pos] = $k+1;
+        }
+        return $menu;
+    }
+
     //Получение с БД всех страничек
     public function getAllPages()
     {
