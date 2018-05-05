@@ -38,12 +38,14 @@ class CPageCreateEdit extends MPageCreateEdit
             {
                 //формируем две вот такие части запроса:
                 $keys .= $key.', ';
+                $val = str_replace("'", "&rsquo;", $val);
                 $values .= "'{$val}', ";
             }
             else//Иначе:
             {
                 //формируем конечные части запроса
                 $keys .= $key.') ';
+                $val = str_replace("'", "&rsquo;", $val);
                 $values .= "'{$val}')";
             }
 
@@ -51,6 +53,7 @@ class CPageCreateEdit extends MPageCreateEdit
 
         $sql = $keys.$values;
 
+//        echo $sql;
         // отправляем информацию в базу
 
         $this->insertPage($sql);
@@ -91,18 +94,20 @@ class CPageCreateEdit extends MPageCreateEdit
             if($counter != $count)//если это - не конечный эл. массива, то
             {
                 //формируем две вот такую часть запроса:
+                $val = str_replace("'", "&rsquo;", $val);
                 $sql .= $key."='{$val}', ";
             }
             else//Иначе:
             {
                 //формируем конечную часть запроса
+                $val = str_replace("'", "&rsquo;", $val);
                 $sql .= $key."='{$val}' ";
             }
         }
         // и соединяем их
         $sql .=" WHERE id = '{$id}'";
 
-        $sql = str_replace("''", "\'", $sql);
+//        echo $sql;
 
         // отправляем информацию в базу
         $this->finalUpdatePage($sql);
