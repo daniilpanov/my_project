@@ -91,4 +91,5 @@ class CMenuCreateEdit extends MMenuCreateEdit
         $sql .="WHERE id = '{$id}'";
         $this->finalUpdateMenu($sql);
     }
+
 }

@@ -32,11 +32,11 @@ $vcreateeditmenu = new \app\classes\CMenuCreateEdit(); //для работы с 
 $vcreateeditnews = new \app\classes\CNewsCreateEdit(); //для работы с новостями
 
 // если от пользователя получены данные из формы
-if ($_POST) {
+if ($_POST)
+{
     //ALL_CREATE
     if ($_GET['page'] == 'createPage')
     {
-
         $vcreateeditpage->createPage($_POST);
     }
     elseif ($_GET['page'] == 'createMenu')

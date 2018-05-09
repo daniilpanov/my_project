@@ -18,8 +18,8 @@ require_once "views/VNewsContent.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="">
-    <meta name="Description" content="" />
-    <meta name="Keywords" content="" />
+    <meta name="Description" content="<?=$content['description'].$NContent['description']?>" />
+    <meta name="Keywords" content="<?=$content['keywords'].$NContent['keywords']?>" />
     <meta name="Robots" content="all" />
     <meta name="Rating" content="General" />
     <meta name="Author" content="" />
@@ -47,11 +47,10 @@ require_once "views/VNewsContent.php";
     <!--End Favicon-->
 
     <!--Java scripts-->
-    <!--<script type="text/javascript" src="js/jquery/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.navgoco.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.lightbox-0.5.js"></script>-->
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.lightbox-0.5.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <!--End Java scripts-->
 

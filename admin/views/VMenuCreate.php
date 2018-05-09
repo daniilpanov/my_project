@@ -6,6 +6,31 @@
             <div class="col-md-4"><input type="text" name="name"></div>
         </div>
         <div class="row">
+            <div class="col-md-4">позиция:</div>
+            <div class="col-md-4">
+                <select name="position">
+                    <?php $menu = $vcreateeditmenu->menu_return('-в конец списка-');
+                    $max = count($menu);
+                    $counter = 0;
+
+                    foreach ($menu as $menu_name => $position)
+                    {
+                        $counter++;
+                        if($counter != $max)
+                        {?>
+                            <option value = "<?php echo $position; ?>"><?=$menu_name ?></option>
+                            <?php
+                        }
+                        else
+                        {?>
+                            <option value = "<?php echo $position; ?>" selected><?=$menu_name ?></option>
+                        <?php   }
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-4">
                 иконка: (<a href="http://fontawesome.veliovgroup.com/design.html" title="список названий" target="_blank">список иконок</a>)
             </div>

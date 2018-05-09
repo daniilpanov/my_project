@@ -37,8 +37,12 @@ class CPageCreateEdit extends MPageCreateEdit
     }
 
     //Создание страничек
-    function createPage($post)
+    public function createPage($post)
     {
+        var_export($post);// для установки позиций остальных страничек
+        $this->pos_inc($post['position']);
+
+
         //Создаём запрос:
         // сюда будем прикреплять ключи,
         $keys = "INSERT INTO pages (";
