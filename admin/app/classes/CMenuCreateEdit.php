@@ -4,6 +4,25 @@ namespace app\classes;
 
 class CMenuCreateEdit extends MMenuCreateEdit
 {
+    // возвращает список меню и добавляет надпись "-в конец списка-"
+    public function menu_return($last_pos = null)
+    {
+        // получаем список всех меню
+        $res = $this->menu_pos();
+        while ($row = mysqli_fetch_assoc($res))
+        {
+            // заносим в новый массив
+            $menu[$row['menu_name']] = $row['position'];
+        }
+        // добавляем в конец массива пункт "-в конец списка-"
+        if($last_pos)
+        {
+            $k = end($menu);
+            $menu[$last_pos] = $k+1;
+        }
+        return $menu;
+    }
+
     //Получение с БД всех меню
     public function getAllMenus()
     {
@@ -19,6 +38,8 @@ class CMenuCreateEdit extends MMenuCreateEdit
     //Создание меню
     public function createMenu($post)
     {
+        $this->pos_inc($post['position']);
+
         //Создаём запрос:
         // сюда будем прикреплять ключи,
         $keys = "INSERT INTO menu (";
@@ -64,6 +85,8 @@ class CMenuCreateEdit extends MMenuCreateEdit
     //Обновление меню
     public function updateMenu($id,$place)
     {
+        $this->pos_inc($place['position']);
+
         //Начало запроса:
         $sql = "UPDATE menu SET ";
 

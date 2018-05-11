@@ -30,4 +30,19 @@ class MMenuCreateEdit
     {
         Db::getInstance()->sql($sql);
     }
+
+    // возвращает список всех страниц со всей информацией по каждой
+    public function menu_pos()
+    {
+        $sql = "SELECT * FROM menu ORDER BY `position` ASC";
+        $res = \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
+        return $res; // возвращаем результат
+    }
+
+    // позиция в меню
+    public function pos_inc($pos)
+    {
+        $sql = "UPDATE menu SET position = position+1 WHERE position >= {$pos}";
+        \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
+    }
 }

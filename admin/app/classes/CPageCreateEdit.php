@@ -57,7 +57,9 @@ class CPageCreateEdit extends MPageCreateEdit
     //Создание страничек
     public function createPage($post)
     {
-        var_export($post);// для установки позиций остальных страничек
+        //var_export($post);// для отладки
+
+        // для установки позиций остальных страничек
         $this->pos_inc($post['position']);
 
 
@@ -122,6 +124,8 @@ class CPageCreateEdit extends MPageCreateEdit
     //Обновление страничек
     public function updatePage($id,$place)
     {
+        $this->pos_inc($place['position']);
+
         //Начало запроса:
         $sql = "UPDATE pages SET ";
         //Считаем эл. массива place(колонки в таблице, которые надо изменить)
