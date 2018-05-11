@@ -33,7 +33,7 @@ $pages = new \app\classes\CMenu();
                             //выводим эти странички
                             foreach ($items as $val)
                             {
-                                echo "<li><a class='pages' href='?page={$val['id']}'>
+                                echo "<li>&emsp;<a class='pages' href='?page={$val['id']}'>
                                 <i class='{$val['menu_icon']} {$val['icon_size']}'></i> 
                                 {$val['menu_name']}</a></li>";
                             }
