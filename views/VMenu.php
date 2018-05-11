@@ -2,7 +2,6 @@
 <?php
 //Создаём объекты классов, методы которых мы позже будем использовать
 $pages = new \app\classes\CMenu();
-
 ?>
 <i>
     <div class="col-md-4" id="menu">
@@ -28,10 +27,16 @@ $pages = new \app\classes\CMenu();
                         //и если в нём menu_number странички совпадает с id меню, то
                         if ($item['menu_number'] == $value['id'])
                         {
+                            // получаем массив всего меню с БД $items[id] = array;
+
+                            $items = $pages->get_menu_from_DB($item["id"]);
                             //выводим эти странички
-                            echo "<li><a class='pages' href='?page={$item['id']}'>
-                            <i class='{$item['menu_icon']} {$item['icon_size']}'></i> 
-                            {$item['menu_name']}</a></li>";
+                            foreach ($items as $val)
+                            {
+                                echo "<li><a class='pages' href='?page={$val['id']}'>
+                                <i class='{$val['menu_icon']} {$val['icon_size']}'></i> 
+                                {$val['menu_name']}</a></li>";
+                            }
                         }
                     }
                     echo "</ul>";

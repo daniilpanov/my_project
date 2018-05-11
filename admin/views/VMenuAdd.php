@@ -18,18 +18,19 @@ foreach ($menus as $key => $value)
 //Чтобы осталась информация только об одном меню:
 unset($menus);
 ?>
+<div class="name___">Вы редактируете меню &#10077;<?=$oneMenu[1]?>&#10078;</div>
 <!--Далее - форма для редактирования данных, которые находятся в массиве $oneMenu-->
 <div class="create">
     <form method="post">
         <div class="row">
             <div class="col-md-4">название меню:</div>
-            <div class="col-md-4"><input type="text" name="name" value="<?=$oneMenu[2]?>"></div>
+            <div class="col-md-4"><input type="text" name="name" value="<?=$oneMenu[1]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 иконка: (<a href="http://fontawesome.veliovgroup.com/design.html" title="список названий" target="_blank">список иконок</a>)
             </div>
-            <div class="col-md-4"><input type="text" name="icon" value="<?=$oneMenu[1]?>"></div>
+            <div class="col-md-4"><input type="text" name="icon" value="<?=$oneMenu[5]?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">размер иконки:</div>

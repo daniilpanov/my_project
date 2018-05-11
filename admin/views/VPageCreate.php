@@ -2,6 +2,7 @@
 
 //Инф. обо всех меню(для выбора, в каком меню будет состоять страничка)
 $menus = $vcreateeditpage->getAllMenus();
+
 ?>
 <!--Форма для создания странички-->
 <div class="create">
@@ -44,6 +45,22 @@ $menus = $vcreateeditpage->getAllMenus();
                         {?>
                             <option value = "<?php echo $position; ?>" selected><?=$menu_name ?></option>
                         <?php   }
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">родительский пункт меню:</div>
+            <div class="col-md-4">
+                <select name = "parent_id"  class="select">
+                    <?php $parent_category = $vcreateeditpage->category_return();
+
+                    foreach ($parent_category as $menu_name => $id)
+                    {
+                        ?>
+                        <option value = "<?php echo $id; ?>"><?php echo $menu_name; ?></option>
+                        <?php
                     }
                     ?>
                 </select>

@@ -36,6 +36,24 @@ class CPageCreateEdit extends MPageCreateEdit
         return $pagesList;
     }
 
+    // возвращает список категорий
+    function category_return()
+    {
+        // получаем список всех категорий
+        $res = $this->menu_pos();
+
+        // добавляем в начало массива пункт "нет"
+        $menu['-нет-'] = 0;
+
+        while ($row = mysqli_fetch_assoc($res))
+        {
+            // заносим в новый массив
+            $menu[$row['menu_name']] = $row['id'];
+        }
+
+        return $menu;
+    }
+
     //Создание страничек
     public function createPage($post)
     {

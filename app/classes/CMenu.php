@@ -18,6 +18,8 @@ class CMenu extends MMenu
         //Возвращаем конечный результат
         return $endResponse;
     }
+
+
     public function preparePages()
     {
         //Метод для запроса к базе данных
@@ -32,4 +34,16 @@ class CMenu extends MMenu
         //Возвращаем конечный результат
         return $endResponse;
     }
+
+    // возвращаем меню с БД
+    public function get_menu_from_DB($menu_number){
+
+        $res = $this->return_menu($menu_number); // запрос к БД
+        while ($row = mysqli_fetch_array($res))
+        {
+            $mname[$row['id']] = $row;
+        }
+        return $mname;
+    }
+
 }

@@ -94,6 +94,19 @@
     font-family: "Comic Sans MS",Aharoni,Arial,serif;
     user-select: all;
 }
+.name___
+{
+    text-align: center;
+    text-decoration: underline;
+    border: outset 5px #000034;
+    margin: 10px 10px 0 10px;
+    padding: 25px;
+    font-family: "Comic Sans MS",Aharoni,Arial,serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-image: radial-gradient(ellipse farthest-side at top left, #ff8b00, #00004a);
+    text-shadow: 1px 1px 2px black;
+}
 /*END__Создание меню, страниц и др.*/
 
 /*Поле для логина*/
