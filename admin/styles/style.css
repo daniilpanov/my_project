@@ -104,7 +104,10 @@
     font-family: "Comic Sans MS",Aharoni,Arial,serif;
     font-size: 20px;
     font-weight: bold;
-    background-image: radial-gradient(ellipse farthest-side at top left, #ff8b00 30%, #00004a 85%);
+    background-image:         radial-gradient(ellipse farthest-side at top left, #ff8b00 30%, #00004a 85%);
+    background-image:     -ms-radial-gradient(ellipse farthest-side at top left, #ff8b00 30%, #00004a 85%);
+    background-image:    -moz-radial-gradient(ellipse farthest-side at top left, #ff8b00 30%, #00004a 85%);
+    background-image: -webkit-radial-gradient(ellipse farthest-side at top left, #ff8b00 30%, #00004a 85%);
     text-shadow: 1px 1px 2px black;
 }
 /*END__Создание меню, страниц и др.*/

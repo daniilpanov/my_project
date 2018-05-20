@@ -4,6 +4,10 @@
     <style rel="stylesheet" type="text/css" media="all">
         #error
         {
+            background-image: -webkit-linear-gradient(to bottom right, #ffee00 40%,#000034 60%);
+            background-image:    -moz-linear-gradient(to bottom right, #ffee00 40%,#000034 60%);
+            background-image:     -ms-linear-gradient(to bottom right, #ffee00 40%,#000034 60%);
+            background-image:         linear-gradient(to bottom right, #ffee00 40%,#000034 60%);
             float: left;
             border: 5px solid black;
             border-bottom-color: gray;

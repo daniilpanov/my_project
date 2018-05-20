@@ -22,8 +22,11 @@
     <title>Установка...</title>
 
     <!--CSS-->
-    <link href="style/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="style/style.css" rel="stylesheet" />
+    <link href="styles/bootstrap-3.3.2/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="styles/bootstrap-3.3.2/dist/js/bootstrap.js" rel="script">
+    <style rel="stylesheet" type="text/css">
+
+    </style>
     <!--End CSS-->
 
     <!--Fonts-->
@@ -284,7 +287,7 @@ else
 // удаляем установщик для предотвращения повторного добавления первоначальных данных
 echo 'Удаляем установщик...OK<br />Готово!<br />';
 echo "<a href=\"$domain_name\">Перейти на сайт</a>&nbsp;|&nbsp; <a href=\"{$domain_name}\admin\">Система администрирования</a>";
-// !!!РАЗКОММЕНТИРУЙТЕ НА РАБОЧЕМ ПРОЭКТЕ
+// !!!РАЗКОММЕНТИРУЙТЕ НА РАБОЧЕМ ПРОЕКТЕ
 // unlink('install.php');
 // unlink('Установка.txt');
 ?>
