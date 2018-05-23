@@ -4,21 +4,14 @@ namespace app\classes;
 
 class MMenu
 {
-    public function getMenu()
+    public function return_menus()
     {
-        $sql = "SELECT id, name, icon, icon_size FROM menu";
-        $result = Db::getInstance()->sql($sql);
+        $sql = "SELECT id, menu_name FROM menu ORDER BY position"; // готовим запрос
 
-        //Возвращаем результат
-        return $result;
+        $res = \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
+        return $res; // возвращаем результат
     }
-    public function getPages()
-    {
-        $sql = "SELECT * FROM pages ORDER BY position ASC";
-        $result = Db::getInstance()->sql($sql);
-        return $result;
-    }
-    public function return_menu($menu_number)
+    public function return_pages($menu_number)
     {
         $sql="SELECT id, parent_id, menu_icon, icon_size, menu_name FROM pages WHERE menu_number ='{$menu_number}' ORDER BY position";
         $res = \app\classes\Db::getInstance()->sql($sql);// выполняем запрос

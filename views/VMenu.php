@@ -2,46 +2,42 @@
 <?php
 //Создаём объекты классов, методы которых мы позже будем использовать
 $pages = new \app\classes\CMenu();
+
+$menus = $pages->get_menus_from_DB();//Список меню
 ?>
 <i>
     <div class="col-md-4" id="menu">
         <?php
-        $menus = $pages->prepareMenu();//Список меню
-        $allPages = $pages->preparePages();//Список страниц
 
-        if (!is_null($menus))
-        {
+    if (!is_null($menus))
+    {
+        // выведедем каждое название меню по отдельности (одна итерация - одно меню)
+        foreach ($menus_items as $menu) {
 
-            foreach ($menus as $value)
-            {
-                if (!is_null($value))//Если $value не пустая, то
-                {
-                    //выводим название меню
-                    echo "<u class='menu'><i class='{$value['icon']} {$value['icon_size']}'></i>{$value['name']}</u>";
-
-                    //страницы меню:
-                    echo "<ul>";
-                    //в цикле foreach перебираем массив со страницами
-                    foreach ($allPages as $item)
-                    {
-                        //и если в нём menu_number странички совпадает с id меню, то
-                        if ($item['menu_number'] == $value['id'])
-                        {
-                            // получаем массив всего меню с БД $items[id] = array;
-
-                            $items = $pages->get_menu_from_DB($item["id"]);
-                            //выводим эти странички
-                            foreach ($items as $val)
-                            {
-                                echo "<li>&emsp;<a class='pages' href='?page={$val['id']}'>
-                                <i class='{$val['menu_icon']} {$val['icon_size']}'></i> 
-                                {$val['menu_name']}</a></li>";
-                            }
-                        }
-                    }
-                    echo "</ul>";
-                }
+            if($menu["header_visible"]== 1){
+                echo "<h4>".$menu["menu_name"]."</h4>"; // выведем название меню
             }
+
+            // ПОДГОТАВЛИВАЕМ МАССИВЫ СТРАНИЦ ДЛЯ ФОРМИРОВАНИЯ МЕНЮ
+
+            // подготавливаем массив всех страниц для определённого меню $all_pages[id] = array(страница со всеми полями с этим id);
+            $all_pages = $pages->get_pages_from_DB($menu['id']);//Список страниц
+
+            // подготавливаем массив дочерных страниц $children[$all_pages["id"]] = $all_pages["parent_id"]
+            // например, $children[3] = 1;
+            $children = $pages->prepare_children($all_pages);
+
+            // выводим каждую страницу меню
+            foreach ($all_pages as $item_page) {
+                // если элемент не имеет дочерных элементов выводим его
+                if(!$item_page["parent_id"]) {
+                    echo $pages->printItem($item_page, $all_pages, $children);
+                }
+
+        }
+
+
+    }
             require_once "views/VNews.php";
             ?>
 
