@@ -127,7 +127,7 @@ if ($_GET)
     }
     elseif ($_GET['editPage'])
     {
-        require_once "views/VPageAdd.php";
+        require_once "views/VPageEdit.php";
     }
 }
 

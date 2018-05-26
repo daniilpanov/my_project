@@ -6,7 +6,7 @@ class MMenu
 {
     public function return_menus()
     {
-        $sql = "SELECT id, menu_name FROM menu ORDER BY position"; // готовим запрос
+        $sql = "SELECT id, name FROM menu ORDER BY position"; // готовим запрос
 
         $res = \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
         return $res; // возвращаем результат

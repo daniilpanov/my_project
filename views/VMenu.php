@@ -12,11 +12,9 @@ $menus = $pages->get_menus_from_DB();//Список меню
     if (!is_null($menus))
     {
         // выведедем каждое название меню по отдельности (одна итерация - одно меню)
-        foreach ($menus_items as $menu) {
+        foreach ($menus as $menu) {
 
-            if($menu["header_visible"]== 1){
-                echo "<h4>".$menu["menu_name"]."</h4>"; // выведем название меню
-            }
+            echo "<h4>".$menu["name"]."</h4>"; // выведем название меню
 
             // ПОДГОТАВЛИВАЕМ МАССИВЫ СТРАНИЦ ДЛЯ ФОРМИРОВАНИЯ МЕНЮ
 

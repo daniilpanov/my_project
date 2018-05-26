@@ -10,23 +10,31 @@ foreach ($pages as $key => $value)
     // если id в $value совпадает с id редактируемого меню, то
     if ($value['id'] == $_GET['editPage'])
     {
-        // перебираем $value (тоже массив) и записываем во второй массив
-        foreach ($value as $item)
-        {
-            $onePage[] = $item;
-        }
+        $onePage = $value;
     }
 }
-//Чтобы осталась информация только об одной страничке:
-unset($pages);
 ?>
-<div class="name___">Вы редактируете страницу &#10077;<?=$onePage[9]?>&#10078;</div>
+<div class="name___">Вы редактируете страницу &#10077;<?=$onePage['menu_name']?>&#10078;</div>
 <!--Далее - форма для редактирования данных, которые находятся в массиве $onePage-->
 <div class="create">
     <form method="post">
         <div class="row">
             <div class="col-md-4">название страницы в меню:</div>
-            <div class="col-md-4"><input type="text" name="menu_name" value="<?=$onePage[9]?>"></div>
+            <div class="col-md-4"><input type="text" name="menu_name" value="<?=$onePage['menu_name']?>"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">позиция страницы в меню:</div>
+            <div class="col-md-4">
+                <select name="position">
+                    <?php
+                    foreach ($pages as $v)
+                    {
+                        echo "<option value='{$v['position']}'>";
+                    }
+                    ?>
+                </select>
+
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">в каком меню:</div>
@@ -35,7 +43,7 @@ unset($pages);
                     <?php
                     foreach ($menus as $value)
                     {
-                        if ($value['id'] == $onePage[7])
+                        if ($value['id'] == $onePage['menu_number'])
                         {
                             echo "<option value='{$value['id']}' selected>{$value['name']}</option>";
                         }
@@ -50,22 +58,22 @@ unset($pages);
         </div>
         <div class="row">
             <div class="col-md-4">заголовок страницы (title):</div>
-            <div class="col-md-4"><input type="text" name="title" value="<?=$onePage[5]?>"></div>
+            <div class="col-md-4"><input type="text" name="title" value="<?=$onePage['title']?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">ключевые слова (keywords):</div>
-            <div class="col-md-4"><input type="text" name="keywords" value="<?=$onePage[4]?>"></div>
+            <div class="col-md-4"><input type="text" name="keywords" value="<?=$onePage['keywords']?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">описание (description):</div>
-            <div class="col-md-4"><textarea name="description"><?=$onePage[1]?></textarea></div>
+            <div class="col-md-4"><textarea name="description"><?=$onePage['description']?></textarea></div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 иконка: (<a href="http://fontawesome.veliovgroup.com/design.html" title="список названий" target="_blank">список иконок</a>)
-                <i class="<?=$onePage[6]." ".$onePage[7]?>"></i>
+                <i class="<?=$onePage['menu_icon']." ".$onePage['icon_size']?>"></i>
             </div>
-            <div class="col-md-4"><input type="text" name="menu_icon" value="<?=$onePage[6]?>"></div>
+            <div class="col-md-4"><input type="text" name="menu_icon" value="<?=$onePage['menu_icon']?>"></div>
         </div>
         <div class="row">
             <div class="col-md-4">размер иконки:</div>
@@ -77,12 +85,12 @@ unset($pages);
                     <option value="icon-3x">icon-3x</option>
                     <option value="icon-4x">icon-4x</option>
                 </select>
-                <?='(Размер: '.$onePage[7].')'?>
+                <?='(Размер: '.$onePage['icon_size'].')'?>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">содержание страницы:</div>
-            <div class="col-md-4"><textarea name="content"><?=$onePage[9]?></textarea></div>
+            <div class="col-md-4"><textarea name="content"><?=$onePage['content']?></textarea></div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>

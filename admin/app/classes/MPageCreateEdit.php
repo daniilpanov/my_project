@@ -52,6 +52,8 @@ class MPageCreateEdit
     public function pos_inc($pos)
     {
         $sql = "UPDATE pages SET position = position+1 WHERE position >= {$pos}";
+        echo $sql;
         \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
+
     }
 }
