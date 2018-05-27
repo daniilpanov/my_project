@@ -115,7 +115,7 @@ if ($_GET)
     //ALL_EDIT
     elseif ($_GET['editMenu'])
     {
-        require_once "views/VMenuAdd.php";
+        require_once "views/VMenuEdit.php";
     }
     elseif ($_GET['editAuth'])
     {
@@ -123,7 +123,7 @@ if ($_GET)
     }
     elseif ($_GET['editUser'])
     {
-        require_once "views/VAuthAdd.php";
+        require_once "views/VAuthEdit.php";
     }
     elseif ($_GET['editPage'])
     {

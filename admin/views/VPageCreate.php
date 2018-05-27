@@ -76,7 +76,7 @@ $menus = $vcreateeditpage->getAllMenus();
         </div>
         <div class="row">
             <div class="col-md-4">описание (description):</div>
-            <div class="col-md-4"><textarea name="description"></textarea></div>
+            <div class="col-md-4"><textarea name="description" spellcheck="false"></textarea></div>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -98,7 +98,7 @@ $menus = $vcreateeditpage->getAllMenus();
         </div>
         <div class="row">
             <div class="col-md-4">содержание страницы:</div>
-            <div class="col-md-4"><textarea name="content"></textarea></div>
+            <div class="col-md-4"><textarea name="content" spellcheck="false"></textarea></div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>

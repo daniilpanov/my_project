@@ -7,7 +7,7 @@ class MPageCreateEdit
     // список страниц
     public function getPagesList()
     {
-        $sql = "SELECT * FROM pages";
+        $sql = "SELECT * FROM pages ORDER BY position";
         $result = Db::getInstance()->sql($sql);
 
         return $result;
@@ -52,7 +52,6 @@ class MPageCreateEdit
     public function pos_inc($pos)
     {
         $sql = "UPDATE pages SET position = position+1 WHERE position >= {$pos}";
-        echo $sql;
         \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
 
     }

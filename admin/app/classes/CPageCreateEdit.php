@@ -139,20 +139,22 @@ class CPageCreateEdit extends MPageCreateEdit
             if($counter != $count)//если это - не конечный эл. массива, то
             {
                 //формируем две вот такую часть запроса:
-                $val = str_replace("'", "&rsquo;", $val);
+                $val = str_replace("'", "&prime;", $val);
+                $val = str_replace('"', '&Prime;', $val);
                 $sql .= $key."='{$val}', ";
             }
             else//Иначе:
             {
                 //формируем конечную часть запроса
-                $val = str_replace("'", "&rsquo;", $val);
+                $val = str_replace("'", "&prime;", $val);
+                $val = str_replace('"', '&Prime;', $val);
                 $sql .= $key."='{$val}' ";
             }
         }
         // и соединяем их
         $sql .=" WHERE id = '{$id}'";
 
-        echo $sql;
+//        echo $sql;
 
         // отправляем информацию в базу
         $this->finalUpdatePage($sql);

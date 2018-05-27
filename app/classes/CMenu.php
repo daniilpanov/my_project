@@ -44,13 +44,7 @@ class CMenu extends MMenu
 
         echo '<li>';
         //Проверяем активна ли ссылка пункта подменю
-        if($page['active_link_in_sidebar']){
-            echo "<a href=\"my_project/?id={$page['id']}\"><i class=\"{$page['menu_icon']} {$page['icon_size']}\"> </i>{$page['menu_name']}</a>";
-        }
-        else{
-            echo "<a href=\"\"><i class=\"{$page['menu_icon']} {$page['icon_size']}\"> </i>{$page['menu_name']}</a>";
-        }
-
+        echo "<a href=\"?page={$page['id']}\" class='pages'><i class=\"{$page['menu_icon']} {$page['icon_size']}\"> </i>{$page['menu_name']}</a>";
 
         // Выводились ли дочерние элементы?
         $ul = false;
