@@ -18,7 +18,7 @@ foreach ($menus as $key => $value)
     <form method="post">
         <div class="row">
             <div class="col-md-4">название меню:</div>
-            <div class="col-md-4"><input type="text" name="name" value="<?=$oneMenu['name']?>"></div>
+            <div class="col-md-4"><input type="text" name="name" value="<?=$oneMenu['name']?>" required></div>
         </div>
         <div class="row">
             <div class="col-md-4">позиция страницы в меню:</div>

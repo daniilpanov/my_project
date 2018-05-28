@@ -1,7 +1,7 @@
 <!--Просто форма-->
-<a href="../index.php">Вернуться на сайт</a>
 <div id="page">
     <center>
+        <a href="../index.php">Вернуться на сайт</a>
         <form method="post" class="login">
             <h2>Для того, чтобы войти как админисратор,<br>Вам надо заполнить следующие поля:</h2>
             <table id="login">

@@ -5,7 +5,12 @@ if ($_GET['page'])
     $content = $page_content->prepareContent($_GET['page']);
     if (empty($content))
     {
-        header('Location: 404.php');
+        $not_found = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        header('Location: 404.php?not_found='.$not_found);
+    }
+    elseif (!empty($content))
+    {
+        unset($not_found);
     }
     //Если есть GET page, то, чтобы вывелся title СТРАНИЦЫ, удаляем весь массив NContent
     unset($NContent);

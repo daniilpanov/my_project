@@ -105,12 +105,43 @@
 
         #result
         {
-            font-size: 50px;
+            font-size: 3em;
+        }
+
+        pre
+        {
+            background-color: #b9b9b9;
+            color: darkred;
+            padding: 1em;
+            font-size: 1.6em;
+            border: 2px solid red;
+
+            box-shadow: 0 0 1px 5px red;
+            -o-box-shadow: 0 0 1px 5px red;
+            -moz-box-shadow: 0 0 1px 5px red;
+            -webkit-box-shadow: 4px 4px 6px 5px #b90000;
+
+            text-shadow: 1px 1px 3px darkred;
+        }
+        pre span
+        {
+            text-shadow: none;
+            font-size: 3.5em;
+            color: rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
 <div id="page">
+        <?php
+        if(!empty($_GET['not_found']))
+        {
+            echo "<pre>
+            Страница 
+            <span>&ldquo;</span><u><b><i>".$_GET['not_found']."</i></b></u><span>&rdquo;</span>
+             не существует</pre><hr>";
+        }
+        ?>
     <?php
     if (!$_GET['call'] == 'true')
     {

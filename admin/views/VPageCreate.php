@@ -9,7 +9,7 @@ $menus = $vcreateeditpage->getAllMenus();
     <form method="post">
         <div class="row">
             <div class="col-md-4">название страницы в меню:</div>
-            <div class="col-md-4"><input type="text" name="menu_name"></div>
+            <div class="col-md-4"><input type="text" name="menu_name" required></div>
         </div>
         <div class="row">
             <div class="col-md-4">в каком меню:</div>
