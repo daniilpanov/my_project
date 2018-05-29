@@ -56,9 +56,9 @@ if ($_POST)
     {
         $vcreateeditpage->updatePage($_GET['editPage'], $_POST);
     }
-    elseif ($_GET['editUser'])
+    elseif ($_GET['editAuth'])
     {
-        $vcreateeditauth->updateAuth($_GET['editUser'], $_POST);
+        $vcreateeditauth->updateAuth($_GET['editAuth'], $_POST);
     }
 }
 // Маршрутизатор
@@ -106,7 +106,7 @@ if ($_GET)
     }
     elseif ($_GET['deleteAuth'])
     {
-        require_once "views/VAuthDelete.php";
+        require_once "views/VAuthCheck.php";
     }
     elseif ($_GET['deleteMenu'])
     {
@@ -121,13 +121,8 @@ if ($_GET)
     {
         require_once "views/VAuthCheck.php";
     }
-    elseif ($_GET['editUser'])
-    {
-        require_once "views/VAuthEdit.php";
-    }
     elseif ($_GET['editPage'])
     {
         require_once "views/VPageEdit.php";
     }
 }
-

@@ -138,7 +138,7 @@
         {
             echo "<pre>
             Страница 
-            <span>&ldquo;</span><u><b><i>".$_GET['not_found']."</i></b></u><span>&rdquo;</span>
+            <span>&#10077;</span><u><b><i>".$_GET['not_found']."</i></b></u><span>&#10078;</span>
              не существует</pre><hr>";
         }
         ?>
@@ -175,7 +175,7 @@
                 <fieldset>
                     <legend><h3><i>Вы связываетесь с администратором этого сайта через <u>e-mail</u></i></h3></legend>
                     <input type="hidden" name="to" value="daniil_panov2005@mail.ru">
-                    <input type="text" name="test" style="margin-left: -10000000000px">
+                    <input type="text" placeholder="Ваш телефон:" name="phone" style="margin-left: -10000000000px">
                     <table id="make_call">
                         <tr>
                             <td><label for="email">Ваш e-mail: </label></td>
@@ -199,7 +199,7 @@
 
     if ($_POST['send'])
     {
-        if (empty($_POST['test']))
+        if (empty($_POST['phone']))
         {
             if (!mail($_POST['to'], $_POST['from'], $_POST['text']))
             {
@@ -207,8 +207,11 @@
             }
             echo "<u id='result'>Ваше сообщение было отправлено администратору сайта.";
         }
-        elseif (!empty($_POST['test']))
+        elseif (!empty($_POST['phone']))
         {
+            ?>
+            <script type="text/javascript">alert('Вы - робот!!!')</script>
+            <?php
             header( 'Location: index.php');
         }
     }

@@ -4,25 +4,16 @@ namespace app\classes;
 
 class MAuthCreateEdit
 {
-    //Получение с БД всех пользователей
-    public function getAuth()
+    //Получение с БД всех пользователей ИЛИ одного пользователя
+    public function get_auth($id = null)
     {
         $sql = "SELECT * FROM users";
+        if(!is_null($id))
+        {
+            $sql .= " WHERE id={$id}";
+        }
         $result = \app\classes\Db::getInstance()->sql($sql);
         return $result;
-    }
-
-    //Метод, проверяющий, правильно ли введён пароль и логин, или нет
-    public function getUser($id)
-    {
-        //SQL-запрос
-        $sql = "SELECT `password` FROM users WHERE `id` = {$id}";
-
-        //если запрос - истина, то возвращаем результат
-        if($response = Db::getInstance()->sql($sql))
-        {
-            return $response;
-        }
     }
 
     //Создание пользователей

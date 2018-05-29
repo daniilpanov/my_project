@@ -3,8 +3,6 @@
 $auth = $vcreateeditauth->getAllAuth();
 ?>
 <!--СДЕСЬ НЕЧЕГО КОММЕНТИРОВАТЬ(итак всё понятно)-->
-
-
 <div class="create"><a href="?page=createAuth"><span class="icon-plus-sign icon-large mysubmenu"></span></a></div>
 <div id="list_table">
     <div class='row list_table_header'>

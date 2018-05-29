@@ -308,6 +308,36 @@ select
 }
 /*END__Поле для логина*/
 
+/*Проверка пароля редактируемого пользователя*/
+#check
+{
+    background-color: gray;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: darkred;
+    text-shadow: 2px 2px 5px #500000;
+}
+#check span
+{
+    transition-duration: 1s;
+    -o-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    color: lightgray;
+    font-weight: lighter;
+}
+#check span:hover
+{
+    color: black;
+}
+#check input
+{
+    border: #ffc000 3px dashed;
+    margin: 1em;
+}
+/*END__Проверка пароля редактируемого пользователя*/
+
 /*Список страниц, меню, пользователей и др.*/
 #list_table
 {

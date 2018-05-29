@@ -7,56 +7,28 @@ class CAuthCreateEdit extends MAuthCreateEdit
     //Метод для получения с БД всех пользователей
     public function getAllAuth()
     {
-        $response = $this->getAuth();
-
+        $response = $this->get_auth();
         foreach ($response as $value)
         {
-            $menu[] = $value;
+            $auth[] = $value;
         }
-        return $menu;
+        return $auth;
     }
 
-    //Метод для получения разрешенияи на редактирование пользователя
-    public function CheckAuth($id, $password)
+    //Метод для получения пароля и логина пользователя
+    public function getAuth($id)
     {
-        //шифрование пароля
-        //Объявляем переменные для улучшенной шифровки
-        $salt1 = "fish";
-        $salt2 = "meat";
-
-        //Шифруем данные переменных с паролем и логином
-
-        $preparedPassword = md5(md5($salt1).md5($password).md5($salt2));
-
-        //echo $preparedPassword;//Для отладки
-
-        //Метод prepare вызывает метод checkUser и передаёт ему переменные с зашифрованными логином и паролем
-        $this->checkUser($id,$preparedPassword);
-    }
-
-    //Метод, проверяющий, правильно ли введён пароль и логин, или нет
-    public function checkUser($id,$password)
-    {
-        if($result = $this->getUser($id))//Если запрос прошел
-        {
-            //Записываем в $userFromDb $result как массив
-            $userFromDb = mysqli_fetch_assoc($result);
-
-            //Проверка
-            if($userFromDb['password'] == $password)
-            {
-                $_SESSION['permission'] = TRUE;
-            }
-            else
-            {
-                echo "Неправильно введён пароль";
-            }
-        }
+        $response = $this->get_auth($id);
+        $auth = mysqli_fetch_assoc($response);
+        return $auth;
     }
 
     //Метод для создания пользователей
     public function createAuth($post)
     {
+        //Поскольку пароль ещё не зашифрован, шифруем его:
+        $post['password'] = md5(md5('fish').md5($post['password']).md5('meat'));
+
         //Создаём запрос:
         // сюда будем прикреплять ключи,
         $keys = "INSERT INTO users (";
@@ -94,39 +66,45 @@ class CAuthCreateEdit extends MAuthCreateEdit
     }
 
     //Метод для удаления пользователей
-    public function deleteOneAuth($menu)
+    public function deleteOneAuth($auth)
     {
-        $this->deleteAuth($menu);
+        $this->deleteAuth($auth);
     }
 
     //Метод дляь обновления пользователя
     public function updateAuth($id,$place)
     {
-        //Начало запроса:
-        $sql = "UPDATE users SET ";
-
-        //Считаем эл. массива place(колонки в таблице, которые надо изменить)
-        $count = count($place);
-        // переменная для счёта
-        $counter = 0;
-        //Перебираем place как ключ и значение
-        foreach ($place as $key => $val)
+        if (!$_POST['lastPassword'])
         {
-            $counter++;
-            if($counter != $count)//если это - не конечный эл. массива, то
-            {
-                //формируем вот такую часть запроса:
-                $sql .= $key."='{$val}', ";
-            }
-            else//Иначе:
-            {
-                //формируем конечную часть запроса
-                $sql .= $key."='{$val}' ";
-            }
+            //Поскольку пароль ещё не зашифрован, шифруем его:
+            $place['password'] = md5(md5('fish').md5($place['password']).md5('meat'));
 
+            //Начало запроса:
+            $sql = "UPDATE users SET ";
+
+            //Считаем эл. массива place(колонки в таблице, которые надо изменить)
+            $count = count($place);
+            // переменная для счёта
+            $counter = 0;
+            //Перебираем place как ключ и значение
+            foreach ($place as $key => $val)
+            {
+                $counter++;
+                if($counter != $count)//если это - не конечный эл. массива, то
+                {
+                    //формируем вот такую часть запроса:
+                    $sql .= $key."='{$val}', ";
+                }
+                else//Иначе:
+                {
+                    //формируем конечную часть запроса
+                    $sql .= $key."='{$val}' ";
+                }
+
+            }
+            //Завершающая часть запроса
+            $sql .="WHERE id = '{$id}'";
+            $this->finalUpdateAuth($sql);
         }
-        //Завершающая часть запроса
-        $sql .="WHERE id = '{$id}'";
-        $this->finalUpdateAuth($sql);
     }
 }
