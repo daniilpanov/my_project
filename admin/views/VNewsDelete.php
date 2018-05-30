@@ -5,7 +5,7 @@ echo "<div class='question'>
     <form method='post'>
         <label>Да<button name='answer' value='true' hidden></button></label>
     </form>
-    <a href='?page=menuList'>Отмена</a>
+    <a href='?page=newsList'>Отмена</a>
 </div>";
 
 //Если пользователь действительно хочет удалить это меню, то
