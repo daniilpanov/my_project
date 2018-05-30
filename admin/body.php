@@ -47,6 +47,10 @@ if ($_POST)
     {
         $vcreateeditauth->createAuth($_POST);
     }
+    elseif ($_GET['page'] == 'createNews')
+    {
+        $vcreateeditnews->createNews($_POST);
+    }
     //ALL_EDIT
     elseif ($_GET['editMenu'])
     {
@@ -59,6 +63,10 @@ if ($_POST)
     elseif ($_GET['editAuth'])
     {
         $vcreateeditauth->updateAuth($_GET['editAuth'], $_POST);
+    }
+    elseif ($_GET['editNews'])
+    {
+        $vcreateeditnews->updateNews($_GET['editNews'], $_POST);
     }
 }
 // Маршрутизатор
@@ -98,6 +106,10 @@ if ($_GET)
         {
             require_once "views/VMenuCreate.php";
         }
+        elseif ($_GET['page'] == 'createNews')
+        {
+            require_once "views/VNewsCreate.php";
+        }
     }
     //ALL_DELETE
     elseif ($_GET['deletePage'])
@@ -112,6 +124,10 @@ if ($_GET)
     {
         require_once "views/VMenuDelete.php";
     }
+    elseif ($_GET['deleteNews'])
+    {
+        require_once "views/VNewsDelete.php";
+    }
     //ALL_EDIT
     elseif ($_GET['editMenu'])
     {
@@ -124,5 +140,9 @@ if ($_GET)
     elseif ($_GET['editPage'])
     {
         require_once "views/VPageEdit.php";
+    }
+    elseif ($_GET['editNews'])
+    {
+        require_once "views/VNewsEdit.php";
     }
 }

@@ -122,18 +122,19 @@ class CPageCreateEdit extends MPageCreateEdit
     }
 
     //Обновление страничек
-    public function updatePage($id,$place)
+    public function updatePage($id,$post)
     {
-        $this->pos_inc($place['position']);
+        //Меняем позицию:
+        $this->pos_inc($post['position']);
 
         //Начало запроса:
         $sql = "UPDATE pages SET ";
         //Считаем эл. массива place(колонки в таблице, которые надо изменить)
-        $count = count($place);
+        $count = count($post);
         // переменная для счёта
         $counter = 0;
         //Перебираем place как ключ и значение
-        foreach ($place as $key => $val)
+        foreach ($post as $key => $val)
         {
             $counter++;
             if($counter != $count)//если это - не конечный эл. массива, то

@@ -1,7 +1,7 @@
 <?php
 //Вопрос:
 echo "<div class='question'>
-    <div>Вы уверены,<br>что хотите удалить это меню?</div>
+    <div>Вы уверены,<br>что хотите удалить эту новость?</div>
     <form method='post'>
         <label>Да<button name='answer' value='true' hidden></button></label>
     </form>
@@ -12,7 +12,7 @@ echo "<div class='question'>
 if ($_POST['answer'])
 {
     // возвращаемся обратно(на menuList)
-    header( 'Location: http://localhost/my_project/admin/?page=menuList' );
+    header( 'Location: http://localhost/my_project/admin/?page=newsList' );
     // и вызываем метод удаления меню
-    $vcreateeditmenu->deleteMenu($_GET['deleteMenu']);
+    $vcreateeditnews->deleteNews($_GET['deleteNews']);
 }

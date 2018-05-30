@@ -23,9 +23,9 @@ class MAuthCreateEdit
     }
 
     //Удаление пользователей
-    public function deleteAuth($menu)
+    public function deleteAuth($auth)
     {
-        $sql = "DELETE FROM users WHERE id='{$menu}'";
+        $sql = "DELETE FROM users WHERE id='{$auth}'";
         Db::getInstance()->sql($sql);
     }
 

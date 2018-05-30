@@ -391,7 +391,7 @@ select
     text-align: center;
     padding: 10px;
 }
-.question a
+.question a, .question label
 {
     text-decoration: underline;
     border-radius: 5px;
@@ -403,5 +403,9 @@ select
     color: rgba(0, 0, 44, 0.85);
     padding: 5px;
     background-color: rgba(0,0,0,0.5);
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 /*END__Общее*/

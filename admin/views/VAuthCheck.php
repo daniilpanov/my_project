@@ -33,7 +33,7 @@ if ($_GET['editAuth'])
 elseif ($_GET['deleteAuth'])
 {
     $auth = $vcreateeditauth->getAuth($_GET['deleteAuth']);
-    if (!$_POST['lastPassword'])
+    if (!$_POST['lastPassword'] && !$_POST['answer'])
     {
         ?>
         <form method="post">
@@ -47,12 +47,14 @@ elseif ($_GET['deleteAuth'])
         </form>
         <?php
     }
-    elseif ($_POST['lastPassword'])
+    elseif ($_POST['lastPassword'] || $_POST['answer'])
     {
-        $_SESSION['password_from_DB'] = md5(md5('fish').md5($_POST['lastPassword']).md5('meat'));
+        if ($_POST['lastPassword'])
+        {
+            $_SESSION['password_from_DB'] = md5(md5('fish').md5($_POST['lastPassword']).md5('meat'));
+        }
         if ($_SESSION['password_from_DB'] == $auth['password'])
         {
-            $_SESSION['password'] = $_POST['lastPassword'];
             require_once "views/VAuthDelete.php";
         }
         else
