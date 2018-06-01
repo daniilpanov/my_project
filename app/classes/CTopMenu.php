@@ -2,55 +2,40 @@
 namespace app\classes;
 
 
-class CMenu extends MMenu
+class CTopMenu extends MTopMenu
 {
-    public function get_menus_from_DB()
+    public function get_all_top_pages()
     {
-        //Метод для запроса к базе данных
-        $response = $this->return_menus();
-
-        //В цикле записываем результат, приведённый к массиву в массив $endResponse
-        while ($row = mysqli_fetch_assoc($response))
+        $response = $this->get_all_pages_for_top_menu();
+        while ($row = mysqli_fetch_array($response))
         {
-            $endResponse[] = $row;
+            $result[$row['id']] = $row;
         }
-
-        //Возвращаем конечный результат
-        return $endResponse;
-    }
-
-    // возвращаем меню с БД
-    public function get_pages_from_DB($menu_number){
-
-        $res = $this->return_pages($menu_number); // запрос к БД
-        while ($row = mysqli_fetch_array($res))
-        {
-            $mname[$row['id']] = $row;
-        }
-        return $mname;
+        return $result;
     }
 
     // подготавливаем массив дочерных страниц
     public function prepare_children($pages)
     {
-
         foreach ($pages as $page)
         {
-            if ($page["parent_id"]) $children[$page["id"]] = $page["parent_id"];
+            if (!empty($page["parent_id"]))
+            {
+                $children[$page["id"]] = $page["parent_id"];
+            }
         }
         return $children;
     }
 
     //Выводим пункт меню
-    public function printItem($page, $pages, $children)
+    public function print_item($page, $pages, $children)
     {
         echo '<li>';
-
-        echo "<a href=\"?page={$page['id']}\" class='pages'><i class=\"{$page['menu_icon']} {$page['icon_size']}\"> </i>{$page['menu_name']}</a>";
-
+        echo "<a href=\"?page={$page['id']}\" class='pages'>
+                  <i class=\"{$page['menu_icon']} {$page['icon_size']}\"></i>{$page['menu_name']}
+              </a>";
         // Выводились ли дочерние элементы?
         $ul = false;
-
         //Бесконечный цикл, в котором мы ищем все дочерние элементы
         while (true)
         {
@@ -58,22 +43,27 @@ class CMenu extends MMenu
             $key = array_search($page["id"], $children); // если нет - вылетаем с цикла while
 
             // Если дочерних элементов не найдено
-            if (!$key) {
+            if (!$key)
+            {
                 // Если выводились дочерние элементы, то закрываем список
-                if ($ul) echo "</ul>";
+                if ($ul)
+                {
+                    echo "</ul>";
+                }
                 break; // Выходим из цикла
             }
 
             // Удаляем найденный элемент (чтобы он не выводился ещё раз)
             unset($children[$key]);
 
-            if (!$ul) {
-                echo '<ul>'; // Начинаем внутренний список, если дочерних элементов ещё не было
+            if (!$ul)
+            {
+                echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class=\'caret\'></b></a><ul class="dropdown-menu">'; // Начинаем внутренний список, если дочерних элементов ещё не было
                 $ul = true; // Устанавливаем флаг
             }
 
             // Рекурсивно выводим все дочерние элементы
-            echo self::printItem($pages[$key], $pages, $children);
+            echo self::print_item($pages[$key], $pages, $children);
         }
         echo "</li>";
     }

@@ -27,7 +27,37 @@ $oneNews = $vcreateeditnews->getOneNews($_GET['editNews']);
         </div>
         <div class="row">
             <div class="col-md-4">размер картинки (image size):</div>
-            <div class="col-md-4"><input type="number" name="image_width" value="<?=$oneNews['image_width']?>"></div>
+            <div class="col-md-4"><input type="text" name="image_width" value="<?=$oneNews['image_width']?>"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">ед.измерения:</div>
+            <div class="col-md-4">
+                <select name="type_of_measure_unit">
+                    <?php
+                    $mu[] = "px";
+                    $mu[] = "%";
+                    $mu[] = "ex";
+                    $mu[] = "em";
+                    $mu[] = "cm";
+                    $mu[] = "mm";
+                    $mu[] = "in";
+                    $mu[] = "pt";
+                    $mu[] = "pc";
+                    $count_mu = count($mu);
+                    for ($i=0;$i<$count_mu;$i++)
+                    {
+                        if ($oneNews['type_of_measure_unit'] == $mu[$i])
+                        {
+                            echo "<option value={$mu[$i]} selected>{$mu[$i]}</option>";
+                        }
+                        else
+                        {
+                            echo "<option value={$mu[$i]}>{$mu[$i]}</option>";
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
         </div>
         <div style="margin: 1em">картинка:<img src="../<?=$oneNews['image']?>" width="<?=$oneNews['image_width']?>" alt="картинки нет"></div>
         <div class="row">

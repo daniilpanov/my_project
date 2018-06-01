@@ -1,6 +1,3 @@
-<?php
-$news = new app\classes\CNews();
-?>
 <table class="news">
     <tr>
         <td class="center"><strong>Главные новости:</strong></td>
@@ -13,11 +10,11 @@ $news = new app\classes\CNews();
             foreach ($allNews as $key => $value)
             {
                 echo "<div class='news_item'>";
-                    echo "<div class='center'><img src='{$value['image']}' width='{$value['image_width']}'></div>";
+                    echo "<div class='center'><img src='{$value['image']}' width='{$value['image_width']}{$value['type_of_measure_unit']}'></div>";
                     echo "<div class='center'><a href='?news={$value['id']}'>{$value['name']}</a></div>";
                     echo "<div class='desc'>";
                     echo "{$value['description']}";
-                    echo "<a href='?news={$value['id']}'>  Подробнее ...</a>";
+                    echo "<a href='?news={$value['id']}'> Подробнее ...</a>";
                     echo "</div>";
                 echo "</div>";
 
@@ -28,6 +25,6 @@ $news = new app\classes\CNews();
         </td>
     </tr>
     <tr>
-        <td><u><b>Общее количество новостей: <?=$countNews?>!</b></u></td>
+        <td><h4><u><b>Общее количество новостей: <?=$countNews?>!</b></u></h4></td>
     </tr>
 </table>

@@ -58,92 +58,105 @@ class CNewsCreateEdit extends MNewsCreateEdit
 
     public function createNews($post)
     {
-        //For a news image
-        if (!empty($_FILES['image']['tmp_name']))
+        $post['image_width'] = (int)$post['image_width'];
+        if ($post['image_width']>300)
         {
-            $post['image'] = $this->getImg();
+            echo "<h4>Введите в поле для размера картинки число, которое меньше или равно 300!</h4>";
         }
-
-        //Создаём запрос:
-        // сюда будем прикреплять ключи,
-        $keys = "INSERT INTO news (";
-        // а сюда - значения
-        $values ="VALUES(";
-
-        //Считаем post
-        $count = count($post);
-        // переменная для счёта
-        $counter = 0;
-        //Перебираем post как ключ и значение
-        foreach ($post as $key => $val)
-        {
-            $counter++;
-            if($counter != $count)//если это - не конечный эл. массива, то
-            {
-                //формируем две вот такие части запроса:
-                $keys .= $key.', ';
-                $values .= "'{$val}', ";
-            }
-            else//Иначе:
-            {
-                //формируем конечные части запроса
-                $keys .= $key.') ';
-                $values .= "'{$val}')";
+        else {
+            //For a news image
+            if (!empty($_FILES['image']['tmp_name'])) {
+                $post['image'] = $this->getImg();
             }
 
+            //Создаём запрос:
+            // сюда будем прикреплять ключи,
+            $keys = "INSERT INTO news (";
+            // а сюда - значения
+            $values = "VALUES(";
+
+            //Считаем post
+            $count = count($post);
+            // переменная для счёта
+            $counter = 0;
+            //Перебираем post как ключ и значение
+            foreach ($post as $key => $val) {
+                $counter++;
+                if ($counter != $count)//если это - не конечный эл. массива, то
+                {
+                    //формируем две вот такие части запроса:
+                    $keys .= $key . ', ';
+                    $values .= "'{$val}', ";
+                } else//Иначе:
+                {
+                    //формируем конечные части запроса
+                    $keys .= $key . ') ';
+                    $values .= "'{$val}')";
+                }
+
+            }
+            // и соединяем их
+            $sql = $keys . $values;
+
+
+            // отправляем информацию в базу
+            $this->insertNews($sql);
         }
-        // и соединяем их
-        $sql = $keys.$values;
-
-
-        // отправляем информацию в базу
-        $this->insertNews($sql);
     }
 
     public function updateNews($id, $post)
     {
-        //For a news image
-        if (isset($_FILES['image']['tmp_name']))
+        $post['image_width'] = (int)$post['image_width'];
+        if ($post['image_width']>300)
         {
-            $post['image'] = $this->getImg('edit');
-            if ($post['image'] === false)
-            {
-                unset($post['image']);
-            }
+            echo "<h4>Введите в поле для размера картинки число, которое меньше или равно 300!</h4>";
         }
+        else
+        {
+            //For a news image
+            if (isset($_FILES['image']['tmp_name']))
+            {
+                $post['image'] = $this->getImg('edit');
+                if ($post['image'] === false)
+                {
+                    unset($post['image']);
+                }
+            }
 
-        //Начало запроса:
-        $sql = "UPDATE news SET ";
-        //Считаем эл. массива place(колонки в таблице, которые надо изменить)
-        $count = count($post);
-        // переменная для счёта
-        $counter = 0;
-        //Перебираем place как ключ и значение
-        foreach ($post as $key => $val)
-        {
-            $counter++;
-            if($counter != $count)//если это - не конечный эл. массива, то
+            //Начало запроса:
+            $sql = "UPDATE news SET ";
+            //Считаем эл. массива place(колонки в таблице, которые надо изменить)
+            $count = count($post);
+            // переменная для счёта
+            $counter = 0;
+            //Перебираем place как ключ и значение
+            foreach ($post as $key => $val)
             {
-                //формируем две вот такую часть запроса:
-                $val = str_replace("'", "&prime;", $val);
-                $val = str_replace('"', '&Prime;', $val);
-                $sql .= $key."='{$val}', ";
+                $counter++;
+                if($counter != $count)//если это - не конечный эл. массива, то
+                {
+                    //формируем две вот такую часть запроса:
+                    $val = str_replace("'", "&prime;", $val);
+                    $val = str_replace('"', '&Prime;', $val);
+                    $sql .= $key."='{$val}', ";
+                }
+                else//Иначе:
+                {
+                    //формируем конечную часть запроса
+                    $val = str_replace("'", "&prime;", $val);
+                    $val = str_replace('"', '&Prime;', $val);
+                    $sql .= $key."='{$val}' ";
+                }
             }
-            else//Иначе:
-            {
-                //формируем конечную часть запроса
-                $val = str_replace("'", "&prime;", $val);
-                $val = str_replace('"', '&Prime;', $val);
-                $sql .= $key."='{$val}' ";
-            }
-        }
-        // и соединяем их
-        $sql .=" WHERE id = '{$id}'";
+            // и соединяем их
+            $sql .=" WHERE id = '{$id}'";
 
 //        echo $sql;
 
-        // отправляем информацию в базу
-        $this->finalUpdateNews($sql);
+            // отправляем информацию в базу
+            $this->finalUpdateNews($sql);
+            header('Location: ?page=newsList');
+        }
     }
 
     public function deleteNews($id)

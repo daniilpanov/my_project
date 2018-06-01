@@ -67,6 +67,24 @@ $menus = $vcreateeditpage->getAllMenus();
             </div>
         </div>
         <div class="row">
+            <div class="col-md-4">видимость странички во всех меню:</div>
+            <div class="col-md-4">
+                <select name="general_visible" class="select">
+                    <option value='0'>невидима</option>
+                    <option value='1' selected>видима</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">видимость странички в верхнем меню:</div>
+            <div class="col-md-4">
+                <select name="visible_at_top_menu" class="select">
+                    <option value='0'>невидима</option>
+                    <option value='1' selected>видима</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-4">заголовок страницы (title):</div>
             <div class="col-md-4"><input type="text" name="title"></div>
         </div>

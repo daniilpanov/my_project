@@ -26,6 +26,22 @@
             <div class="col-md-4"><input type="number" name="image_width"></div>
         </div>
         <div class="row">
+            <div class="col-md-4">ед.измерения:</div>
+            <div class="col-md-4">
+                <select name="type_of_measure_unit">
+                    <option value="px" selected>px</option>
+                    <option value="%">%</option>
+                    <option value="ex">ex</option>
+                    <option value="em">em</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                    <option value="in">in</option>
+                    <option value="pt">pt</option>
+                    <option value="pc">pc</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-4">содержание новости (content of this news):</div>
             <div class="col-md-4"><textarea name="content" spellcheck="false"></textarea></div>
         </div>

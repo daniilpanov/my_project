@@ -4,16 +4,28 @@ namespace app\classes;
 
 class MNews
 {
-    //функция для получения новостей
-    public function getAllNews()
+    public function getLimitOfNews()
     {
-        $sql = "SELECT id, name, description, image, image_width FROM news ORDER BY id DESC LIMIT 5";
+        $sql = "SELECT news_per_page FROM constants";
+        $response = Db::getInstance()->sql($sql);
+        $result = mysqli_fetch_assoc($response);
+        return $result['news_per_page'];
+    }
+
+    //метод для получения новостей
+    public function getAllNews($limit = null)
+    {
+        $sql = "SELECT id, name, description, image, image_width, type_of_measure_unit FROM news ORDER BY id DESC";
+        if (!is_null($limit))
+        {
+            $sql .= " LIMIT {$limit}";
+        }
         $result = Db::getInstance()->sql($sql);
 
         return $result;
     }
 
-    //функция для подсчёта новостей
+    //метод для подсчёта новостей
     public function countNews()
     {
         $sql = "SELECT COUNT(id) FROM news";

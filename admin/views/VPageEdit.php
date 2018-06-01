@@ -89,6 +89,65 @@ foreach ($pages as $key => $value)
             </div>
         </div>
         <div class="row">
+            <div class="col-md-4">родительский пункт меню:</div>
+            <div class="col-md-4">
+                <select name = "parent_id"  class="select">
+                    <?php $parent_category = $vcreateeditpage->category_return();
+
+                    foreach ($parent_category as $menu_name => $id)
+                    {
+                        if($onePage['parent_id'] == $id)
+                        {
+                            ?>
+                            <option value = "<?php echo $id; ?>" selected><?php echo $menu_name; ?></option>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                            <option value = "<?php echo $id; ?>"><?php echo $menu_name; ?></option>
+                            <?php
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">видимость странички во всех меню:</div>
+            <div class="col-md-4">
+                <select name="general_visible" class="select">
+                    <?php
+                    if ($onePage['general_visible'] == '1')
+                    {
+                        echo "<option value='0'>невидима</option><option value='1' selected>видима</option>";
+                    }
+                    else
+                    {
+                        echo "<option value='0' selected>невидима</option><option value='1'>видима</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">видимость странички в верхнем меню:</div>
+            <div class="col-md-4">
+                <select name="visible_at_top_menu" class="select">
+                    <?php
+                    if ($onePage['visible_at_top_menu'] == '1')
+                    {
+                        echo "<option value='0'>невидима</option><option value='1' selected>видима</option>";
+                    }
+                    else
+                    {
+                        echo "<option value='0' selected>невидима</option><option value='1'>видима</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-4">заголовок страницы (title):</div>
             <div class="col-md-4"><input type="text" name="title" value="<?=$onePage['title']?>"></div>
         </div>

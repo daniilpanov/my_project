@@ -15,4 +15,9 @@ class CNewsContent extends MNewsContent
 
         return $result[0];
     }
+
+    public function getAllNews()
+    {
+
+    }
 }

@@ -1,3 +1,9 @@
+body
+{
+    margin: 1em;
+    overflow-x: hidden;
+}
+
 /*Заголовок*/
 #header
 {
@@ -12,6 +18,43 @@
 {
    text-align: center;
     margin: 25px 10%;
+}
+#admin
+{
+    text-align: center;
+    font-family: "Arial", "Comic Sans MS", sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-style: italic;
+
+    padding: 1em;
+
+
+    /*ALL TYPES OF 'background-image: linear-gradient'*/
+    background-image: linear-gradient(left, #8dffee 25%, white 75%);
+    background-image: -o-linear-gradient(left, #8dffee 25%, white 75%);
+    background-image: -ms-linear-gradient(left, #8dffee 25%, white 75%);
+    background-image: -moz-linear-gradient(left, #8dffee 25%, white 75%);
+    background-image: -webkit-linear-gradient(left, #8dffee 25%, white 75%);
+
+    -o-background-image: linear-gradient(left, #8dffee 25%, white 75%);
+    -o-background-image: -o-linear-gradient(left, #8dffee 25%, white 75%);
+    -o-background-image: -ms-linear-gradient(left, #8dffee 25%, white 75%);
+    -o-background-image: -moz-linear-gradient(left, #8dffee 25%, white 75%);
+    -o-background-image: -webkit-linear-gradient(left, #8dffee 25%, white 75%);
+
+    -moz-background-image: linear-gradient(left, #8dffee 25%, white 75%);
+    -moz-background-image: -o-linear-gradient(left, #8dffee 25%, white 75%);
+    -moz-background-image: -ms-linear-gradient(left, #8dffee 25%, white 75%);
+    -moz-background-image: -moz-linear-gradient(left, #8dffee 25%, white 75%);
+    -moz-background-image: -webkit-linear-gradient(left, #8dffee 25%, white 75%);
+
+    -webkit-background-image: linear-gradient(left, #8dffee 25%, white 75%);
+    -webkit-background-image: -o-linear-gradient(left, #8dffee 25%, white 75%);
+    -webkit-background-image: -ms-linear-gradient(left, #8dffee 25%, white 75%);
+    -webkit-background-image: -moz-linear-gradient(left, #8dffee 25%, white 75%);
+    -webkit-background-image: -webkit-linear-gradient(left, #8dffee 25%, white 75%);
+    /*END__ALL TYPES OF 'background-image: linear-gradient'*/
 }
 /*END__Заголовок*/
 
