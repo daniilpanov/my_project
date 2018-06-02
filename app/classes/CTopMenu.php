@@ -31,7 +31,7 @@ class CTopMenu extends MTopMenu
     public function print_item($page, $pages, $children)
     {
         echo '<li>';
-        echo "<a href=\"?page={$page['id']}\" class='pages'>
+        echo "<a href=\"?page={$page['id']}\" class='top_pages'>
                   <i class=\"{$page['menu_icon']} {$page['icon_size']}\"></i>{$page['menu_name']}
               </a>";
         // Выводились ли дочерние элементы?
