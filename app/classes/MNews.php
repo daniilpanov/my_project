@@ -6,7 +6,7 @@ class MNews
 {
     public function getLimitOfNews()
     {
-        $sql = "SELECT news_per_page FROM constants";
+        $sql = "SELECT `value` FROM constants WHERE `name` = 'news_per_page'";
         $response = Db::getInstance()->sql($sql);
         $result = mysqli_fetch_assoc($response);
         return $result['news_per_page'];

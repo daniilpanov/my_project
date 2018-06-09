@@ -289,5 +289,4 @@ echo 'Удаляем установщик...OK<br />Готово!<br />';
 echo "<a href=\"$domain_name\">Перейти на сайт</a>&nbsp;|&nbsp; <a href=\"{$domain_name}\admin\">Система администрирования</a>";
 // !!!РАЗКОММЕНТИРУЙТЕ НА РАБОЧЕМ ПРОЕКТЕ
 // unlink('install.php');
-// unlink('Установка.txt');
 ?>

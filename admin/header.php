@@ -6,6 +6,8 @@ function __autoload($name)
     //echo $name."<br>";//для отладки
     require_once($name.'.php');
 }
+
+require_once "../lib/functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">

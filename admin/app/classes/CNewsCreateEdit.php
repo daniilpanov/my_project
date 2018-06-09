@@ -63,9 +63,11 @@ class CNewsCreateEdit extends MNewsCreateEdit
         {
             echo "<h4>Введите в поле для размера картинки число, которое меньше или равно 300!</h4>";
         }
-        else {
+        else
+        {
             //For a news image
-            if (!empty($_FILES['image']['tmp_name'])) {
+            if (!empty($_FILES['image']['tmp_name']))
+            {
                 $post['image'] = $this->getImg();
             }
 

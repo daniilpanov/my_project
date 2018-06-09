@@ -20,14 +20,14 @@
 }
 /*END__Заголовок*/
 
-/*Навигация по сайту*/
+/*Навигационная панель*/
 #navigation
 {
     background-color: #0e4000;
     padding: 5px;
     text-align: center;
 }
-#navigation a,#navigation a:hover,#navigation a:active,#navigation a:visited
+#navigation a, #navigation a:active, #navigation a:visited
 {
     border: whitesmoke 1px solid;
     text-decoration: none;
@@ -36,7 +36,30 @@
     font-size: 15px;
     padding: 2px;
 }
-/*END__Навигация по сайту*/
+#navigation a:hover
+{
+    margin: 1px;
+    color: green;
+    background-color: whitesmoke;
+}
+
+#time
+{
+    margin-left: 5em;
+    color: #ebe0af;
+    font-style: italic;
+    font-size: medium;
+    font-family: Vendana, sans-serif;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+#time:hover
+{
+    color: red;
+}
+/*END__Навигационная панель*/
 
 /*Создание меню, страниц и др.*/
 .create

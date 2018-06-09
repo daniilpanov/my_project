@@ -7,6 +7,8 @@ function __autoload($name)
 }
 require_once "views/VContent.php";
 
+require_once "lib/functions.php";
+
 require_once "views/VNewsContent.php";
 ?>
 
