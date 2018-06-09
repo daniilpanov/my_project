@@ -19,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">картинка (image):</div>
-            <div class="col-md-4"><input name="image" type="file" accept="image/*"></div>
+            <div class="col-md-4"><input name="file" type="file" accept="image/*"></div>
         </div>
         <div class="row">
             <div class="col-md-4">размер картинки (image size):</div>

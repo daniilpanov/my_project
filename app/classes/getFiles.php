@@ -5,15 +5,26 @@ namespace app\classes;
 class getFiles
 {
     private $files = array();
+    private static $instance = null;
 
-    public function getFiles($file_path, $file_type, $max_size, $multiple = false)
+    public static function getInstance()
     {
+        if (self::$instance === null)
+        {
+            self::$instance = new self;
+        }
+
+        return self::$instance;
+
+    }
+
+    public function getFiles($file_path, $max_size, $multiple = false)
+    {
+        echo $file_path.$max_size;
         if (!is_int($max_size))
         {
             $max_size = 300000;
         }
-
-        $this->getForm($multiple, $max_size, $file_type);
 
         if (isset($_FILES['file']))
         {
@@ -24,26 +35,6 @@ class getFiles
 
             $this->moveFilesToPath($file_path);
         }
-    }
-
-    private function getForm($multiple, $max_size, $file_type)
-    {
-        ?>
-        <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max_size;?>">
-            <?php
-            if ($multiple === true)
-            {
-                echo "<input type='file' name='file[]' accept='{$file_type}' multiple>";
-            }
-            else
-            {
-                echo "<input type='file' name='file' accept='{$file_type}'>";
-            }
-            ?>
-            <input type="submit">
-        </form>
-        <?php
     }
 
     private function moveFilesToPath($last_path)

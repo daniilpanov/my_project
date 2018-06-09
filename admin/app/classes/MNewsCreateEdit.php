@@ -27,6 +27,7 @@ class MNewsCreateEdit
 
     public function finalUpdateNews($sql)
     {
+        echo $sql;
         \app\classes\Db::getInstance()->sql($sql);
     }
 

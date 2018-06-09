@@ -22,38 +22,11 @@ class CNewsCreateEdit extends MNewsCreateEdit
         return $result;
     }
 
-    public function getImg($param = null)
+    public function getImg()
     {
-        $newFilename = 'C:/xampp/htdocs/my_project/img/'.$_FILES['image']['name'];
-        $forReturn = 'img/'.$_FILES['image']['name'];
-        $uploadInfo = $_FILES['image'];
+        getFiles::getInstance()->getFiles('C:/xampp/htdocs/my_project/img/',  30000);
 
-        if (is_null($param))
-        {
-            if (!move_uploaded_file($uploadInfo['tmp_name'], $newFilename))
-            {
-                die('Не удалось осуществить сохранение файла');
-            }
-            else
-            {
-                //Перемещаем файл из временной папки в указанную
-
-                return $forReturn;
-            }
-        }
-        elseif ($param == 'edit')
-        {
-            if(!move_uploaded_file($uploadInfo['tmp_name'], $newFilename))
-            {
-                return false;
-            }
-            else
-            {
-                //Перемещаем файл из временной папки в указанную
-
-                return $forReturn;
-            }
-        }
+        echo 'img/'.$_FILES['file']['name'];
     }
 
     public function createNews($post)
@@ -66,9 +39,9 @@ class CNewsCreateEdit extends MNewsCreateEdit
         else
         {
             //For a news image
-            if (!empty($_FILES['image']['tmp_name']))
+            if (!empty($_FILES['file']['tmp_name']))
             {
-                $post['image'] = $this->getImg();
+                echo $post['image'] = $this->getImg();
             }
 
             //Создаём запрос:
@@ -116,9 +89,10 @@ class CNewsCreateEdit extends MNewsCreateEdit
         else
         {
             //For a news image
-            if (isset($_FILES['image']['tmp_name']))
+            if (isset($_FILES['file']['tmp_name']))
             {
-                $post['image'] = $this->getImg('edit');
+                echo $post['image'] = $this->getImg();
+                echo "OK";
                 if ($post['image'] === false)
                 {
                     unset($post['image']);
@@ -157,7 +131,7 @@ class CNewsCreateEdit extends MNewsCreateEdit
 
             // отправляем информацию в базу
             $this->finalUpdateNews($sql);
-            header('Location: ?page=newsList');
+            //header('Location: ?page=newsList');
         }
     }
 
