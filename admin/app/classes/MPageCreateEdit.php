@@ -5,7 +5,7 @@ namespace app\classes;
 class MPageCreateEdit
 {
     // список страниц
-    public function getPagesList()
+    protected function getPagesList()
     {
         $sql = "SELECT * FROM pages ORDER BY position";
         $result = Db::getInstance()->sql($sql);
@@ -14,13 +14,13 @@ class MPageCreateEdit
     }
 
     // добавить страницу
-    public function insertPage($sql)
+    protected function insertPage($sql)
     {
         Db::getInstance()->sql($sql);
     }
 
     // получить список меню
-    public function getMenuList()
+    protected function getMenuList()
     {
         $sql = "SELECT id, name FROM menu";
         $result = Db::getInstance()->sql($sql);
@@ -28,20 +28,20 @@ class MPageCreateEdit
     }
 
     // удалить страницу
-    public function deletePage($page)
+    protected function deletePage($page)
     {
         $sql = "DELETE FROM pages WHERE id='{$page}'";
         Db::getInstance()->sql($sql);
     }
 
     // обновить страницу
-    public function finalUpdatePage($sql)
+    protected function finalUpdatePage($sql)
     {
         Db::getInstance()->sql($sql);
     }
 
     // возвращает список всех страниц со всей информацией по каждой
-    public function menu_pos()
+    protected function menu_pos()
     {
         $sql = "SELECT * FROM pages ORDER BY `position` ASC";
         $res = \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
@@ -49,10 +49,9 @@ class MPageCreateEdit
     }
 
     // позиция в меню
-    public function pos_inc($pos)
+    protected function pos_inc($pos)
     {
         $sql = "UPDATE pages SET position = position+1 WHERE position >= {$pos}";
         \app\classes\Db::getInstance()->sql($sql);// выполняем запрос
-
     }
 }

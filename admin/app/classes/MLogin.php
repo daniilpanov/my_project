@@ -5,7 +5,7 @@ namespace app\classes;
 class MLogin
 {
     //Метод, проверяющий, правильно ли введён пароль и логин, или нет
-    public function getUser($login)
+    protected function getUser($login)
     {
         //SQL-запрос
         $sql = "SELECT `password` FROM `users` WHERE login='{$login}'";

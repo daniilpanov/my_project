@@ -58,7 +58,7 @@ class CTopMenu extends MTopMenu
 
             if (!$ul)
             {
-                echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class=\'caret\'></b></a><ul class="dropdown-menu">'; // Начинаем внутренний список, если дочерних элементов ещё не было
+                echo '<input type="checkbox" class="ul_opening"><ul class="top_pages_children">'; // Начинаем внутренний список, если дочерних элементов ещё не было
                 $ul = true; // Устанавливаем флаг
             }
 

@@ -4,27 +4,22 @@ namespace app\classes;
 
 class CSettings extends MSettings
 {
-    public function prepareSettings($name = null)
+    public function prepareSettings()
     {
-        if (is_null($name))
+        $response = $this->getSettings();
+        while ($row = mysqli_fetch_assoc($response))
         {
-            $response = $this->getSettings();
-            while ($row = mysqli_fetch_assoc($response))
-            {
-                $result[] = $row;
-            }
-        }
-        else
-        {
-            $response = $this->getSettings($name);
-            $result = mysqli_fetch_assoc($response);
+            $result[] = $row;
         }
         return $result;
     }
 
     public function saveSettings($post)
     {
-        $sql = "UPDATE constants SET `value`='{$post['value']}', `translate` = '{$post['translate']}' WHERE `name` = '{$post['name']}'";
-        $this->insertSettings($sql);
+        foreach ($post as $value)
+        {
+            $sql = "UPDATE constants SET `value`='{$value['value']}', `translate` = '{$value['translate']}' WHERE `name` = '{$value['name']}'";
+            $this->insertSettings($sql);
+        }
     }
 }

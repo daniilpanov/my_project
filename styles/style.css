@@ -58,6 +58,39 @@ body
 }
 /*END__Заголовок*/
 
+/*Верхнее меню*/
+#topMenu
+{
+    background-color: darkred;
+}
+#topMenu a
+{
+    color: whitesmoke;
+    padding: 10px;
+}
+#topMenu .active a
+{
+    color: black;
+    padding: 10px;
+}
+
+.top_pages_children
+{
+    margin: 0;
+    display: none;
+}
+.top_pages_children a
+{
+    padding: 10px;
+    margin: 0;
+}
+
+.ul_opening:checked + .top_pages_children
+{
+    display: block;
+}
+/*END__Верхнее меню*/
+
 /*Меню*/
 .menu,.pages
 {

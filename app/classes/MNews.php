@@ -4,7 +4,7 @@ namespace app\classes;
 
 class MNews
 {
-    public function getLimitOfNews()
+    protected function getLimitOfNews()
     {
         $sql = "SELECT `value` FROM constants WHERE `name` = 'news_per_page'";
         $response = Db::getInstance()->sql($sql);
@@ -13,7 +13,7 @@ class MNews
     }
 
     //метод для получения новостей
-    public function getAllNews($limit = null)
+    protected function getAllNews($limit = null)
     {
         $sql = "SELECT id, name, description, image, image_width, type_of_measure_unit FROM news ORDER BY id DESC";
         if (!is_null($limit))
@@ -26,7 +26,7 @@ class MNews
     }
 
     //метод для подсчёта новостей
-    public function countNews()
+    protected function countNews()
     {
         $sql = "SELECT COUNT(id) FROM news";
         $result = Db::getInstance()->sql($sql);
