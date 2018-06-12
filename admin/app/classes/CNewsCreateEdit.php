@@ -24,17 +24,25 @@ class CNewsCreateEdit extends MNewsCreateEdit
 
     public function getImg()
     {
-        getFiles::getInstance()->getFiles('C:/xampp/htdocs/my_project/img/',  30000);
-
+        echo "'ok'";
+        $create_file = new getFiles();
+        echo "'ok'";
+        $create_file->getFiles('C:/xampp/htdocs/my_project/img/');
+        echo "'ok'";
         echo 'img/'.$_FILES['file']['name'];
+        return 'img/'.$_FILES['file']['name'];
     }
 
     public function createNews($post)
     {
         $post['image_width'] = (int)$post['image_width'];
-        if ($post['image_width']>300)
+        if ($post['type_of_measure_unit'] == 'px' && $post['image_width']>300)
         {
-            echo "<h4>Введите в поле для размера картинки число, которое меньше или равно 300!</h4>";
+            echo "<h4>Введите размер картинки, который меньше или равен <u>300px!</u></h4>";
+        }
+        elseif ($post['type_of_measure_unit'] == '%' && $post['image_width']>80)
+        {
+            echo "<h4>Введите размер картинки, который меньше или равен <u>80%!</u></h4>";
         }
         else
         {
