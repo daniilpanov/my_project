@@ -5,13 +5,27 @@ namespace app\classes;
 class getFiles
 {
     private $files = array();
+    private static $instance = null;
+
+    private function  __construct(){}
+    private function __clone(){}
+    private function __wakeup(){}
+
+    public static function getInstance()
+    {
+        if (self::$instance === null)
+        {
+            self::$instance = new self;
+        }
+
+        return self::$instance;
+
+    }
 
     public function getFiles($file_path)
     {
-        echo "OK";
         if (isset($_FILES['file']))
         {
-            echo "OK";
             foreach ($_FILES['file'] as $key => $file_info)
             {
                 $this->files[$key] = $file_info;

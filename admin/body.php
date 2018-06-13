@@ -81,84 +81,88 @@ if ($_POST)
 // если нажата кнопка, подключаем соответствующие виды
 if ($_GET)
 {
-    if($_GET['page'])
+    if(isset($_GET['page']))
     {
-        //SETTINGS_LIST
-        if ($_GET['page'] == 'settings')
+        // быстрое сравнение $_GET['page']:
+        switch ($_GET['page'])
         {
-        require_once "views/VSettings.php";
-        }
-        //ALL_LISTS
-        elseif ($_GET['page'] == 'pageList')
-        {
-            require_once "views/VPageList.php";
-        }
-        elseif ($_GET['page'] == 'authList')
-        {
-            require_once "views/VAuthList.php";
-        }
-        elseif ($_GET['page'] == 'menuList')
-        {
-            require_once "views/VMenuList.php";
-        }
-        elseif ($_GET['page'] == 'newsList')
-        {
-            require_once "views/VNewsList.php";
-        }
-        //ALL_CREATE
-        elseif ($_GET['page'] == 'createPage')
-        {
-            require_once "views/VPageCreate.php";
-        }
-        elseif ($_GET['page'] == 'createAuth')
-        {
-            require_once "views/VAuthCreate.php";
-        }
-        elseif ($_GET['page'] == 'createMenu')
-        {
-            require_once "views/VMenuCreate.php";
-        }
-        elseif ($_GET['page'] == 'createNews')
-        {
-            require_once "views/VNewsCreate.php";
+            //SETTINGS
+            case 'settings':
+                require_once "views/VSettings.php";
+                break;
+
+            //HELP
+            case 'help':
+                require_once "views/VHelp.php";
+                break;
+
+            //ALL_LISTS
+            case 'pageList':
+                require_once "views/VPageList.php";
+                break;
+            case 'authList':
+                require_once "views/VAuthList.php";
+                break;
+            case 'menuList':
+                require_once "views/VMenuList.php";
+                break;
+            case 'newsList':
+                require_once "views/VNewsList.php";
+                break;
+
+            //ALL_CREATE
+            case 'createPage':
+                require_once "views/VPageCreate.php";
+                break;
+            case 'createAuth':
+                require_once "views/VAuthCreate.php";
+                break;
+            case 'createMenu':
+                require_once "views/VMenuCreate.php";
+                break;
+            case 'createNews':
+                require_once "views/VNewsCreate.php";
+                break;
         }
     }
-    //ALL_DELETE
-    elseif ($_GET['deletePage'])
+    else
     {
-        require_once "views/VPageDelete.php";
-    }
-    elseif ($_GET['deleteAuth'])
-    {
-        require_once "views/VAuthCheck.php";
-    }
-    elseif ($_GET['deleteMenu'])
-    {
-        require_once "views/VMenuDelete.php";
-    }
-    elseif ($_GET['deleteNews'])
-    {
-        require_once "views/VNewsDelete.php";
-    }
-    //ALL_EDIT
-    elseif ($_GET['editMenu'])
-    {
-        require_once "views/VMenuEdit.php";
-    }
-    elseif ($_GET['editAuth'])
-    {
-        require_once "views/VAuthCheck.php";
-    }
-    elseif ($_GET['editPage'])
-    {
-        require_once "views/VPageEdit.php";
-    }
-    elseif ($_GET['editNews'])
-    {
-        require_once "views/VNewsEdit.php";
-    }
-    elseif ($_GET['editSetting'])
-    {
-        require_once "views/VSettingsEdit.php";
+        // поскольку здесь требуется сравнение ключей $_GET,
+        // "добываем" их с помощью foreach:
+        foreach ($_GET as $key => $value)
+        {
+            $page = $key;
+        }
+
+        // и снова - быстрое сравнение:
+        switch ($page)
+        {
+            //ALL_DELETE
+            case 'deletePage':
+                require_once "views/VPageDelete.php";
+                break;
+            case 'deleteAuth':
+                require_once "views/VAuthCheck.php";
+                break;
+            case 'deleteMenu':
+                require_once "views/VMenuDelete.php";
+                break;
+            case 'deleteNews':
+                require_once "views/VNewsDelete.php";
+                break;
+            //ALL_EDIT
+            case 'editMenu':
+                require_once "views/VMenuEdit.php";
+                break;
+            case 'editAuth':
+                require_once "views/VAuthCheck.php";
+                break;
+            case 'editPage':
+                require_once "views/VPageEdit.php";
+                break;
+            case 'editNews':
+                require_once "views/VNewsEdit.php";
+                break;
+        }
     }
 }

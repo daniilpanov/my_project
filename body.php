@@ -14,6 +14,7 @@
             </tr>
         </table>
     </div>
+    <!--Написать письмо администратору: -->
     <div id="admin">
         Если Вы хотите стать одним из администраторов этого сайта, нажмите <a href="callToAdmin.php?back=index.php" target="_blank">сюда</a>
     </div>
@@ -23,6 +24,7 @@
 $topPages = new \app\classes\CTopMenu();
 $pages = new \app\classes\CMenu();
 $news = new app\classes\CNews();
+$reviews = new \app\classes\CReviews();
 
 require_once "views/VTopMenu.php";
 ?>

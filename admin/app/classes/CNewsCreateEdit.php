@@ -24,12 +24,8 @@ class CNewsCreateEdit extends MNewsCreateEdit
 
     public function getImg()
     {
-        echo "'ok'";
-        $create_file = new getFiles();
-        echo "'ok'";
-        $create_file->getFiles('C:/xampp/htdocs/my_project/img/');
-        echo "'ok'";
-        echo 'img/'.$_FILES['file']['name'];
+        getFiles::getInstance()->getFiles('C:/xampp/htdocs/my_project/img/');
+
         return 'img/'.$_FILES['file']['name'];
     }
 
