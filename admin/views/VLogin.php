@@ -1,6 +1,6 @@
 <!--Просто форма-->
+<a href="../index.php" id="backup">Вернуться на сайт</a>
 <div id="page">
-    <a href="../index.php">Вернуться на сайт</a>
     <form method="post">
         <div>
             <h3>Авторизация доступа</h3>

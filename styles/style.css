@@ -8,7 +8,7 @@ body
 #header
 {
     background-color: whitesmoke;
-    border: seagreen 1px solid;
+    border: seagreen 5px double;
     margin: 25px;
     text-align: center;
     width: 90%;
@@ -81,8 +81,20 @@ body
 }
 .top_pages_children a
 {
+    transition-duration: 5s;
+    -o-transition-duration: 5s;
+    -moz-transition-duration: 5s;
+    -webkit-transition-duration: 5s;
     padding: 10px;
     margin: 0;
+}
+.top_pages_children a:hover
+{
+    transition-duration: 1s;
+    -o-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    background-color: darkgreen;
 }
 
 .ul_opening:checked + .top_pages_children
