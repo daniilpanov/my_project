@@ -5,9 +5,18 @@ namespace app\classes;
 class MPageCreateEdit
 {
     // список страниц
-    protected function getPagesList()
+    protected function getPagesList($admin)
     {
-        $sql = "SELECT * FROM pages ORDER BY position";
+        $sql = "SELECT * FROM pages";
+        if ($admin === true)
+        {
+            $sql .= " WHERE page_type='admin'";
+        }
+        else
+        {
+            $sql .= " WHERE page_type='common'";
+        }
+        $sql .= " ORDER BY position";
         $result = Db::getInstance()->sql($sql);
 
         return $result;

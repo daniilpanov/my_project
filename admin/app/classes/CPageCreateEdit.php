@@ -24,9 +24,9 @@ class CPageCreateEdit extends MPageCreateEdit
     }
 
     //Получение с БД всех страничек
-    public function getAllPages()
+    public function getAllPages($admin = false)
     {
-        $response = $this->getPagesList();
+        $response = $this->getPagesList($admin);
         while($row = mysqli_fetch_assoc($response))
         {
             $pagesList[] = $row;
