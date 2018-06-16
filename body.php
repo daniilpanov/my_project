@@ -9,7 +9,7 @@
                 </td>
                 <!--Название сайта-->
                 <td id="siteName" class="col-8">
-                    <h1>MY PROJECT</h1>
+                    <h1><?=SITE_NAME?></h1>
                 </td>
             </tr>
         </table>

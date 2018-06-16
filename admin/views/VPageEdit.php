@@ -212,7 +212,18 @@ foreach ($pages as $key => $value)
                     </select>
                 </div>
             </div>
-        <?}?>
+        <?php
+        }
+        else
+        {
+            ?>
+            <input type="hidden" name="parent_id" value="0">
+            <input type="hidden" name="menu_number" value="0">
+            <input type="hidden" name="general_visible" value="0">
+            <input type="hidden" name="visible_at_top_menu" value="0">
+            <?php
+        }
+        ?>
         <div class="row">
             <div class="col-md-4">содержание страницы:</div>
             <div class="col-md-4"><textarea name="content" spellcheck="false"><?=$onePage['content']?></textarea></div>

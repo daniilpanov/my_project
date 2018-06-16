@@ -8,6 +8,8 @@ function __autoload($name)
 }
 
 require_once "../lib/functions.php";
+
+require_once "constants.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">

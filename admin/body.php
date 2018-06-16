@@ -4,7 +4,7 @@
     <div id="header">
         <div id="logo"><img src="img/pirate-bay.jpg" width="100" height="100"></div>
         <div id="siteName">
-            <h1>MY PROJECT</h1>
+            <h1><?=SITE_NAME?></h1>
         </div>
     </div>
 </header>
@@ -27,7 +27,6 @@
 <?php
 
 // создаем новые обьекты
-$vsettings = new app\classes\CSettings(); //для работы с настройками
 $vcreateeditpage = new \app\classes\CPageCreateEdit(); //для работы со страницами
 $vcreateeditauth = new \app\classes\CAuthCreateEdit(); //для работы с пользователями
 $vcreateeditmenu = new \app\classes\CMenuCreateEdit(); //для работы с меню

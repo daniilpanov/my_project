@@ -155,9 +155,9 @@ class CPageCreateEdit extends MPageCreateEdit
         // и соединяем их
         $sql .=" WHERE id = '{$id}'";
 
-//        echo $sql;
+        echo $sql;
 
         // отправляем информацию в базу
-        $this->finalUpdatePage($sql);
+        //$this->finalUpdatePage($sql);
     }
 }

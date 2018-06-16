@@ -64,4 +64,16 @@ class Db extends Config
         return $result;
     }
 
+    public function multiSql($query)
+    {
+        $result = mysqli_multi_query(self::$handler, $query);
+
+        // если запрос не удался, выдаем сообщение об ошибке
+        if (!$result)
+        {
+            die ("<h1>Ошибка запроса к базе данных</h1>");
+        }
+
+        return $result;
+    }
 }
